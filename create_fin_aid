@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: Enter the target container name"
+    exit 1
+fi
+
+target_con=$1
+
+#create main 4 directories
+sudo lxc exec $target_con -- mkdir -p /root/FAFSA_Information /root/Financial_Records /root/Applications /root/Income_Verification
+
+#create the files within those directories
+sudo lxc exec $target_con -- bash -c 'touch /root/FAFSA_Information/Student_Income_Records /root/FAFSA_Information/Student_Tax_Information /root/FAFSA_Information/Dependency_Status_Forms /root/FAFSA_Information/FAFSA_Submission_Confirmation'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Financial_Records/Confirmed_Payments /root/Financial_Records/Pending_Payments /root/Financial_Records/Authorized_Payer_Information /root/Financial_Records/Billing_Statements'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Applications/Permission_to_Enroll_Forms /root/Applications/Federal_Work-Study_Forms /root/Applications/Study_Abroad_Forms /root/Applications/Transfer_Credit_Forms'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Income_Verification/Tax_Records /root/Income_Verification/Citizenship_Status /root/Income_Verification/Social_Security_Number /root/Income_Verification/W2_Forms'
+
+#hide the snap directory
+sudo lxc exec $target_con -- mv /root/snap /root/.snap

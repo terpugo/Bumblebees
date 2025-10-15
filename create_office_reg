@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: Enter the target container name"
+    exit 1
+fi
+
+target_con=$1
+
+#create main 4 directories
+sudo lxc exec $target_con -- mkdir -p /root/Transcripts /root/Schedule_of_Classes /root/Academic_Records_and_Documents /root/Student_Information
+
+#create the files within those directories
+sudo lxc exec $target_con -- bash -c 'touch /root/Transcripts/Class_of_2026 /root/Transcripts/Class_of_2027 /root/Transcripts/Class_of_2028 /root/Transcripts/Class_of_2029'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Schedule_of_Classes/2025-26 /root/Schedule_of_Classes/2024-25 /root/Schedule_of_Classes/2023-24 /root/Schedule_of_Classes/2022-23'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Academic_Records_and_Documents/Notarized_Documents /root/Academic_Records_and_Documents/Student_Email_Addresses /root/Academic_Records_and_Documents/Graduation_Applications /root/Academic_Records_and_Documents/Diploma_Remake_Requests'
+
+sudo lxc exec $target_con -- bash -c 'touch /root/Student_Information/Student_Identification_Numbers /root/Student_Information/Home_Address /root/Student_Information/Social_Security_Numbers /root/Student_Information/Student_Directory_ID'
+
+#hide the snap directory
+sudo lxc exec $target_con -- mv /root/snap /root/.snap

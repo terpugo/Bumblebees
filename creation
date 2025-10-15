@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if [ $# -ne 4 ]
+then
+    echo "Usage: Enter the target container name, the external IP to listen to, and the config to create"
+    exit 1
+fi
+
+target_con=$1
+ext_IP=$2
+config_num=$3
+
+timestamp="$(date +%s)"
+target_con_new="${target_con}-${config_num}-${timestamp}"
+
+
+sudo lxc init ubuntu:20.04 $target_con_new
+sudo lxc start $target_con_new
+sleep 5
+
+con_IP=$(sudo lxc exec $target_con_new -- hostname -I)
+
+sudo lxc exec $target_con_new -- sudo apt-get update
+sudo lxc exec $target_con_new -- sudo apt-get install -y openssh-server
+sudo lxc exec $target_con_new -- sudo ssh-keygen -A
+sudo lxc exec $target_con_new -- sudo sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
+sudo lxc exec $target_con_new -- sudo systemctl restart ssh
+
+sudo ip addr add $ext_IP/16 brd + dev enp4s0
+
+sudo sysctl -w net.ipv4.conf.all.route_localnet=1
+
+sudo screen -dmS "mitm_${target_con_new}" node /root/honeypots/MITM/mitm/index.js config_file
+
+if [ "$config_num" -eq 1 ]; then
+    cp -r ~/Bumblebees/1/* /var/snap/lxd/common/lxd/storage-pools/default/containers/$target_con_new/rootfs/home      # office of the registrar
+elif [ "$config_num" -eq 2 ]; then
+    cp -r ~/Bumblebees/1/* /root/containers/$target_con_new/rootfs/root     # financial aid office
+elif [ "$config_num" -eq 3 ]; then
+    cp -r ~/Bumblebees/3/* /root/containers/$target_con_new/rootfs/root       # computer science department
+fi
+
+

@@ -1,0 +1,53 @@
+#!/bin/bash
+# usage: creation <instance_name> <external_IP> <mitm_port> <config_num>
+# Creates an LXD container named exactly as <instance_name>, deploys the selected
+# Bumblebees template into /home/ubuntu using lxc file push, and then exits
+# with the container left in STOPPED state (recycling will start services).
+
+set -euo pipefail
+
+if [ $# -ne 4 ]; then
+  echo "Usage: creation <instance_name> <external_IP> <mitm_port> <config_num>"
+  exit 1
+fi
+
+instance_name=$1
+ext_IP=$2
+mitm_port=$3
+config_num=$4
+
+# Validate instance name (LXD-safe: letters, numbers, hyphens)
+if ! echo "$instance_name" | grep -Eq '^[A-Za-z0-9-]+$'; then
+  echo "ERROR: instance_name contains invalid characters. Use only letters, numbers, and hyphens."
+  exit 2
+fi
+
+# Path where your Bumblebees templates live (update if needed)
+SOURCE_BASE="/home/aces/Bumblebees"
+
+echo "Creating instance (stopped): $instance_name (config $config_num)"
+
+# Create the container in STOPPED state
+sudo lxc init ubuntu:20.04 "$instance_name"
+
+# Ensure target path exists inside container
+sudo lxc exec "$instance_name" -- mkdir -p /home/ubuntu || true
+
+# Copy template files using lxc file push (recursive)
+if [ "$config_num" -ge 1 ] && [ "$config_num" -le 3 ]; then
+  TEMPLATE_DIR="${SOURCE_BASE}/${config_num}"
+  if [ -d "$TEMPLATE_DIR" ]; then
+    echo "Deploying template (config $config_num) into $instance_name..."
+    # Push files into the container; this preserves file contents reliably
+    sudo lxc file push -r "${TEMPLATE_DIR}/." "${instance_name}/home/ubuntu/"
+    # Fix ownership inside container to ubuntu user
+    sudo lxc exec "$instance_name" -- chown -R ubuntu:ubuntu /home/ubuntu || true
+  else
+    echo "WARNING: template directory $TEMPLATE_DIR not found — skipping copy"
+  fi
+else
+  echo "Unknown config number: $config_num — no files copied"
+fi
+
+echo "Creation finished. Container $instance_name remains STOPPED for recycling."
+exit 0

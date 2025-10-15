@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]
+then
+  echo "Usage: ./deletion_script <external IP> <MITM port> <container name>"
+  exit 1
+fi
+
+extIP=$1
+mitm_port=$2
+containerName=$3
+
+# validate name
+if ! echo "$containerName" | grep -Eq '^[A-Za-z0-9-]+$'; then
+  echo "ERROR: containerName contains invalid characters. Use only letters, numbers, and hyphens."
+  exit 2
+fi
+
+# try to stop any MITM screen session matching the container if present
+sudo screen -S "mitm-${containerName}" -X quit 2>/dev/null || true
+
+# Only attempt to exec/stop/delete if the instance exists
+if sudo lxc list "$containerName" --format csv | grep -q "^$containerName,"; then
+  state=$(sudo lxc info "$containerName" 2>/dev/null | awk -F: '/^Status:/ {gsub(/^ +| +$/,"",$2); print $2; exit}')
+  echo "Found $containerName (status: ${state})"
+  if [ "$state" = "RUNNING" ]; then
+    sudo lxc exec "$containerName" -- systemctl stop ssh || sudo lxc exec "$containerName" -- service ssh stop || true
+    sudo lxc stop "$containerName" || true
+  else
+    echo "$containerName is not running (status: $state); skipping stop"
+  fi
+  sudo lxc delete "$containerName" || true
+else
+  echo "Instance $containerName not found; skipping stop/delete"
+fi
+
+exit 0

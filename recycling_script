@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]
+then
+  echo "Usage: ./recycling_script <external ip> <MITM port> <container name> "
+exit 1
+fi
+
+extIP=$1
+mitm_port=$2
+containerName=$3
+
+# Get random number 1-3 from Python
+
+num=$(python3 -c "import random; print(random.randint(1,3))")
+echo "config num is $num "
+
+if [ "$num" -eq 1 ]; then
+  newContainerName="${containerName}_registrar"
+  echo "Selected template: Office of the Registrar -> new container: $newContainerName"
+elif [ "$num" -eq 2 ]; then
+  newContainerName="${containerName}_financial_aid"
+  echo "Selected template: Financial Aid Office -> new container: $newContainerName"
+elif [ "$num" -eq 3 ]; then
+  newContainerName="${containerName}_cs_dept"
+  echo "Selected template: Computer Science Department -> new container: $newContainerName"
+else
+  # fallback (shouldn't happen)
+  newContainerName="${containerName}_unknown"
+  echo "Unknown config number ($num). Using fallback name: $newContainerName"
+fi
+
+./deletion_script "$extIP" "$mitm_port" "$containerName"
+
+./creation "$containerName" "$extIP" "$mitm_port" "$num"
+
+

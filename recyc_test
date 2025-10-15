@@ -1,0 +1,152 @@
+#!/bin/bash
+# usage: recycling <external_IP> <mitm_port> <canonical_container_name>
+# Creates a temporary container based on a random template (via ./creation),
+# deletes the old canonical container if present, renames the temp -> canonical,
+# starts the canonical container, configures SSH, sets host IP, and starts MITM.
+
+set -euo pipefail
+
+if [ $# -ne 3 ]; then
+  echo "Usage: ./recycling <external_IP> <mitm_port> <container_name>"
+  exit 1
+fi
+
+extIP=$1
+mitm_port=$2
+containerName=$3
+
+# Validate canonical name (must be LXD-safe)
+if ! echo "$containerName" | grep -Eq '^[A-Za-z0-9-]+$'; then
+  echo "ERROR: containerName contains invalid characters. Use only letters, numbers, and hyphens."
+  exit 2
+fi
+
+# Pick a random config 1..3
+num=$(python3 -c "import random; print(random.randint(1,3))")
+echo "config num is $num"
+
+# Report which template corresponds to the number (order: 1=Financial Aid, 2=Registrar, 3=CS)
+if [ "$num" -eq 1 ]; then
+  echo "Selected template: Financial Aid Office (config 1)"
+elif [ "$num" -eq 2 ]; then
+  echo "Selected template: Office of the Registrar (config 2)"
+elif [ "$num" -eq 3 ]; then
+  echo "Selected template: Computer Science Department (config 3)"
+fi
+
+# Build a temp name (prefix-based)
+tmpName="${containerName}-tmp-${num}-$(date +%s)"
+echo "Creating temporary container (stopped): $tmpName (will move to $containerName on success)"
+
+# Call creation to make the temp container (creation leaves it STOPPED)
+./creation "$tmpName" "$extIP" "$mitm_port" "$num"
+rc=$?
+if [ $rc -ne 0 ]; then
+  echo "Creation failed for $tmpName (rc=$rc). Aborting recycle; keeping original $containerName."
+  exit 1
+fi
+
+# Detect the actual created instance name (prefix match)
+created_instance=$(sudo lxc list --format csv | cut -d, -f1 | grep "^${tmpName}" | head -n1)
+
+if [ -z "$created_instance" ]; then
+  echo "ERROR: Could not find created instance that starts with prefix $tmpName"
+  echo "Current containers:"
+  sudo lxc list | sed -n '1,200p'
+  exit 2
+fi
+
+echo "Detected created instance: $created_instance"
+
+# If old canonical exists, stop & delete it (safe; ignore errors)
+if sudo lxc list "$containerName" --format csv | grep -q "^$containerName,"; then
+  echo "Stopping and deleting old container $containerName"
+  sudo lxc stop "$containerName" || true
+  sudo lxc delete "$containerName" || true
+else
+  echo "No existing container named $containerName to delete"
+fi
+
+# Ensure created_instance is stopped before renaming (creation should leave it stopped)
+echo "Ensuring $created_instance is STOPPED before renaming..."
+if sudo lxc list --format csv | cut -d, -f1,2 | grep -q "^${created_instance},RUNNING"; then
+  echo "$created_instance is RUNNING; attempting to stop..."
+  sudo lxc stop "$created_instance" || true
+  # Wait up to 30s for it to stop
+  count=0
+  while sudo lxc list --format csv | cut -d, -f1,2 | grep -q "^${created_instance},RUNNING" && [ $count -lt 30 ]; do
+    sleep 1
+    count=$((count+1))
+  done
+
+  if sudo lxc list --format csv | cut -d, -f1,2 | grep -q "^${created_instance},RUNNING"; then
+    echo "$created_instance still RUNNING after wait; forcing stop..."
+    sudo lxc stop "$created_instance" --force || true
+    sleep 2
+  fi
+fi
+
+# Verify it's stopped (abort if still running)
+if sudo lxc list --format csv | cut -d, -f1,2 | grep -q "^${created_instance},RUNNING"; then
+  echo "ERROR: $created_instance could not be stopped. Aborting move. Inspect containers:"
+  sudo lxc list | sed -n '1,200p'
+  exit 4
+fi
+
+# Move/rename the detected created instance -> canonical
+echo "Renaming $created_instance -> $containerName"
+sudo lxc move "$created_instance" "$containerName"
+if [ $? -ne 0 ]; then
+  echo "Failed to move $created_instance to $containerName. Please inspect containers:"
+  sudo lxc list | sed -n '1,200p'
+  exit 3
+fi
+
+# Start the moved container
+echo "Starting $containerName..."
+sudo lxc start "$containerName" || true
+
+# Wait a few seconds for network
+sleep 5
+
+# Wait until the container has an IP (10s timeout loop)
+count=0
+con_IP=""
+while [ $count -lt 20 ]; do
+  con_IP=$(sudo lxc exec "$containerName" -- hostname -I 2>/dev/null | awk '{print $1}' || true)
+  if [ -n "$con_IP" ]; then
+    break
+  fi
+  count=$((count+1))
+  sleep 1
+done
+
+echo "Container IP: ${con_IP:-(none)}"
+
+# Install & configure SSH inside the container (noninteractive)
+echo "Installing and configuring SSH inside $containerName..."
+sudo lxc exec "$containerName" -- apt-get update -y
+sudo lxc exec "$containerName" -- apt-get install -y openssh-server
+sudo lxc exec "$containerName" -- ssh-keygen -A
+# Permit root login as in your original script (be aware security implications)
+sudo lxc exec "$containerName" -- sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
+sudo lxc exec "$containerName" -- systemctl restart ssh || true
+
+# Add host external IP only if not already present on the host
+if ! ip addr show | grep -q "$extIP"; then
+  sudo ip addr add "$extIP/16" brd + dev enp4s0 2>/dev/null || echo "ip add failed - check host interface (enp4s0)"
+else
+  echo "Host IP $extIP already present; skipping ip add"
+fi
+
+# Allow route_localnet if needed
+sudo sysctl -w net.ipv4.conf.all.route_localnet=1 >/dev/null 2>&1 || true
+
+# Start the MITM node script inside a screen session named by the container
+echo "Starting MITM screen session for $containerName..."
+sudo screen -dmS "mitm-${containerName}" node /root/honeypots/MITM/mitm/index.js /root/honeypots/MITM/mitm/config/mitm.js
+
+# Final status and listing
+echo "Recycle complete. New $containerName created from config $num"
+sudo lxc list | sed -n '1,200p'
+exit 0
