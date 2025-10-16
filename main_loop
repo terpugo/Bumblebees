@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 
 if [ $# -ne 4 ]
 then
@@ -8,36 +8,60 @@ fi
 num=$(python3 -c "import random; print(random.randint(1,3))")
 echo "config num is $num "
 
+#making the 1st container
+
 # Generate timestamp
-timestamp=$(date +%s)   # or use +"%Y%m%d%H%M%S" for readable format
+# timestamp=$(date +%s)   # or use +"%Y%m%d%H%M%S" for readable format
 
 # Combine into the container name
-newContainerName="hp-${num}-${timestamp}"
+newContainerName="hp-1-${num}"
 echo "New container name: $newContainerName"
 
-newContainerName=hp-${num}
-#making the 1st container'
-./new_create start "$num"
+sudo ./new_create start "$num" 02
+# end of first container
 
+#making 2nd container 
 num=$(python3 -c "import random; print(random.randint(1,3))")
 echo "config num is $num "
-#making the 2nd container
+# Combine into the container name
+newContainerName2="hp-2-${num}"
+echo "New container name: $newContainerName2"
 
+sudo ./new_create start "$num" 03
+# end of second container
+
+# making third container 
 num=$(python3 -c "import random; print(random.randint(1,3))")
 echo "config num is $num "
-#making the 3rd container
 
-num=$(python3 -c "import random; print(random.randint(1,3))")
-echo "config num is $num "
+# Combine into the container name
+newContainerName3="hp-2-${num}"
+echo "New container name: $newContainerName3"
+
+sudo ./new_create start "$num" 04
+# end of third container
+
 #making the 4th container 
+num=$(python3 -c "import random; print(random.randint(1,3))")
+echo "config num is $num "
+# Combine into the container name
+newContainerName4="hp-4-${num}"
+echo "New container name: $newContainerName4"
+sudo ./new_create start "$num" 05
+# end of 4th container 
 
 num=$(python3 -c "import random; print(random.randint(1,3))")
 echo "config num is $num "'
 
 
 while true
-do
-./create 
+  do
+not_connected=true
+sudo tail -F $auth_log | while read -r LINE && [ $not_connected == true ]
+      if echo "$LINE" | grep "logged out"
+      then
+./parsing_commmands
 
 
+done 
 

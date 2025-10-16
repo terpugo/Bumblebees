@@ -1,14 +1,23 @@
-# to get ip attacker IP
-grep Connection <file path> | cut -d ':' -f 4 | cut -d '|' -f 1
+#date and time for file name
 
-#to get number of commands 
-grep -c 'line from reader: ' < file path > | cut -d ':' -f 4-
+            attacker_timestamp=$(grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3 | sed 's/ /_/; s/[:.]/-/g')
+            file=mtitm/parsed/$attacker_timestamp
+            #to get date attacker came in 
+            grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3 | cut -d ' ' -f 1 >> $file
+            # to get ip attacker IP
+            grep -m 1 'Attacker connected: ' <filepath> | cut -d ':' -f 4 | cut -d '|' -f 1 | cut -d ' ' -f 2 >> $file
+            #to get number of commands  
+            grep -c 'line from reader: ' < file path > | cut -d ':' -f 4- >> $file
 
-#to get list of commands 
-grep 'line from reader: ' <file path> | cut -d ':' -f 4-
+            #to get list of commands 
+            grep 'line from reader: ' <file path> | cut -d ':' -f 4- >> $file
 
-#to get time attacker came in 
-grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3| cut -d ' ' -f 2
+            #to get time attacker came in 
+            grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3| cut -d ' ' -f 2 >> $file
 
-#to get time attacker left 
-grep 'Attacker closed connection' <file path>| cut -d '-' -f 1,2,3 | cut -d ' ' -f 2
+            #to get time attacker left  
+            grep 'Attacker closed connection' <file path>| cut -d '-' -f 1,2,3 | cut -d ' ' -f 2 >> $file 
+
+
+
+

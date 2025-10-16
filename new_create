@@ -20,20 +20,21 @@ release_name() {
 
 # Usage message
 usage() {
-    echo "Usage: $0 [start|stop] <config> [container_name]"
+    echo "Usage: $0 [start|stop] <config> <profile> [container_name]"
     echo "  start: start a honeypot with a name auto-assigned for given config"
     echo "  stop: stop a honeypot and free up its name (requires container_name)"
     exit 1
 }
 
 # Check args
-if [ $# -lt 2 ]; then
+if [ $# -lt 3 ]; then
     usage
 fi
 
 action=$1
 config=$2
-container_name=$3
+container_name=$4
+profile=$3
 
 # Start container
 if [ "$action" = "start" ]; then
@@ -47,7 +48,7 @@ if [ "$action" = "start" ]; then
     echo "🚀 Starting honeypot container: $name for $config"
 
     # starts container
-     sudo lxc launch ubuntu:20.04 $name
+     sudo lxc launch ubuntu:20.04 -p $profile $name
      sleep 5
      sudo lxc exec $name -- sudo apt-get update
      sudo lxc exec $name -- sudo apt-get install -y openssh-server
