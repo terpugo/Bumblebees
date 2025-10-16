@@ -33,11 +33,11 @@ sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 sudo screen -dmS "mitm_${target_con_new}" node /root/honeypots/MITM/mitm/index.js config_file
 
 if [ "$config_num" -eq 1 ]; then
-    cp -r ~/Bumblebees/1/* /var/snap/lxd/common/lxd/storage-pools/default/containers/$target_con_new/rootfs/home      # office of the registrar
+    sudo cp -r ~/Bumblebees/1/* /root/containers/$target_con_new/rootfs/root      # office of the registrar
 elif [ "$config_num" -eq 2 ]; then
-    cp -r ~/Bumblebees/1/* /root/containers/$target_con_new/rootfs/root     # financial aid office
+    sudo cp -r ~/Bumblebees/1/* /root/containers/$target_con_new/rootfs/root     # financial aid office
 elif [ "$config_num" -eq 3 ]; then
-    cp -r ~/Bumblebees/3/* /root/containers/$target_con_new/rootfs/root       # computer science department
+    sudo cp -r ~/Bumblebees/3/* /root/containers/$target_con_new/rootfs/root       # computer science department
 fi
 
 

@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# Define the Python command (adjust if using venv)
+PYTHON_CMD="python3"
+MANAGER_SCRIPT="honeypot_name_manager.py"
+
+# Helper: get a container name from Python
+get_name() {
+    config=$1
+    name=$($PYTHON_CMD -c "from honeypot_name_manager import ContainerNameManager; m=ContainerNameManager(); n=m.get_available_name('$config'); print(n if n else '')")
+    echo "$name"
+}
+
+# Helper: release a container name in Python
+release_name() {
+    config=$1
+    name=$2
+    $PYTHON_CMD -c "from honeypot_name_manager import ContainerNameManager; m=ContainerNameManager(); m.release_name('$config', '$name')"
+}
+
+# Usage message
+usage() {
+    echo "Usage: $0 [start|stop] <config> [container_name]"
+    echo "  start: start a honeypot with a name auto-assigned for given config"
+    echo "  stop: stop a honeypot and free up its name (requires container_name)"
+    exit 1
+}
+
+# Check args
+if [ $# -lt 2 ]; then
+    usage
+fi
+
+action=$1
+config=$2
+container_name=$3
+
+# Start container
+if [ "$action" = "start" ]; then
+    name=$(get_name "$config")
+
+    if [ -z "$name" ]; then
+        echo "⚠️  No available names left for $config!"
+        exit 1
+    fi
+
+    echo "🚀 Starting honeypot container: $name for $config"
+
+    # starts container
+     sudo lxc launch ubuntu:20.04 $name
+     sleep 5
+     sudo lxc exec $name -- sudo apt-get update
+     sudo lxc exec $name -- sudo apt-get install -y openssh-server
+     sudo lxc exec $name -- sudo ssh-keygen -A
+     sudo lxc exec $name -- sudo sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
+     sudo lxc exec $name -- sudo systemctl restart ssh
+
+     if [ "$config" = "config1" ]; then
+       sudo cp -r ~/Bumblebees/1/* /root/containers/$name/rootfs/root
+    elif [ "$config" = "config2" ]; then
+      sudo cp -r ~/Bumblebees/2/* /root/containers/$name/rootfs/root
+    else
+      sudo cp -r ~/Bumblebees/3/* /root/containers/$name/rootfs/root
+   fi
+
+    echo "✅ Container started as '$name'"
+
+# Stop container
+elif [ "$action" = "stop" ]; then
+    if [ -z "$container_name" ]; then
+        usage
+    fi
+
+    echo "🛑 Stopping honeypot container: $container_name"
+
+    # Stop and remove the container
+#     docker stop "$container_name" >/dev/null 2>&1
+ #    docker rm "$container_name" >/dev/null 2>&1#
+  #   Release the name in Python
+     release_name "$config" "$container_name"
+     echo "✅ Released name '$container_name' for $config"
+
+else
+    usage
+fi
+

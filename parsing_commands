@@ -1,0 +1,14 @@
+# to get ip attacker IP
+grep Connection <file path> | cut -d ':' -f 4 | cut -d '|' -f 1
+
+#to get number of commands 
+grep -c 'line from reader: ' < file path > | cut -d ':' -f 4-
+
+#to get list of commands 
+grep 'line from reader: ' <file path> | cut -d ':' -f 4-
+
+#to get time attacker came in 
+grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3| cut -d ' ' -f 2
+
+#to get time attacker left 
+grep 'Attacker closed connection' <file path>| cut -d '-' -f 1,2,3 | cut -d ' ' -f 2

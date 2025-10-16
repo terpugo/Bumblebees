@@ -30,6 +30,7 @@ else
   echo "Unknown config number ($num). Using fallback name: $newContainerName"
 fi
 
+
 ./deletion_script "$extIP" "$mitm_port" "$containerName"
 
 ./creation "$containerName" "$extIP" "$mitm_port" "$num"
