@@ -2,19 +2,19 @@
 
 if [ $# -ne 4 ]
 then
-    echo "Usage: Enter the target container name, the external IP to listen to, and the config to create"
+    echo "Usage: Enter the target container name, the external IP to listen to, and the config to create, profile number"
     exit 1
 fi
 
 target_con=$1
 ext_IP=$2
 config_num=$3
-
+profile=$4
 timestamp="$(date +%s)"
 target_con_new="${target_con}-${config_num}-${timestamp}"
 
 
-sudo lxc init ubuntu:20.04 $target_con_new
+sudo lxc init ubuntu:20.04 -p $profile $target_con_new
 sudo lxc start $target_con_new
 sleep 5
 
@@ -26,9 +26,9 @@ sudo lxc exec $target_con_new -- sudo ssh-keygen -A
 sudo lxc exec $target_con_new -- sudo sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
 sudo lxc exec $target_con_new -- sudo systemctl restart ssh
 
-sudo ip addr add $ext_IP/16 brd + dev enp4s0
+#sudo ip addr add $ext_IP/24 brd + dev enp4s0
 
-sudo sysctl -w net.ipv4.conf.all.route_localnet=1
+#sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 
 sudo screen -dmS "mitm_${target_con_new}" node /root/honeypots/MITM/mitm/index.js config_file
 

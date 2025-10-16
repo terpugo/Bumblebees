@@ -1,14 +1,15 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]
+if [ $# -ne 4 ]
 then
-  echo "Usage: ./recycling_script <external ip> <MITM port> <container name> "
+  echo "Usage: ./recycling_script <external ip> <MITM port> <container name> <profile>"
 exit 1
 fi
 
 extIP=$1
 mitm_port=$2
 containerName=$3
+profile=$4
 
 # Get random number 1-3 from Python
 
@@ -33,6 +34,6 @@ fi
 
 ./deletion_script "$extIP" "$mitm_port" "$containerName"
 
-./creation "$containerName" "$extIP" "$mitm_port" "$num"
+./creation "$containerName" "$extIP" "$num" "$profile"
 
 
