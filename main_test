@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ $# -ne 2 ]
+then
+  echo "Usage: profile container_name"
+fi
+
+profile=$1
+con_name=$2
+
+while [[ true ]]
+  do
+  num=$(python3 -c "import random; print(random.randint(1,3))")
+   echo "config num is $num"
+  ./creation $con_name $profile $num
+  sleep 10
+
+  tail -F mitm_test | while read -r LINE
+  do
+    if echo "$LINE" | grep 'Attacker closed connection'
+
+    then
+        pkill -f "tail -F mitm_test"
+        ./deletion_script $con_name
+        break
+        fi
+  done
+done

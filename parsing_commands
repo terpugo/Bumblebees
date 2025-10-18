@@ -1,22 +1,48 @@
-#date and time for file name
+#!/bin/bash
 
-            attacker_timestamp=$(grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3 | sed 's/ /_/; s/[:.]/-/g')
-            file=mtitm/parsed/$attacker_timestamp
-            #to get date attacker came in 
-            grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3 | cut -d ' ' -f 1 >> $file
-            # to get ip attacker IP
-            grep -m 1 'Attacker connected: ' <filepath> | cut -d ':' -f 4 | cut -d '|' -f 1 | cut -d ' ' -f 2 >> $file
-            #to get number of commands  
-            grep -c 'line from reader: ' < file path > | cut -d ':' -f 4- >> $file
+con_name=$1
 
-            #to get list of commands 
-            grep 'line from reader: ' <file path> | cut -d ':' -f 4- >> $file
+session=$(sudo cat /root/MITM_data/logins/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
 
-            #to get time attacker came in 
-            grep 'Attacker authenticated and is inside container' <file path> | cut -d '-' -f 1,2,3| cut -d ' ' -f 2 >> $file
+sudo gzip -d /root/MITM_data/sessions/${session}.gz 2>/dev/null
 
-            #to get time attacker left  
-            grep 'Attacker closed connection' <file path>| cut -d '-' -f 1,2,3 | cut -d ' ' -f 2 >> $file 
+mitm_log="/root/MITM_data/sessions/${session}"
+
+attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker IP Address:" | cut -d' ' -f4)
+echo "attacker ip: $attacker_ip"
+echo
+
+login_time=$(sudo cat ${mitm_log} | grep "Date:" | cut -d' ' -f2-)
+echo "attacker logged in at $login_time"
+echo
+
+exit_time=$(sudo cat ${mitm_log} | tail -n 1 | cut -d':' -f1-3)
+echo "attacker left at $exit_time"
+echo
+
+con_ID=$(sudo cat ${mitm_log} | grep "Container ID:" | cut -d' ' -f3)
+user=$(sudo cat ${mitm_log} | grep "Attacker Username:" | cut -d' ' -f3)
+
+list_commands=$(sudo perl -pe 's/\r//g; s/\e\[[\d;]*[A-Za-z]//g' ${mitm_log} \
+           | grep -F "${user}@${con_ID}" \
+           | sed -n "s/.*\$ //p")
+echo "list of attacker commands: "
+echo "$list_commands"
+echo
+
+num_commands=$(echo "$list_commands" | wc -l)
+
+echo "number of attacker commands: ${num_commands}"
+echo
+
+start_seconds=$(date -d "${login_time%.*}" +%s)
+end_seconds=$(date -d "${exit_time%.*}" +%s)
+
+difference=$(( end_seconds - start_seconds ))
+
+seconds=$(( difference % 60 ))
+minutes=$(( difference / 60 ))
+echo "attacker spent ${minutes} minutes and ${seconds} seconds in honeypot"
 
 
 

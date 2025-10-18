@@ -1,21 +1,15 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]
+if [ $# -ne 1 ]
 then
-  echo "Usage: ./deletion_script <external IP> <MITM port> <container name>"
+  echo "Usage: ./deletion_script <container name>"
   exit 1
 fi
 
-extIP=$1
-mitm_port=$2
-containerName=$3
+containerName=$1
 
-intIP=$(sudo lxc exec "$containerName" -- hostname -I)
+sudo screen -S "mitm_${containerName}" -X quit
 
-sudo screen -S process_name -X quit
-
-
-sudo lxc exec "$containerName" -- systemctl stop ssh || sudo lxc exec "$containerName" -- service ssh stop
 sudo lxc stop "$containerName"
 sudo lxc delete "$containerName"
 
