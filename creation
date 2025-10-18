@@ -18,6 +18,7 @@ target_con_new="${target_con}-${config_num}-${timestamp}"
 
 # starts containe
 #sudo lxc launch ubuntu:20.04 -p $profile $con_name #> /dev/null
+
 if [ "$config" == 1 ]; then
     sudo lxc launch c1_image -p $profile $con_name
   elif [ "$config" == 2 ]; then 
