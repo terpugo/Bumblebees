@@ -7,24 +7,41 @@ fi
 
 profile=$1
 con_name=$2
+auth_log=/root/containers/${con_name}/rootfs/var/log/auth.log
 
 while true
 do
-   num=$(python3 -c "import random; print(random.randint(1,3))")
-   echo "config num is $num"
-  ./creation $profile $con_name $num
+  num=$(python3 -c "import random; print(random.randint(1,3))")
+  echo config num is $num
 
-  screen -dmS tail1 ./copy_auth.sh $con_name
-  sudo tail -F mitm_test | while read -r LINE
- do
-      if echo "$LINE" | grep "Attacker closed connection"
+  ./creation $con_name $profile $num
+
+  sudo screen -dmS tail_${con_name} ./copy_auth.sh $con_name
+
+  # stream only new lines; check both connect and disconnect in same loop
+  sudo tail -n0 -F ${auth_log} | while read -r LINE
+  do
+      if echo "$LINE" | grep -q "Accepted password"
       then
+        echo "attacker is inside"
+      fi
 
+      if echo "$LINE" | grep -q "Disconnected from user"
+      then
+          # stop the detached screen session
+          sudo screen -S tail_${con_name} -X quit || true
+
+          # kill the tail process streaming that specific auth_log
+          sudo pkill -f "tail -n0 -F ${auth_log}" || true
 
           ./deletion_script $con_name
-          pkill -f "tail -F mitm_test"
+          ./parsing_commands $con_name
+
+          # break inner loop so outer while restarts
+          break
       fi
   done
+
+  # tiny pause
+  sleep 1
 done
-
-

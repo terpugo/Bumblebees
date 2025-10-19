@@ -2,11 +2,11 @@
 
 con_name=$1
 
-session=$(sudo cat /root/MITM_data/logins/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
+session=$(sudo cat /root/MITM_data/logins/${con_name}/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
 
-sudo gzip -d /root/MITM_data/sessions/${session}.gz 2>/dev/null
+sudo gzip -d /root/MITM_data/sessions/${con_name}/${session}.gz 2>/dev/null
 
-mitm_log="/root/MITM_data/sessions/${session}"
+mitm_log="/root/MITM_data/sessions/${con_name}/${session}"
 
 attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker IP Address:" | cut -d' ' -f4)
 echo "attacker ip: $attacker_ip"
