@@ -1,64 +1,41 @@
 #!/bin/bash
-set -euo pipefail
+# Bootstrap Netdata for ephemeral honeypot container
 
-# --------------------------
+# -----------------------
 # CONFIGURATION
-# --------------------------
-PARENT_IP="172.30.201.214:19999"   # Host Netdata IP + port
-API_KEY="bumbleb33"                 # Shared API key for all ephemeral honeypots
-NODE_NAME="${HOOD_HOSTNAME:-honeypot}"  # Logical node name (passed from lifecycle script)
+# -----------------------
+HOST_IP="172.30.201.214"       # Host Netdata IP
+HOST_PORT="19999"              # Host Netdata port (default 19999)
+API_KEY="bumbleb33"            # Shared API key
+NODE_NAME="${HOOD_HOSTNAME:-$(hostname)}"  # Container hostname for Netdata
 
-# --------------------------
-# SET HOSTNAME
-# --------------------------
-sudo hostnamectl set-hostname "$NODE_NAME"
-
-# --------------------------
-# INSTALL NETDATA IF NOT PRESENT
-# --------------------------
-if ! command -v netdata >/dev/null 2>&1; then
-  curl -sSL https://my-netdata.io/kickstart.sh | sudo bash -s -- --dont-wait --disable-telemetry
-fi
-
-# --------------------------
-# CONFIGURE NETDATA WEB UI (LOCAL ONLY)
-# --------------------------
-sudo mkdir -p /etc/netdata
-sudo tee /etc/netdata/netdata.conf > /dev/null <<NETCONF
-[global]
-    hostname = $NODE_NAME
-
-[web]
-    bind to = 127.0.0.1
-    mode = simple
-NETCONF
-
-# --------------------------
-# CONFIGURE STREAMING TO PARENT
-# --------------------------
-sudo tee /etc/netdata/stream.conf > /dev/null <<STREAMCONF
+# -----------------------
+# CREATE STREAM CONFIG
+# -----------------------
+sudo tee /etc/netdata/stream.conf > /dev/null <<EOF
 [stream]
     enabled = yes
 
 [backend]
-    # keep default
-STREAMCONF
-
-# Add the API key stanza used by host Netdata
-sudo tee /etc/netdata/stream.conf.d/honeypot.stream.conf > /dev/null <<STREAMKEY
-[stream]
     enabled = yes
-    destination = $PARENT_IP
-    api key = $API_KEY
-    hostname = $NODE_NAME
-STREAMKEY
+    type = proxy
+    destination = ${HOST_IP}:${HOST_PORT}
+    api key = ${API_KEY}
+    hostname = ${NODE_NAME}
+EOF
 
-# --------------------------
+# -----------------------
 # RESTART NETDATA
-# --------------------------
-sudo systemctl daemon-reload || true
-sudo systemctl enable --now netdata
+# -----------------------
 sudo systemctl restart netdata
 
-echo "Netdata installed and streaming as $NODE_NAME -> $PARENT_IP (api key $API_KEY)"
+# -----------------------
+# FORCE NODE REGISTRATION
+# -----------------------
+# This ensures streaming starts immediately
+if [ -f /usr/libexec/netdata/netdata-claim.sh ]; then
+    sudo /usr/libexec/netdata/netdata-claim.sh -o
+fi
+
+echo "Bootstrap complete: Netdata streaming configured to ${HOST_IP}:${HOST_PORT} as node '${NODE_NAME}'."
 
