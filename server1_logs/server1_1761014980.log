@@ -1,0 +1,47 @@
+2025-10-20 22:50:04.061 - [Info] MITM Version: 1.4
+2025-10-20 22:50:04.063 - [Info] Auto Access Enabled: true
+2025-10-20 22:50:04.064 - [Debug] [Init] Auto Access Barrier: true
+2025-10-20 22:50:04.080 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-20 22:50:18.890 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-20 22:50:20.813 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-20 22:50:20.813 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-20 22:50:20.874 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-20 22:50:20.875 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-20 22:50:20.876 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-20 22:50:22.120 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-20 22:50:22.121 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-20 22:50:22.121 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-20 22:50:22.121 - [Debug] [Auto Access] Adding the following credentials: "hello:hi"
+2025-10-20 22:50:22.516 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-20 22:50:22.516 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-20 22:50:22.554 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-20 22:50:23.063 - [Debug] [SHELL] Opened shell for attacker
+2025-10-20 22:50:23.065 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-20 22:50:24.691 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-20 22:50:24.921 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-20 22:50:25.260 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-20 22:50:25.946 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-20 22:50:26.172 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-20 22:50:26.295 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-20 22:50:26.382 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-20 22:50:26.547 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-20 22:50:26.616 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-20 22:50:27.086 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-20 22:50:27.087 - [Debug] [SHELL] line from reader: echo hi
+2025-10-20 22:50:27.087 - [Debug] [SHELL] Keystroke buffer: 101,99,99,127,104,111,32,104,105,13
+2025-10-20 22:50:27.452 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-20 22:50:27.901 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-20 22:50:28.260 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-20 22:50:28.261 - [Debug] [SHELL] line from reader: ls
+2025-10-20 22:50:28.261 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-10-20 22:50:30.202 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-20 22:50:30.480 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-20 22:50:30.565 - [Debug] [SHELL] Attacker Keystroke: u
+2025-10-20 22:50:31.147 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-20 22:50:31.351 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-20 22:50:31.457 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-20 22:50:31.848 - [Debug] [SHELL] Attacker Keystroke: y
+2025-10-20 22:50:32.052 - [Debug] [SHELL] Attacker Keystroke: u
+2025-10-20 22:50:32.433 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-20 22:50:32.433 - [Debug] [SHELL] line from reader: touch yu
+2025-10-20 22:50:32.434 - [Debug] [SHELL] Keystroke buffer: 116,111,117,99,104,32,121,117,13

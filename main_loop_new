@@ -9,13 +9,13 @@ fi
 profile=$1
 con_name=$2
 auth_log=/root/containers/${con_name}/rootfs/var/log/auth.log
-mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
 while true
 do
   num=$(python3 -c "import random; print(random.randint(1,3))")
   echo config num is $num
   timestamp="$(date +%s)"
+  mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
   ./creation $con_name $profile $num $timestamp
 
   # creates copy auth.log in case attackers delete auth.log
@@ -37,7 +37,7 @@ do
           # kill the tail process streaming that specific auth_log
           # sudo pkill -f "tail -n0 -F ${auth_log}" || true
            
-          $(date +"%Y-%m-%d %H:%M:%S.%3N") >> $mitm_log
+          date +"%Y-%m-%d %H:%M:%S.%3N" >> "$mitm_log"
           ./deletion_script $con_name
           sleep 2
           ./parsing_commands $con_name $num $timestamp
