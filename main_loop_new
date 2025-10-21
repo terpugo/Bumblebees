@@ -15,11 +15,8 @@ do
   num=$(python3 -c "import random; print(random.randint(1,3))")
   echo config num is $num
   timestamp="$(date +%s)"
-  mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
   ./creation $con_name $profile $num $timestamp
-
-  # creates copy auth.log in case attackers delete auth.log
-  sudo screen -dmS tail_${con_name} ./copy_auth.sh $con_name $timestamp
+  data_collection="/home/aces/Bumblebees/Attacker_Data/${con_name}_${timestamp}.txt"
 
   # stream only new lines; check both connect and disconnect in same loop
   sudo tail -n0 -F ${auth_log} | while read -r LINE
@@ -27,16 +24,16 @@ do
       if echo "$LINE" | grep -q "Accepted password"
       then
         echo "attacker is inside"
-        sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $num $timestamp
+        sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
+        sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time $con_name 2m $timestamp
       fi
 
       if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out"; then
 
-          sudo screen -S tail_${con_name} -X quit || true
-
           # kill the tail process streaming that specific auth_log
-          # sudo pkill -f "tail -n0 -F ${auth_log}" || true
-          sudo date +"%Y-%m-%d %H:%M:%S.%3N" >> "$mitm_log"
+          sudo pkill -f "tail -n0 -F ${auth_log}" || true
+          sudo screen -S "idle_${con_name}" -X quit
+          echo "$(date +"%Y-%m-%d %H:%M:%S.%3N")" > "$data_collection"
           ./deletion_script $con_name
           sleep 2
           ./parsing_commands $con_name $num $timestamp

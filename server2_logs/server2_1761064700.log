@@ -1,0 +1,22 @@
+2025-10-21 12:38:42.746 - [Info] MITM Version: 1.4
+2025-10-21 12:38:42.748 - [Info] Auto Access Enabled: true
+2025-10-21 12:38:42.749 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 12:38:42.754 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-10-21 12:39:02.102 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 12:39:02.154 - [Debug] [Connection] Attacker closed the connection
+2025-10-21 12:39:13.922 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 12:39:16.034 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 12:39:16.034 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 12:39:16.097 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 12:39:16.098 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 12:39:16.098 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 12:39:17.148 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 12:39:17.150 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-21 12:39:17.150 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 12:39:17.150 - [Debug] [Auto Access] Adding the following credentials: "subomi:hi"
+2025-10-21 12:39:17.510 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 12:39:17.510 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 12:39:17.546 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-21 12:39:17.916 - [Debug] [SHELL] Opened shell for attacker
+2025-10-21 12:39:17.918 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-21 12:39:18.701 - [Debug] [SHELL] Attacker Keystroke: e

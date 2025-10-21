@@ -1,0 +1,19 @@
+2025-10-21 14:44:15.699 - [Info] MITM Version: 1.4
+2025-10-21 14:44:15.701 - [Info] Auto Access Enabled: true
+2025-10-21 14:44:15.701 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 14:44:15.707 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-10-21 14:44:44.096 - [Debug] [Connection] Attacker connected: 10.175.167.143 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 14:44:45.636 - [Debug] [Auth] Attacker 10.175.167.143 trying to authenticate with "none"
+2025-10-21 14:44:45.637 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 14:44:45.700 - [Debug] [Auth] Attacker 10.175.167.143 trying to authenticate with "publickey"
+2025-10-21 14:44:45.701 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 14:44:45.701 - [Debug] [Auth] Attacker: 10.175.167.143 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 14:45:11.764 - [Debug] [Auth] Attacker 10.175.167.143 trying to authenticate with "password"
+2025-10-21 14:45:11.766 - [Debug] [Auto Access] Attacker: 10.175.167.143, Threshold: 1, Attempts: 1
+2025-10-21 14:45:11.766 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 14:45:11.766 - [Debug] [Auto Access] Adding the following credentials: "attacker:s"
+2025-10-21 14:45:12.111 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 14:45:12.111 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-10-21 14:45:12.148 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-21 14:45:12.507 - [Debug] [SHELL] Opened shell for attacker
+2025-10-21 14:45:12.508 - [Debug] [LXC Streams] New Stream | Total Streams: 1

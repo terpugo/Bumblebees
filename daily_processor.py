@@ -2,14 +2,23 @@
 """
 daily_reports.py
 
-Parse attacker report .txt files in a directory and write attacker_reports_YYYYMMDD.xlsx
-for a specific date. By default the script processes **yesterday** (useful for daily cron).
+Process daily attacker report .txt files written in the new positional format and
+write attacker_reports_YYYYMMDD.xlsx.
+
+New positional format (expected lines):
+  0: con_name
+  1: config_num
+  2: attacker_ip
+  3: login_time
+  4: exit_time
+  5: num_commands
+  6..N-1: commands (one per line)
+  optionally final line: "X minutes and Y seconds"
 
 Usage:
   python3 daily_reports.py /path/to/Attacker_Data
-  python3 daily_reports.py /path/to/Attacker_Data --date 2025-10-19
+  python3 daily_reports.py /path/to/Attacker_Data --date 2025-10-20
 """
-
 import sys
 import re
 from pathlib import Path
@@ -18,58 +27,6 @@ from datetime import datetime, timedelta
 import argparse
 import time
 
-def extract_first(prefix, text, flags=re.MULTILINE):
-    pattern = rf"^{re.escape(prefix)}\s*[:=]?\s*(.*)$"
-    m = re.search(pattern, text, flags)
-    return m.group(1).strip() if m else ""
-
-def extract_commands_block(text):
-    m = re.search(r"(?mi)^list of attacker commands:\s*\n(.*?)(?:\n\s*\n|$)", text, re.S)
-    return m.group(1).rstrip() if m else ""
-
-def extract_minutes_seconds(text):
-    m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", text)
-    if not m:
-        return 0, 0
-    return int(m.group(1)), int(m.group(2))
-
-def parse_file(path: Path):
-    text = path.read_text(encoding="utf-8", errors="replace")
-    config_num = extract_first("config num", text)
-    attacker_ip = extract_first("attacker ip", text)
-    login_time = extract_first("attacker logged in at", text)
-    exit_time = extract_first("attacker left at", text)
-    container_id = extract_first("container ID", text) or extract_first("Container ID", text)
-    attacker_username = extract_first("Attacker username", text) or extract_first("Attacker Username", text)
-    num_commands = extract_first("number of attacker commands", text)
-    commands = extract_commands_block(text)
-    minutes, seconds = extract_minutes_seconds(text)
-    total_seconds = minutes * 60 + seconds
-
-    # try to extract epoch from filename if present (digits)
-    epoch = ""
-    m = re.search(r"(\d{9,})", path.name)
-    if m:
-        epoch = m.group(1)
-    else:
-        epoch = str(int(path.stat().st_mtime))
-
-    return {
-        "filename": path.name,
-        "epoch": epoch,
-        "config_num": config_num,
-        "attacker_ip": attacker_ip,
-        "login_time": login_time,
-        "exit_time": exit_time,
-        "container_id": container_id,
-        "attacker_username": attacker_username,
-        "num_commands": num_commands,
-        "commands": commands,
-        "minutes": minutes,
-        "seconds": seconds,
-        "total_seconds": total_seconds
-    }
-
 def day_range_for_date(target_date: datetime):
     start = datetime(target_date.year, target_date.month, target_date.day)
     end = start + timedelta(days=1)
@@ -77,9 +34,64 @@ def day_range_for_date(target_date: datetime):
     end_ts = int(time.mktime(end.timetuple()))
     return start_ts, end_ts
 
+def parse_positional_file(path: Path):
+    text = path.read_text(encoding="utf-8", errors="replace")
+    lines = [ln.rstrip("\n") for ln in text.splitlines()]
+    while lines and lines[0].strip() == "":
+        lines.pop(0)
+    while lines and lines[-1].strip() == "":
+        lines.pop()
+
+    con_name = lines[0] if len(lines) > 0 else ""
+    config_num = lines[1] if len(lines) > 1 else ""
+    attacker_ip = lines[2] if len(lines) > 2 else ""
+    login_time = lines[3] if len(lines) > 3 else ""
+    exit_time = lines[4] if len(lines) > 4 else ""
+    num_commands = ""
+    commands = ""
+    minutes = 0
+    seconds = 0
+
+    if len(lines) > 5:
+        if lines[5].strip().isdigit():
+            num_commands = lines[5].strip()
+            cmd_lines = lines[6:]
+        else:
+            cmd_lines = lines[5:]
+        if cmd_lines:
+            last = cmd_lines[-1].strip()
+            m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", last)
+            if m:
+                minutes = int(m.group(1))
+                seconds = int(m.group(2))
+                cmd_lines = cmd_lines[:-1]
+        commands = "\n".join(cmd_lines).strip()
+        if not num_commands:
+            num_commands = str(len([c for c in cmd_lines if c.strip()]))
+    else:
+        commands = ""
+        num_commands = lines[5].strip() if len(lines) > 5 else ""
+
+    total_seconds = minutes * 60 + seconds
+
+    return {
+        "filename": path.name,
+        "config_num": config_num,
+        "attacker_ip": attacker_ip,
+        "login_time": login_time,
+        "exit_time": exit_time,
+        "container_id": con_name,
+        "attacker_username": "",
+        "num_commands": num_commands,
+        "commands": commands,
+        "minutes": minutes,
+        "seconds": seconds,
+        "total_seconds": total_seconds
+    }
+
 def main():
-    parser = argparse.ArgumentParser(description="Create an Excel report from daily attacker .txt files.")
-    parser.add_argument("dir", help="Directory containing report .txt files (e.g. /home/student/Bumblebees/Attacker_Data)")
+    parser = argparse.ArgumentParser(description="Create Excel report from positional attacker .txt files.")
+    parser.add_argument("dir", help="Directory containing report .txt files")
     parser.add_argument("--date", help="Target date YYYY-MM-DD (local). Defaults to yesterday if omitted.", default=None)
     args = parser.parse_args()
 
@@ -88,7 +100,6 @@ def main():
         print(f"Directory not found: {outdir}", file=sys.stderr)
         sys.exit(1)
 
-    # Determine target date: default = yesterday
     if args.date:
         try:
             target = datetime.strptime(args.date, "%Y-%m-%d")
@@ -110,12 +121,11 @@ def main():
             print(f"Skipping {p.name}: cannot stat file ({e})", file=sys.stderr)
             continue
 
-        # only include files modified within the target day (local time)
         if not (start_ts <= mtime < end_ts):
             continue
 
         try:
-            row = parse_file(p)
+            row = parse_positional_file(p)
             rows.append(row)
         except Exception as e:
             print(f"Warning: failed to parse {p.name}: {e}", file=sys.stderr)
@@ -125,13 +135,18 @@ def main():
         sys.exit(0)
 
     df = pd.DataFrame(rows, columns=[
-        "filename","epoch","config_num","attacker_ip","login_time","exit_time",
+        "filename","config_num","attacker_ip","login_time","exit_time",
         "container_id","attacker_username","num_commands","commands","minutes","seconds","total_seconds"
     ])
 
     xlsx_path = outdir / f"attacker_reports_{target.strftime('%Y%m%d')}.xlsx"
-    df.to_excel(xlsx_path, index=False)
-    print(f"Wrote Excel file: {xlsx_path}")
+    try:
+        df.to_excel(xlsx_path, index=False)
+        print(f"Wrote Excel file: {xlsx_path}")
+    except Exception as e:
+        print(f"Failed to write Excel file: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
+

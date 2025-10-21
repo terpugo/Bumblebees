@@ -1,0 +1,64 @@
+2025-10-21 11:14:45.324 - [Info] MITM Version: 1.4
+2025-10-21 11:14:45.326 - [Info] Auto Access Enabled: true
+2025-10-21 11:14:45.326 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 11:14:45.332 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-10-21 11:15:19.485 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 11:15:21.366 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 11:15:21.367 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 11:15:21.412 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 11:15:21.413 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 11:15:21.414 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 11:15:22.332 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 11:15:22.334 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-21 11:15:22.334 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 11:15:22.334 - [Debug] [Auto Access] Adding the following credentials: "hello:hi"
+2025-10-21 11:15:22.684 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 11:15:22.684 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 11:15:22.721 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-21 11:15:23.081 - [Debug] [SHELL] Opened shell for attacker
+2025-10-21 11:15:23.083 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-21 11:15:24.269 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-21 11:15:24.484 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-21 11:15:24.561 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-21 11:15:24.699 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 11:15:24.792 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-21 11:15:24.898 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-21 11:15:24.980 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 11:15:25.177 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 11:15:25.178 - [Debug] [SHELL] line from reader: echo hi
+2025-10-21 11:15:25.178 - [Debug] [SHELL] Keystroke buffer: 101,99,104,111,32,104,105,13
+2025-10-21 11:15:26.106 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-21 11:15:26.210 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-21 11:15:26.447 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-21 11:15:26.924 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 11:15:27.067 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 11:15:27.205 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-21 11:15:27.257 - [Debug] [SHELL] Attacker Keystroke: h
+2025-10-21 11:15:27.365 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 11:15:27.514 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-21 11:15:27.737 - [Debug] [SHELL] Attacker Keystroke: '
+2025-10-21 11:15:28.480 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 11:15:28.682 - [Debug] [SHELL] Attacker Keystroke: "
+2025-10-21 11:15:29.101 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 11:15:29.899 - [Debug] [SHELL] Attacker Keystroke: '
+2025-10-21 11:15:30.038 - [Debug] [SHELL] Attacker Keystroke: m
+2025-10-21 11:15:30.089 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-21 11:15:30.284 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-21 11:15:30.363 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 11:15:30.431 - [Debug] [SHELL] Attacker Keystroke: m
+2025-10-21 11:15:30.611 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 11:15:30.704 - [Debug] [SHELL] Attacker Keystroke: n
+2025-10-21 11:15:30.858 - [Debug] [SHELL] Attacker Keystroke: g
+2025-10-21 11:15:30.904 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-21 11:15:31.060 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 11:15:31.110 - [Debug] [SHELL] Attacker Keystroke: u
+2025-10-21 11:15:31.186 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-21 11:15:31.494 - [Debug] [SHELL] Attacker Keystroke: "
+2025-10-21 11:15:31.757 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 11:15:31.758 - [Debug] [SHELL] line from reader: echo "i'm timing out"
+2025-10-21 11:15:31.758 - [Debug] [SHELL] Keystroke buffer: 101,104,99,127,127,99,104,111,32,39,127,34,105,39,109,32,116,105,109,105,110,103,32,111,117,116,34,13
+2025-10-21 11:15:48.412 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-21 11:15:48.487 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-21 11:15:48.725 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 11:15:48.726 - [Debug] [SHELL] line from reader: ls
+2025-10-21 11:15:48.726 - [Debug] [SHELL] Keystroke buffer: 108,115,13

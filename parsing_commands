@@ -9,64 +9,55 @@ fi
 con_name=$1
 config_num=$2
 timestamp=$3
-session=$(sudo cat /root/MITM_data/logins/${con_name}/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
+# session=$(sudo cat /root/MITM_data/logins/${con_name}/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
 
-sudo gzip -d /root/MITM_data/sessions/${con_name}/${session}.gz 2>/dev/null
+# sudo gzip -d /root/MITM_data/sessions/${con_name}/${session}.gz 2>/dev/null
 
 mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
 OUTDIR="/home/aces/Bumblebees/Attacker_Data"
 mkdir -p "$OUTDIR"
 epoch=$(date +%s)
-outfile="${OUTDIR}/${con_name}_${epoch}.txt"
+outfile="${OUTDIR}/${con_name}_${timestamp}.txt"
 
-echo "$con_name" > "$outfile"
-echo "config num= $config_num" > "$outfile"
+echo "$con_name" >> "$outfile"
+echo "$config_num" >> "$outfile"
 
 attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8)
-echo "attacker ip: $attacker_ip" >> "$outfile"
-echo >> "$outfile"
+echo "$attacker_ip" >> "$outfile"
 
-login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated:" | cut -d' ' -f1-2)
-echo "attacker logged in at $login_time" >> "$outfile"
-echo >> "$outfile"
+login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated" | cut -d' ' -f1-2)
+echo "$login_time" >> "$outfile"
+exit_time=$(sudo cat ${outfile} | head -1 | cut -d' ' -f1-2)
 
-exit_time=$(sudo cat ${mitm_log} | tail -n -1 )
+#if [ -z "$exit_time" ]; then
+#    echo "end time not found"
+#fi
 
-if [ -z "$exit_time" ]; then
-    echo "end time not found"
-fi
+echo "$exit_time" >> "$outfile"
 
-echo "attacker left at $exit_time" >> "$outfile"
-echo >> "$outfile"
 
-#con_ID=$(sudo cat ${mitm_log} | grep "Container ID:" | cut -d' ' -f3)
-#echo "container ID: $con_ID" >> "$outfile" 
-user=$(sudo cat ${mitm_log} | grep "Opened shell for" | cut -d' ' -f9)
-echo "Attacker username: $user"
-echo >> "$outfile"
+
 list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
 num_commands=$(echo "$list_commands" | wc -l)
 
-echo "number of attacker commands: ${num_commands}"
-echo >> "$outfile"
+echo "${num_commands}" >> "$outfile"
 
-echo "list of attacker commands: "
-echo "$list_commands"
+echo "$list_commands" >> "$outfile"
 echo
 
+# Convert to seconds since epoch (same dummy date)
+s1=$(date -d "1970-01-01 `echo $login_time | cut -d' ' -f2`" +%s)
+s2=$(date -d "1970-01-01 `echo $exit_time | cut -d' ' -f2`" +%s)
 
+diff=$((s2 - s1))
+minutes=$((diff / 60))
+seconds=$((diff % 60))
 
-start_seconds=$(date -d "${login_time%.*}" +%s)
-end_seconds=$(date -d "${exit_time%.*}" +%s)
+echo "$minutes minutes and $seconds seconds" >> "$outfile"
 
-difference=$(( end_seconds - start_seconds ))
-
-seconds=$(( difference % 60 ))
-minutes=$(( difference / 60 ))
-echo "${minutes} minutes and ${seconds} seconds"  >> "$outfile"
-
+sudo tail -n +2 "$outfile" > temp && sudo mv temp "$outfile"
 
 
 

@@ -1,0 +1,38 @@
+#!/bin/bash
+# time_attacker (stop when attacker found idle)
+
+if [ $# -ne 3 ]; then
+  echo "Usage: container_name idle_allowed(timestamp format ok for sleep, e.g. 7m) timestamp"
+  exit 1
+fi
+
+con_name=$1
+idle_allowed=$2
+timestamp=$3
+
+auth_log="/root/containers/${con_name}/rootfs/var/log/auth.log"
+mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
+
+while true; do
+  # ensure the mitm log exists; if not, wait and retry
+ # if [ ! -f "$mitm_log" ]; then
+  #  echo "MITM log not found: $mitm_log" >&2
+#    sleep "$idle_allowed"
+ #   continue
+ # fi
+
+  last_line_before=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+
+  sleep "$idle_allowed"
+
+  last_line_after=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+
+  if [ "$last_line_before" = "$last_line_after" ]; then
+    sudo echo "Attacker timed out" >> $auth_log
+    # Stop looping because attacker is idle
+    exit 0
+  fi
+
+  # if attacker still active, loop again
+done
+
