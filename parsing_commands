@@ -1,39 +1,62 @@
 #!/bin/bash
 
-con_name=$1
+if [ $# -ne 3 ]
+then
+  echo "Usage: <container name> <configuration number> <timestamp>"
+  exit 1
+fi
 
+con_name=$1
+config_num=$2
+timestamp=$3
 session=$(sudo cat /root/MITM_data/logins/${con_name}/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
 
 sudo gzip -d /root/MITM_data/sessions/${con_name}/${session}.gz 2>/dev/null
 
-mitm_log="/root/MITM_data/sessions/${con_name}/${session}"
+mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
-attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker IP Address:" | cut -d' ' -f4)
-echo "attacker ip: $attacker_ip"
-echo
+OUTDIR="/home/aces/Bumblebees/Attacker_Data"
+mkdir -p "$OUTDIR"
+epoch=$(date +%s)
+outfile="${OUTDIR}/${con_name}_${epoch}.txt"
 
-login_time=$(sudo cat ${mitm_log} | grep "Date:" | cut -d' ' -f2-)
-echo "attacker logged in at $login_time"
-echo
+echo "$con_name" > "$outfile"
+echo "config num= $config_num" > "$outfile"
 
-exit_time=$(sudo cat ${mitm_log} | tail -n 1 | cut -d':' -f1-3)
-echo "attacker left at $exit_time"
-echo
+attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8)
+echo "attacker ip: $attacker_ip" >> "$outfile"
+echo >> "$outfile"
 
-con_ID=$(sudo cat ${mitm_log} | grep "Container ID:" | cut -d' ' -f3)
-user=$(sudo cat ${mitm_log} | grep "Attacker Username:" | cut -d' ' -f3)
+login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated:" | cut -d' ' -f1-2)
+echo "attacker logged in at $login_time" >> "$outfile"
+echo >> "$outfile"
 
-list_commands=$(sudo perl -pe 's/\r//g; s/\e\[[\d;]*[A-Za-z]//g' ${mitm_log} \
-           | grep -F "${user}@${con_ID}" \
-           | sed -n "s/.*\$ //p")
-echo "list of attacker commands: "
-echo "$list_commands"
-echo
+exit_time=$(sudo cat ${mitm_log} | grep "Attacker closed connection" | cut -d' ' -f1-2)
+
+if [ -z "$exit_time" ]; then
+    echo "end time not found"
+fi
+
+echo "attacker left at $exit_time" >> "$outfile"
+echo >> "$outfile"
+
+#con_ID=$(sudo cat ${mitm_log} | grep "Container ID:" | cut -d' ' -f3)
+#echo "container ID: $con_ID" >> "$outfile" 
+user=$(sudo cat ${mitm_log} | grep "Opened shell for" | cut -d' ' -f9)
+echo "Attacker username: $user"
+echo >> "$outfile"
+list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
 num_commands=$(echo "$list_commands" | wc -l)
 
 echo "number of attacker commands: ${num_commands}"
+echo >> "$outfile"
+
+echo "list of attacker commands: "
+echo "$list_commands"
 echo
+
+
 
 start_seconds=$(date -d "${login_time%.*}" +%s)
 end_seconds=$(date -d "${exit_time%.*}" +%s)
@@ -42,7 +65,7 @@ difference=$(( end_seconds - start_seconds ))
 
 seconds=$(( difference % 60 ))
 minutes=$(( difference / 60 ))
-echo "attacker spent ${minutes} minutes and ${seconds} seconds in honeypot"
+echo "${minutes} minutes and ${seconds} seconds"  >> "$outfile"
 
 
 

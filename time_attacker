@@ -1,0 +1,38 @@
+#!/bin/bash
+# time_attacker (fixed)
+
+if [ $# -ne 3 ]; then
+  echo "Usage: container_name config_num timestamp"
+  exit 1
+fi
+
+sleep 10
+con_name=$1
+config=$2
+timestamp=$3
+
+auth_log="/root/containers/${con_name}/rootfs/var/log/auth.log"
+mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
+
+# look for the MITM log marker that shows attacker left
+attacker_left=$(grep -F "Attacker closed connection" "$mitm_log" 2>/dev/null || true)
+
+if [ -z "$attacker_left" ]; then
+  # stop the detached mitm screen (so the log file isn't being written)
+#  sudo screen -S "mitm_${con_name}" -X quit || true
+
+  # stop the copy_auth tail screen if used
+ # sudo screen -S "tail_${con_name}" -X quit || true
+
+  # kill any tail processes streaming the auth log on host (best-effort)
+  #sudo pkill -f "tail -n0 -F ${auth_log}" || true
+
+  # run deletion + parsing
+ # ./deletion_script $con_name
+
+  #sleep 2
+  # sudo rm -f "/home/aces/Bumblebees/${con_name}.log"
+  # ./parsing_commands $con_name $config_num
+  echo "Attacker timed out" >> $auth_log
+fi
+
