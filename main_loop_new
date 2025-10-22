@@ -25,7 +25,7 @@ do
       then
         echo "attacker is inside"
         sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
-        sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time $con_name 60 $timestamp
+        sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
 
       fi
 

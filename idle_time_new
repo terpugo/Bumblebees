@@ -1,0 +1,55 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]; then
+  echo "Usage: container_name idle_allowed(timestamp format ok for sleep, e.g. 7m) timestamp"
+  exit 1
+fi
+
+con_name=$1
+idle_allowed=$2
+timestamp=$3
+
+auth_log="/root/containers/${con_name}/rootfs/var/log/auth.log"
+mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
+
+# Minimal inline convert: supports 30s, 7m, 1h (no extra function)
+num=${idle_allowed%%[smh]}
+suf=${idle_allowed#"$num"}
+if [ -z "$suf" ] || [ "$suf" = "s" ]; then
+  idle_secs=$num
+elif [ "$suf" = "m" ]; then
+  idle_secs=$(( num * 60 ))
+elif [ "$suf" = "h" ]; then
+  idle_secs=$(( num * 3600 ))
+else
+  echo "Invalid idle_allowed format"
+  exit 2
+fi
+
+while true; do
+
+  last_line_before=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+
+  # --- minimal change: poll each second and reset timer when file changes
+  elapsed=0
+  while [ "$elapsed" -lt "$idle_secs" ]; do
+    sleep 1
+    last_line_after=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+    if [ "$last_line_before" != "$last_line_after" ]; then
+      # activity seen: reset timer and keep watching
+      last_line_before=$last_line_after
+      elapsed=0
+      continue
+    fi
+    elapsed=$((elapsed + 1))
+  done
+  # --- end minimal change
+
+  # If we reach here, file unchanged for idle_allowed => attacker idle
+  printf '%s\n' "Attacker timed out" | sudo tee -a "$auth_log" >/dev/null
+  # Stop looping because attacker is idle
+  exit 0
+
+  # if attacker still active, loop again
+done
+
