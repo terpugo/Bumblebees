@@ -1,0 +1,123 @@
+2025-10-21 19:43:47.383 - [Info] MITM Version: 1.4
+2025-10-21 19:43:47.385 - [Info] Auto Access Enabled: true
+2025-10-21 19:43:47.385 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 19:43:47.391 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-21 19:44:30.999 - [Debug] [Connection] Attacker connected: 10.172.95.111 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 19:44:32.489 - [Debug] [Auth] Attacker 10.172.95.111 trying to authenticate with "none"
+2025-10-21 19:44:32.489 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 19:44:32.548 - [Debug] [Auth] Attacker 10.172.95.111 trying to authenticate with "publickey"
+2025-10-21 19:44:32.549 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 19:44:32.550 - [Debug] [Auth] Attacker: 10.172.95.111 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 19:44:53.374 - [Debug] [Auth] Attacker 10.172.95.111 trying to authenticate with "password"
+2025-10-21 19:44:53.375 - [Debug] [Auto Access] Attacker: 10.172.95.111, Threshold: 1, Attempts: 1
+2025-10-21 19:44:53.375 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 19:44:53.375 - [Debug] [Auto Access] Adding the following credentials: "attacker:s"
+2025-10-21 19:44:53.841 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 19:44:53.841 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-21 19:44:53.883 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-21 19:44:54.442 - [Debug] [SHELL] Opened shell for attacker
+2025-10-21 19:44:54.443 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-21 19:44:55.688 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-21 19:44:55.801 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-21 19:44:55.967 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 19:44:55.968 - [Debug] [SHELL] line from reader: ls
+2025-10-21 19:44:55.968 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-10-21 19:45:04.284 - [Debug] [SHELL] Attacker Keystroke: b
+2025-10-21 19:45:04.401 - [Debug] [SHELL] Attacker Keystroke: f
+2025-10-21 19:45:04.853 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 19:45:05.208 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 19:45:06.123 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:06.239 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:06.360 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:06.505 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:06.730 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:07.864 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-21 19:45:08.085 - [Debug] [SHELL] Attacker Keystroke: x
+2025-10-21 19:45:08.740 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 19:45:08.895 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-21 19:45:09.423 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 19:45:09.780 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:09.911 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:10.044 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:10.208 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:10.734 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 19:45:10.734 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 19:45:10.796 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 19:45:10.797 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 19:45:10.797 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 19:45:10.815 - [Debug] [SHELL] Attacker Keystroke: c
+2025-10-21 19:45:11.000 - [Debug] [SHELL] Attacker Keystroke: d
+2025-10-21 19:45:11.222 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-10-21 19:45:11.904 - [Debug] [SHELL] Attacker Keystroke: g
+2025-10-21 19:45:11.976 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:11.976 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:11.977 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-21 19:45:12.077 - [Debug] [SHELL] Attacker Keystroke: r
+2025-10-21 19:45:12.442 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:12.582 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:12.886 - [Debug] [SHELL] Attacker Keystroke: G
+2025-10-21 19:45:12.975 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:12.975 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:12.975 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 3 attempts. Remaining: 3 attempts
+2025-10-21 19:45:13.161 - [Debug] [SHELL] Attacker Keystroke: r
+2025-10-21 19:45:13.375 - [Debug] [SHELL] Attacker Keystroke: a
+2025-10-21 19:45:13.486 - [Debug] [SHELL] Attacker Keystroke: n
+2025-10-21 19:45:13.660 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-21 19:45:13.680 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:13.680 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:13.680 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 4 attempts. Remaining: 2 attempts
+2025-10-21 19:45:13.732 - [Debug] [Connection] Attacker closed the connection
+2025-10-21 19:45:14.120 - [Debug] [SHELL] Attacker Keystroke: _
+2025-10-21 19:45:14.454 - [Debug] [SHELL] Attacker Keystroke: p
+2025-10-21 19:45:15.085 - [Debug] [SHELL] Attacker Keystroke: r
+2025-10-21 19:45:15.861 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:15.971 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-21 19:45:16.193 - [Debug] [SHELL] Attacker Keystroke: P
+2025-10-21 19:45:17.045 - [Debug] [SHELL] Attacker Keystroke: r
+2025-10-21 19:45:17.317 - [Debug] [SHELL] Attacker Keystroke: o
+2025-10-21 19:45:17.587 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 19:45:17.681 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 19:45:17.681 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 19:45:17.729 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 19:45:17.729 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 19:45:17.729 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 19:45:18.233 - [Debug] [SHELL] Attacker Keystroke: p
+2025-10-21 19:45:18.408 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-21 19:45:18.534 - [Debug] [SHELL] Attacker Keystroke: a
+2025-10-21 19:45:18.829 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:18.830 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:18.830 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-21 19:45:19.344 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-21 19:45:19.463 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-21 19:45:19.493 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:19.493 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:19.493 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 3 attempts. Remaining: 3 attempts
+2025-10-21 19:45:19.883 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 19:45:19.884 - [Debug] [SHELL] line from reader: cd Grant_Propsals
+2025-10-21 19:45:19.884 - [Debug] [SHELL] Keystroke buffer: 98,102,111,111,127,127,127,127,127,101,120,105,116,127,127,127,127,99,100,32,103,114,127,127,71,114,97,110,116,95,112,114,127,127,80,114,111,112,115,97,108,115,13
+2025-10-21 19:45:20.239 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:20.239 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:20.239 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 4 attempts. Remaining: 2 attempts
+2025-10-21 19:45:20.298 - [Debug] [Connection] Attacker closed the connection
+2025-10-21 19:45:23.442 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 19:45:23.542 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 19:45:23.542 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 19:45:23.589 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 19:45:23.589 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 19:45:23.589 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 19:45:36.256 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 19:45:36.256 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 19:45:36.256 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-21 19:45:41.480 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-21 19:45:41.700 - [Debug] [SHELL] Attacker Keystroke: x
+2025-10-21 19:45:41.860 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-21 19:45:42.092 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-21 19:45:43.170 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-21 19:45:43.170 - [Debug] [SHELL] line from reader: exit
+2025-10-21 19:45:43.171 - [Debug] [SHELL] Keystroke buffer: 101,120,105,116,13
+2025-10-21 19:45:43.174 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-10-21 19:45:43.174 - [Debug] [SHELL] Honeypot ended shell
+2025-10-21 19:45:43.219 - [Debug] [SHELL] Attacker ended the shell
+2025-10-21 19:45:43.221 - [Debug] [Connection] Attacker closed connection
+2025-10-21 19:45:43.224 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-21 19:45:43.224 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -20,20 +20,20 @@ if [ "$config" == 1 ]; then
 sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c1_banner'|" /root/honeypots/MITM/config"/${con_name}.js"
 sleep 2
     sudo lxc launch c1_image -p $profile $con_name
-  elif [ "$config" == 2 ]; then 
+  elif [ "$config" == 2 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c2_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
-sleep 2 
-    sudo lxc launch c2_image -p $profile $con_name 
+sleep 2
+    sudo lxc launch c2_image -p $profile $con_name
   elif [ "$config" == 3 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c3_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
-sleep 2 
+sleep 2
     sudo lxc launch c3_image -p $profile $con_name
 fi
 sleep 10
 sudo lxc exec $con_name -- sudo apt-get update
 sudo lxc exec $con_name -- sudo apt-get install -y openssh-server
 sudo lxc exec $con_name -- sudo ssh-keygen -A
-sudo lxc exec $con_name -- sudo sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin no/" /etc/ssh/sshd_config
+#sudo lxc exec $con_name -- sudo sed -i "s/PermitRootLogin yes/PermitRootLogin no/" /etc/ssh/sshd_config
 sudo lxc exec $con_name -- sudo sed -i "s/#PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config
 sudo lxc exec $con_name -- sudo sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
 sudo lxc exec $con_name -- sudo systemctl restart ssh

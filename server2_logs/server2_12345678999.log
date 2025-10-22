@@ -1,0 +1,61 @@
+2025-10-21 20:58:23.643 - [Info] MITM Version: 1.4
+2025-10-21 20:58:23.646 - [Info] Auto Access Enabled: true
+2025-10-21 20:58:23.646 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 20:58:23.651 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-10-21 20:58:29.557 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 20:58:31.286 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 20:58:31.286 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 20:58:31.346 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 20:58:31.347 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 20:58:31.347 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 20:58:32.418 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:58:32.420 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-21 20:58:32.420 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 20:58:32.420 - [Debug] [Auto Access] Adding the following credentials: "root:hi"
+2025-10-21 20:58:32.733 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 20:58:32.733 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 20:58:35.839 - [Debug] [LXC] Authentication Failed
+2025-10-21 20:58:35.839 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:35.840 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-21 20:58:35.840 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:35.840 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 3 attempts. Remaining: 3 attempts
+2025-10-21 20:58:35.841 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-21 20:58:35.842 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-10-21 20:58:37.590 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:58:37.591 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 20:58:37.591 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 20:58:40.692 - [Debug] [LXC] Authentication Failed
+2025-10-21 20:58:40.692 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:40.692 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 4 attempts. Remaining: 2 attempts
+2025-10-21 20:58:40.692 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:40.692 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 5 attempts. Remaining: 1 attempts
+2025-10-21 20:58:40.694 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-21 20:58:40.694 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-10-21 20:58:42.097 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:58:42.098 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 20:58:42.098 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 20:58:45.198 - [Debug] [LXC] Authentication Failed
+2025-10-21 20:58:45.199 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:45.199 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 6 attempts. Remaining: 0 attempts
+2025-10-21 20:58:45.199 - [Debug] [Connection] Max Login Attempts Reached - Closing connection on attacker
+2025-10-21 20:58:45.199 - [Debug] [Auth] Attacker authentication error: Error: All configured authentication methods failed
+2025-10-21 20:58:45.199 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 7 attempts. Remaining: -1 attempts
+2025-10-21 20:58:45.199 - [Debug] [Connection] Attacker closed the connection
+2025-10-21 20:58:45.201 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-21 20:58:45.201 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-10-21 20:59:16.309 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 20:59:17.964 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 20:59:17.964 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 20:59:18.026 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 20:59:18.026 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 20:59:18.026 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 20:59:18.919 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:59:18.920 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 20:59:18.920 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-21 20:59:19.940 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:59:19.941 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 20:59:19.941 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 3 attempts. Remaining: 3 attempts
+2025-10-21 20:59:20.836 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:59:20.837 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-10-21 20:59:20.837 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 4 attempts. Remaining: 2 attempts
+2025-10-21 20:59:20.888 - [Debug] [Connection] Attacker closed the connection

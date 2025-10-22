@@ -1,0 +1,21 @@
+2025-10-21 20:07:52.117 - [Info] MITM Version: 1.4
+2025-10-21 20:07:52.119 - [Info] Auto Access Enabled: true
+2025-10-21 20:07:52.119 - [Debug] [Init] Auto Access Barrier: true
+2025-10-21 20:07:52.125 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-10-21 20:08:20.500 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 20:08:20.533 - [Debug] [Connection] Attacker closed the connection
+2025-10-21 20:08:49.854 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-21 20:08:51.537 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-21 20:08:51.538 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-21 20:08:51.600 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-21 20:08:51.601 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-21 20:08:51.601 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-21 20:08:52.797 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-21 20:08:52.798 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-21 20:08:52.798 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-21 20:08:52.798 - [Debug] [Auto Access] Adding the following credentials: "subomi:hi"
+2025-10-21 20:08:53.155 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-21 20:08:53.155 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-10-21 20:08:53.189 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-21 20:08:53.553 - [Debug] [SHELL] Opened shell for attacker
+2025-10-21 20:08:53.554 - [Debug] [LXC Streams] New Stream | Total Streams: 1

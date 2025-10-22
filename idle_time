@@ -14,12 +14,6 @@ auth_log="/root/containers/${con_name}/rootfs/var/log/auth.log"
 mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
 while true; do
-  # ensure the mitm log exists; if not, wait and retry
- # if [ ! -f "$mitm_log" ]; then
-  #  echo "MITM log not found: $mitm_log" >&2
-#    sleep "$idle_allowed"
- #   continue
- # fi
 
   last_line_before=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
 

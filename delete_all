@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo screen -S "server1_mainloop" -X quit
+sudo screen -S "server2_mainloop" -X quit
+sudo screen -S "server3_mainloop" -X quit
+sudo screen -S "server4_mainloop" -X quit
+
+/home/aces/Bumblebees/deletion_script server1
+/home/aces/Bumblebees/deletion_script server2
+/home/aces/Bumblebees/deletion_script server3
+/home/aces/Bumblebees/deletion_script server4
