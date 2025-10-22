@@ -1,4 +1,5 @@
 #!/bin/bash
+/home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): auto pushing to github"
 set -euo pipefail
 
 # LOG file for debugging

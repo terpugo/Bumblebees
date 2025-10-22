@@ -1,5 +1,5 @@
 #!/bin/bash
-
+/home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date) system rebooted, running reboot_honeypots"
 sudo screen -S "server1_mainloop" -X quit
 sudo screen -S "server2_mainloop" -X quit
 sudo screen -S "server3_mainloop" -X quit

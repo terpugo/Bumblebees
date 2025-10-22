@@ -23,10 +23,10 @@ do
   do
       if echo "$LINE" | grep -q "Accepted password"
       then
-        echo "attacker is inside"
+
         sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
         sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
-
+        /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
       fi
 
       if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out"; then
@@ -39,6 +39,7 @@ do
           /home/aces/Bumblebees/deletion_script $con_name
           sleep 2
           /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp
+          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker left, ${con_name} deleted, and mitm log parsed"
 
           # break inner loop so outer while restarts
           break
