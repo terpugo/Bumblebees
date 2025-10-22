@@ -81,7 +81,6 @@ def parse_positional_file(path: Path):
         "login_time": login_time,
         "exit_time": exit_time,
         "container_id": con_name,
-        "attacker_username": "",
         "num_commands": num_commands,
         "commands": commands,
         "minutes": minutes,
@@ -136,7 +135,7 @@ def main():
 
     df = pd.DataFrame(rows, columns=[
         "filename","config_num","attacker_ip","login_time","exit_time",
-        "container_id","attacker_username","num_commands","commands","minutes","seconds","total_seconds"
+        "container_id","num_commands","commands","minutes","seconds","total_seconds"
     ])
 
     xlsx_path = Path("/home/aces/Bumblebees/honeypot_data_sheets") / f"attacker_reports_{target.strftime('%Y%m%d')}.xlsx"
@@ -149,4 +148,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
