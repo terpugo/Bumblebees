@@ -9,9 +9,6 @@ fi
 con_name=$1
 config_num=$2
 timestamp=$3
-# session=$(sudo cat /root/MITM_data/logins/${con_name}/${con_name}.txt | tail -n 1 |  cut -d';' -f3)
-
-# sudo gzip -d /root/MITM_data/sessions/${con_name}/${session}.gz 2>/dev/null
 
 mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
@@ -28,12 +25,8 @@ echo "$attacker_ip" >> "$outfile"
 
 login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated" | cut -d' ' -f1-2)
 echo "$login_time" >> "$outfile"
+
 exit_time=$(sudo cat ${outfile} | head -1 | cut -d' ' -f1-2)
-
-#if [ -z "$exit_time" ]; then
-#    echo "end time not found"
-#fi
-
 echo "$exit_time" >> "$outfile"
 
 

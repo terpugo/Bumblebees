@@ -4,15 +4,16 @@ sudo screen -S "server1_mainloop" -X quit
 sudo screen -S "server2_mainloop" -X quit
 sudo screen -S "server3_mainloop" -X quit
 sudo screen -S "server4_mainloop" -X quit
+#sleep 5
 
 /home/aces/Bumblebees/deletion_script server1
 /home/aces/Bumblebees/deletion_script server2
 /home/aces/Bumblebees/deletion_script server3
 /home/aces/Bumblebees/deletion_script server4
-
+#sleep 5
 sudo screen -dmS server1_mainloop /home/aces/Bumblebees/main_loop_new 02 server1
 sudo screen -dmS server2_mainloop /home/aces/Bumblebees/main_loop_new 03 server2
 sudo screen -dmS server3_mainloop /home/aces/Bumblebees/main_loop_new 04 server3
 sudo screen -dmS server4_mainloop /home/aces/Bumblebees/main_loop_new 05 server4
-
-
+#sleep 5
+/usr/bin/python3 /home/aces/Bumblebees/daily_processor.py --date "$(date +%F)" /home/aces/Bumblebees/Attacker_Data
