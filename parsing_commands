@@ -33,7 +33,11 @@ echo "$exit_time" >> "$outfile"
 
 list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
-num_commands=$(echo "$list_commands" | wc -l)
+if [ -z "$list_commands" ]; then
+  num_commands=0
+else
+  num_commands=$(echo "$list_commands" | wc -l)
+fi
 
 echo "${num_commands}" >> "$outfile"
 
