@@ -1,0 +1,31 @@
+2025-10-24 09:52:38.153 - [Info] MITM Version: 1.4
+2025-10-24 09:52:38.155 - [Info] Auto Access Enabled: true
+2025-10-24 09:52:38.155 - [Debug] [Init] Auto Access Barrier: true
+2025-10-24 09:52:38.161 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-24 09:52:47.557 - [Debug] [Connection] Attacker connected: 10.175.90.186 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-24 09:52:48.803 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "none"
+2025-10-24 09:52:48.803 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-24 09:52:48.869 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "publickey"
+2025-10-24 09:52:48.870 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-24 09:52:48.870 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-24 09:52:49.752 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:52:49.753 - [Debug] [Auto Access] Attacker: 10.175.90.186, Threshold: 1, Attempts: 1
+2025-10-24 09:52:49.753 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-24 09:52:49.753 - [Debug] [Auto Access] Adding the following credentials: "subomi:hi"
+2025-10-24 09:52:50.101 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-24 09:52:50.101 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-24 09:52:50.133 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-24 09:52:50.508 - [Debug] [SHELL] Opened shell for attacker
+2025-10-24 09:52:50.509 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-24 09:53:01.199 - [Debug] [Connection] Attacker connected: 10.175.90.186 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-24 09:53:04.042 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "none"
+2025-10-24 09:53:04.043 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-24 09:53:04.108 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "publickey"
+2025-10-24 09:53:04.109 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-24 09:53:04.109 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-24 09:53:04.979 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:53:04.980 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-24 09:53:04.980 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-24 09:53:05.007 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-24 09:53:05.132 - [Debug] [SHELL] Opened shell for attacker
+2025-10-24 09:53:05.132 - [Debug] [LXC Streams] New Stream | Total Streams: 2

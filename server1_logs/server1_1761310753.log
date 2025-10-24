@@ -1,0 +1,50 @@
+2025-10-24 08:59:39.316 - [Info] MITM Version: 1.4
+2025-10-24 08:59:39.319 - [Info] Auto Access Enabled: true
+2025-10-24 08:59:39.319 - [Debug] [Init] Auto Access Barrier: true
+2025-10-24 08:59:39.324 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-24 09:01:02.351 - [Debug] [Connection] Attacker connected: 10.175.90.186 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-24 09:01:03.544 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "none"
+2025-10-24 09:01:03.544 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-24 09:01:03.592 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "publickey"
+2025-10-24 09:01:03.593 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-24 09:01:03.593 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-24 09:01:06.002 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:01:06.003 - [Debug] [Auto Access] Attacker: 10.175.90.186, Threshold: 1, Attempts: 1
+2025-10-24 09:01:06.003 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-24 09:01:06.003 - [Debug] [Auto Access] Adding the following credentials: "subomi:hi"
+2025-10-24 09:01:06.346 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-24 09:01:06.346 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-24 09:01:06.376 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-24 09:01:06.730 - [Debug] [SHELL] Opened shell for attacker
+2025-10-24 09:01:06.731 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-24 09:01:16.172 - [Debug] [Connection] Attacker connected: 10.175.90.186 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-24 09:01:17.463 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "none"
+2025-10-24 09:01:17.463 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-24 09:01:17.576 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "publickey"
+2025-10-24 09:01:17.577 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-24 09:01:17.577 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-24 09:01:20.990 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:01:20.991 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-10-24 09:01:20.991 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 2 attempts. Remaining: 4 attempts
+2025-10-24 09:01:24.081 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:01:24.081 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-10-24 09:01:24.082 - [Debug] [Auth] Attacker: 10.175.90.186 has so far made 3 attempts. Remaining: 3 attempts
+2025-10-24 09:01:25.128 - [Debug] [Auth] Attacker 10.175.90.186 trying to authenticate with "password"
+2025-10-24 09:01:25.128 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-24 09:01:25.128 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-24 09:01:25.154 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-24 09:01:25.271 - [Debug] [SHELL] Opened shell for attacker
+2025-10-24 09:01:25.271 - [Debug] [LXC Streams] New Stream | Total Streams: 2
+2025-10-24 09:01:29.725 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-24 09:01:29.902 - [Debug] [SHELL] Attacker Keystroke: x
+2025-10-24 09:01:29.989 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-24 09:01:30.114 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-24 09:01:30.222 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-24 09:01:30.223 - [Debug] [SHELL] line from reader: exit
+2025-10-24 09:01:30.223 - [Debug] [SHELL] Keystroke buffer: 101,120,105,116,13
+2025-10-24 09:01:30.227 - [Debug] [LXC Streams] Removed Stream | Total streams: 1
+2025-10-24 09:01:30.227 - [Debug] [SHELL] Honeypot ended shell
+2025-10-24 09:01:30.278 - [Debug] [SHELL] Attacker ended the shell
+2025-10-24 09:01:30.279 - [Debug] [Connection] Attacker closed connection
+2025-10-24 09:01:30.282 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-24 09:01:30.282 - [Debug] [LXC] Container's OpenSSH server closed connection
