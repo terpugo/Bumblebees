@@ -1,0 +1,39 @@
+2025-10-23 19:53:30.155 - [Info] MITM Version: 1.4
+2025-10-23 19:53:30.157 - [Info] Auto Access Enabled: true
+2025-10-23 19:53:30.157 - [Debug] [Init] Auto Access Barrier: true
+2025-10-23 19:53:30.163 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-23 19:53:36.941 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-23 19:53:38.755 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-23 19:53:38.756 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-23 19:53:38.817 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-23 19:53:38.818 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-23 19:53:38.818 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-23 19:53:41.074 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-23 19:53:41.076 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-23 19:53:41.076 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-23 19:53:41.076 - [Debug] [Auto Access] Adding the following credentials: "root:hi"
+2025-10-23 19:53:41.370 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-23 19:53:41.370 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-23 19:53:41.409 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-23 19:53:41.765 - [Debug] [SHELL] Opened shell for attacker
+2025-10-23 19:53:41.766 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-23 19:53:44.510 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-23 19:53:44.934 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-23 19:53:45.202 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-23 19:53:45.203 - [Debug] [SHELL] line from reader: ls
+2025-10-23 19:53:45.203 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-10-23 19:54:10.202 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-23 19:54:10.565 - [Debug] [SHELL] Attacker Keystroke: x
+2025-10-23 19:54:10.792 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-23 19:54:10.993 - [Debug] [SHELL] Attacker Keystroke: r
+2025-10-23 19:54:12.359 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:54:12.716 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-23 19:54:12.938 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-23 19:54:12.938 - [Debug] [SHELL] line from reader: exit
+2025-10-23 19:54:12.938 - [Debug] [SHELL] Keystroke buffer: 101,120,105,114,127,116,13
+2025-10-23 19:54:12.940 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-10-23 19:54:12.940 - [Debug] [SHELL] Honeypot ended shell
+2025-10-23 19:54:13.003 - [Debug] [SHELL] Attacker ended the shell
+2025-10-23 19:54:13.004 - [Debug] [Connection] Attacker closed connection
+2025-10-23 19:54:13.008 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-23 19:54:13.008 - [Debug] [LXC] Container's OpenSSH server closed connection

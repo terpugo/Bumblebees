@@ -32,14 +32,23 @@ do
       if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out"; then
 
           # kill the tail process streaming that specific auth_log
+          out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
+          echo "$date" > "$data_collection"
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit
           sudo screen -S "idle_${con_name}" -X quit
-          echo "$(date +"%Y-%m-%d %H:%M:%S.%3N")" > "$data_collection"
+
+          if [[ "$LINE" == *"Attacker timed out"* ]]; then
+            echo "yes" >> "$data_collection"
+          else
+            echo "no" >> "$data_collection"
+          fi
+
+
           /home/aces/Bumblebees/deletion_script $con_name
           sleep 2
           /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp
-          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker left, ${con_name} deleted, and mitm log parsed"
+          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker left at $out, ${con_name} deleted, and mitm log parsed"
 
           # break inner loop so outer while restarts
           break

@@ -1,0 +1,129 @@
+2025-10-23 19:57:40.751 - [Info] MITM Version: 1.4
+2025-10-23 19:57:40.753 - [Info] Auto Access Enabled: true
+2025-10-23 19:57:40.753 - [Debug] [Init] Auto Access Barrier: true
+2025-10-23 19:57:40.758 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-23 19:57:52.527 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-23 19:57:52.593 - [Debug] [Connection] Attacker closed the connection
+2025-10-23 19:58:06.723 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-10-23 19:58:08.274 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-10-23 19:58:08.274 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-23 19:58:08.322 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-10-23 19:58:08.323 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-10-23 19:58:08.323 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-10-23 19:58:10.838 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-10-23 19:58:10.840 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-10-23 19:58:10.840 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-23 19:58:10.840 - [Debug] [Auto Access] Adding the following credentials: "root:hi"
+2025-10-23 19:58:11.269 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-23 19:58:11.269 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-23 19:58:11.305 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-23 19:58:11.669 - [Debug] [SHELL] Opened shell for attacker
+2025-10-23 19:58:11.671 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-10-23 19:58:13.239 - [Debug] [SHELL] Attacker Keystroke: l
+2025-10-23 19:58:13.585 - [Debug] [SHELL] Attacker Keystroke: s
+2025-10-23 19:58:13.894 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-23 19:58:13.896 - [Debug] [SHELL] line from reader: ls
+2025-10-23 19:58:13.896 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-10-23 19:58:26.977 - [Debug] [SHELL] Attacker Keystroke: sudo[Space]lxc[Space]exec[Space]""
+2025-10-23 19:58:26.982 - [Debug] [SHELL] Attacker Keystroke: $containerName"[Space]
+2025-10-23 19:58:26.984 - [Debug] [SHELL] Attacker Keystroke: --[Space]hostnamectl[Space]s
+2025-10-23 19:58:26.984 - [Debug] [SHELL] Attacker Keystroke: et-hostname[Space]"$ho
+2025-10-23 19:58:26.985 - [Debug] [SHELL] Attacker Keystroke: stname"
+2025-10-23 19:58:53.322 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.812 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.840 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.869 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.921 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.951 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:53.983 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.014 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.046 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.076 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.107 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.137 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.169 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.190 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.247 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.278 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.310 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.310 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.339 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.369 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.399 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.449 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.480 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.512 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.543 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.573 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.605 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.636 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.668 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.699 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.730 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.761 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.793 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.823 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.854 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.885 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.885 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.936 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:54.978 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.030 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.030 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.057 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.081 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.102 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:55.133 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.088 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.572 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.601 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.632 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.663 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.694 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.716 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.772 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.803 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.832 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.833 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.862 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.892 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.942 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:56.973 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.005 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.036 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.067 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.098 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.129 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.161 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.192 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.222 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.254 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.285 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.315 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.346 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.377 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.408 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.439 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.470 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.501 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.532 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.564 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.594 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-10-23 19:58:57.979 - [Debug] [SHELL] Attacker Keystroke: [ESC][A
+2025-10-23 19:58:58.466 - [Debug] [SHELL] Attacker Keystroke: [ESC][A
+2025-10-23 19:58:58.637 - [Debug] [SHELL] Attacker Keystroke: [ESC][A
+2025-10-23 19:58:59.092 - [Debug] [SHELL] Attacker Keystroke: [ESC][B
+2025-10-23 19:58:59.416 - [Debug] [SHELL] Attacker Keystroke: [ESC][B
+2025-10-23 19:59:16.677 - [Debug] [SHELL] Attacker Keystroke: e
+2025-10-23 19:59:16.840 - [Debug] [SHELL] Attacker Keystroke: x
+2025-10-23 19:59:16.867 - [Debug] [SHELL] Attacker Keystroke: i
+2025-10-23 19:59:17.076 - [Debug] [SHELL] Attacker Keystroke: t
+2025-10-23 19:59:17.316 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-10-23 19:59:17.316 - [Debug] [SHELL] line from reader: exit
+2025-10-23 19:59:17.316 - [Debug] [SHELL] Keystroke buffer: 115,117,100,111,32,108,120,99,32,101,120,101,99,32,34,34,36,99,111,110,116,97,105,110,101,114,78,97,109,101,34,32,45,45,32,104,111,115,116,110,97,109,101,99,116,108,32,115,101,116,45,104,111,115,116,110,97,109,101,32,34,36,104,111,115,116,110,97,109,101,34,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,27,91,65,27,91,65,27,91,65,27,91,66,27,91,66,101,120,105,116,13
+2025-10-23 19:59:17.318 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-10-23 19:59:17.318 - [Debug] [SHELL] Honeypot ended shell
+2025-10-23 19:59:17.369 - [Debug] [SHELL] Attacker ended the shell
+2025-10-23 19:59:17.370 - [Debug] [Connection] Attacker closed connection
+2025-10-23 19:59:17.372 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-23 19:59:17.372 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -6,13 +6,14 @@ Process daily attacker report .txt files written in the new positional format an
 write attacker_reports_YYYYMMDD.xlsx.
 
 New positional format (expected lines):
-  0: con_name
-  1: config_num
-  2: attacker_ip
-  3: login_time
-  4: exit_time
-  5: num_commands
-  6..N-1: commands (one per line)
+  0: yes/no for timed_out
+  1: con_name
+  2: config_num
+  3: attacker_ip
+  4: login_time
+  5: exit_time
+  6: num_commands or first command
+  7..N-1: commands (one per line)
   optionally final line: "X minutes and Y seconds"
 
 Usage:
@@ -36,45 +37,47 @@ def day_range_for_date(target_date: datetime):
 
 def parse_positional_file(path: Path):
     text = path.read_text(encoding="utf-8", errors="replace")
-    lines = [ln.rstrip("\n") for ln in text.splitlines()]
-    while lines and lines[0].strip() == "":
-        lines.pop(0)
-    while lines and lines[-1].strip() == "":
-        lines.pop()
+    lines = [ln.rstrip("\n") for ln in text.splitlines() if ln.strip()]
 
-    con_name = lines[0] if len(lines) > 0 else ""
-    config_num = lines[1] if len(lines) > 1 else ""
-    attacker_ip = lines[2] if len(lines) > 2 else ""
-    login_time = lines[3] if len(lines) > 3 else ""
-    exit_time = lines[4] if len(lines) > 4 else ""
+    # First line is timed_out (yes/no)
+    timed_out = lines.pop(0) if lines else "no"
+
+    # Assign standard fields safely
+    con_name     = lines[0] if len(lines) > 0 else ""
+    config_num   = lines[1] if len(lines) > 1 else ""
+    attacker_ip  = lines[2] if len(lines) > 2 else ""
+    login_time   = lines[3] if len(lines) > 3 else ""
+    exit_time    = lines[4] if len(lines) > 4 else ""
+
+    # Process commands and optional "X minutes and Y seconds"
     num_commands = ""
-    commands = ""
-    minutes = 0
-    seconds = 0
+    commands     = ""
+    minutes      = 0
+    seconds      = 0
 
-    if len(lines) > 5:
-        if lines[5].strip().isdigit():
-            num_commands = lines[5].strip()
-            cmd_lines = lines[6:]
-        else:
-            cmd_lines = lines[5:]
-        if cmd_lines:
-            last = cmd_lines[-1].strip()
-            m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", last)
-            if m:
-                minutes = int(m.group(1))
-                seconds = int(m.group(2))
-                cmd_lines = cmd_lines[:-1]
+    cmd_lines = lines[5:] if len(lines) > 5 else []
+
+    if cmd_lines:
+        # Check if last line contains duration
+        last = cmd_lines[-1].strip()
+        m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", last)
+        if m:
+            minutes = int(m.group(1))
+            seconds = int(m.group(2))
+            cmd_lines = cmd_lines[:-1]
+
+        # If first line of cmd_lines is a number, that's num_commands
+        if cmd_lines and cmd_lines[0].strip().isdigit():
+            num_commands = cmd_lines.pop(0).strip()
+
         commands = "\n".join(cmd_lines).strip()
         if not num_commands:
             num_commands = str(len([c for c in cmd_lines if c.strip()]))
-    else:
-        commands = ""
-        num_commands = lines[5].strip() if len(lines) > 5 else ""
 
     total_seconds = minutes * 60 + seconds
 
     return {
+        "timed_out": timed_out,
         "filename": path.name,
         "config_num": config_num,
         "attacker_ip": attacker_ip,
@@ -134,7 +137,7 @@ def main():
         sys.exit(0)
 
     df = pd.DataFrame(rows, columns=[
-        "filename","config_num","attacker_ip","login_time","exit_time",
+        "timed_out", "filename","config_num","attacker_ip","login_time","exit_time",
         "container_id","num_commands","commands","minutes","seconds","total_seconds"
     ])
 
@@ -148,5 +151,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-

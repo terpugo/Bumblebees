@@ -12,6 +12,9 @@ config=$3
 timestamp=$4
 target_con_new="${target_con}-${config_num}-${timestamp}"
 
+num=$(python3 -c "import random; print(random.randint(1,1000))")
+hostname=server${num}
+
 # starts container
 #sudo lxc launch ubuntu:20.04 -p $profile $con_name #> /dev/null
 
@@ -20,20 +23,25 @@ if [ "$config" == 1 ]; then
 sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c1_banner'|" /root/honeypots/MITM/config"/${con_name}.js"
 sleep 2
     sudo lxc launch c1_image -p $profile $con_name
+    sudo cp -r 1/* /root/containers/$con_name/rootfs/root
   elif [ "$config" == 2 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c2_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
 sleep 2
     sudo lxc launch c2_image -p $profile $con_name
+    sudo cp -r 2/* /root/containers/$con_name/rootfs/root
   elif [ "$config" == 3 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c3_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
 sleep 2
     sudo lxc launch c3_image -p $profile $con_name
+    sudo cp -r 3/* /root/containers/$con_name/rootfs/root
 fi
 sleep 10
+sudo lxc exec $con_name -- mv snap .snap
+sudo lxc exec $con_name -- hostnamectl set-hostname $hostname
 sudo lxc exec $con_name -- sudo apt-get update
 sudo lxc exec $con_name -- sudo apt-get install -y openssh-server
 sudo lxc exec $con_name -- sudo ssh-keygen -A
-#sudo lxc exec $con_name -- sudo sed -i "s/PermitRootLogin yes/PermitRootLogin no/" /etc/ssh/sshd_config
+sudo lxc exec $con_name -- sudo sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" /etc/ssh/sshd_config
 sudo lxc exec $con_name -- sudo sed -i "s/#PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config
 sudo lxc exec $con_name -- sudo sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
 sudo lxc exec $con_name -- sudo systemctl restart ssh

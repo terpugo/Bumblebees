@@ -29,12 +29,15 @@ echo "$login_time" >> "$outfile"
 exit_time=$(sudo cat ${outfile} | head -1 | cut -d' ' -f1-2)
 echo "$exit_time" >> "$outfile"
 
-
-
 list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
 if [ -z "$list_commands" ]; then
-  num_commands=0
+  if sudo grep -qF "Noninteractive mode" "$mitm_log"; then
+    list_commands=$(sudo grep -F "Noninteractive mode" "$mitm_log" | cut -d' ' -f10-)
+    num_commands=1
+  else
+    num_commands=0
+  fi
 else
   num_commands=$(echo "$list_commands" | wc -l)
 fi
