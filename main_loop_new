@@ -41,7 +41,7 @@ do
       then
 
         attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8)
-        sudo /sbin/iptables -A FORWARD -i lxcbr0 -d $ext_IP -p tcp --dport 22 -j DROP
+        sudo /sbin/iptables -I FORWARD -i lxcbr0 -d $ext_IP -p tcp --dport 22 -j DROP
         sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
         sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
         /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
