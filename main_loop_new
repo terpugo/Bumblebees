@@ -33,7 +33,7 @@ do
 
           # kill the tail process streaming that specific auth_log
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
-          echo "$date" > "$data_collection"
+          echo "$out" > "$data_collection"
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit
           sudo screen -S "idle_${con_name}" -X quit
