@@ -10,21 +10,6 @@ profile=$1
 con_name=$2
 auth_log=/root/containers/${con_name}/rootfs/var/log/auth.log
 
-if [ "$profile" = "02" ]
-then
-  ext_IP=172.20.0.2
-elif [ "$profile" = "03" ]
-then
-  ext_IP=172.20.0.3
-elif [ "$profile" = "04" ]
-then
-  ext_IP=172.20.0.4
-else
-  ext_IP=172.20.0.5
-fi
-
-echo $ext_IP
-
 while true
 do
   num=$(python3 -c "import random; print(random.randint(1,3))")
@@ -40,11 +25,16 @@ do
       if echo "$LINE" | grep -q "Accepted password"
       then
 
-        attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8)
-        sudo /sbin/iptables -I FORWARD -i lxcbr0 -d $ext_IP -p tcp --dport 22 -j DROP
-        sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
-        sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
-        /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
+        num_attacker=$(sudo cat ${auth_log} | grep "Accepted password" | wc -l)
+
+        if [ $num_attacker -gt 1 ]; then
+          echo "Attacker timed out" | sudo tee -a $auth_log
+        else
+          sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
+          sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
+          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
+        fi
+
       fi
 
       if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out"; then
@@ -52,7 +42,7 @@ do
           # kill the tail process streaming that specific auth_log
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
           echo "$out" > "$data_collection"
-          sudo /sbin/iptables -D FORWARD -i lxcbr0 -d $ext_IP -p tcp --dport 22 -j DROP
+
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit
           sudo screen -S "idle_${con_name}" -X quit

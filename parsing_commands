@@ -20,10 +20,10 @@ outfile="${OUTDIR}/${con_name}_${timestamp}.txt"
 echo "$con_name" >> "$outfile"
 echo "$config_num" >> "$outfile"
 
-attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8)
+attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8 | head -1)
 echo "$attacker_ip" >> "$outfile"
 
-login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated" | cut -d' ' -f1-2)
+login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated" | cut -d' ' -f1-2 | head -1)
 echo "$login_time" >> "$outfile"
 
 exit_time=$(sudo cat ${outfile} | head -1 | cut -d' ' -f1-2)
