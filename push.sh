@@ -33,7 +33,7 @@ cd "$REPO_DIR" || { echo "ERROR: cannot cd to $REPO_DIR"; exit 1; }
 
 # Run daily_processor (script must be executable or invoke python explicitly)
 # Using explicit python path prevents "command not found" issues
-$PYTHON "$REPO_DIR/daily_processor.py" --date "$(date +%F)" "$REPO_DIR/Attacker_Data" || echo "Processor returned non-zero"
+$PYTHON "$REPO_DIR/daily_processor.py" "$REPO_DIR/Attacker_Data" || echo "Processor returned non-zero"
 
 # Git operations
 $GIT add -A

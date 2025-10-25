@@ -1,0 +1,21 @@
+2025-10-25 04:12:38.017 - [Info] MITM Version: 1.4
+2025-10-25 04:12:38.019 - [Info] Auto Access Enabled: true
+2025-10-25 04:12:38.020 - [Debug] [Init] Auto Access Barrier: true
+2025-10-25 04:12:38.025 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-10-25 04:31:02.199 - [Debug] [Connection] Attacker connected: 35.216.243.84 | Client Identification: SSH-2.0-Go
+2025-10-25 04:31:02.846 - [Debug] [Auth] Attacker 35.216.243.84 trying to authenticate with "none"
+2025-10-25 04:31:02.846 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-25 04:31:12.201 - [Debug] [Connection] Attacker closed the connection
+2025-10-25 04:37:39.035 - [Debug] [Connection] Attacker connected: 45.135.232.24 | Client Identification: SSH-2.0-Go
+2025-10-25 04:37:39.883 - [Debug] [Auth] Attacker 45.135.232.24 trying to authenticate with "none"
+2025-10-25 04:37:39.883 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-10-25 04:37:40.193 - [Debug] [Auth] Attacker 45.135.232.24 trying to authenticate with "password"
+2025-10-25 04:37:40.195 - [Debug] [Auto Access] Attacker: 45.135.232.24, Threshold: 1, Attempts: 1
+2025-10-25 04:37:40.195 - [Debug] [Auto Access] Compromising the honeypot
+2025-10-25 04:37:40.195 - [Debug] [Auto Access] Adding the following credentials: "www:cloud9"
+2025-10-25 04:37:40.537 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-10-25 04:37:40.537 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-10-25 04:37:40.570 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-10-25 04:37:41.195 - [Debug] [Connection] Attacker closed connection
+2025-10-25 04:37:41.200 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-10-25 04:37:41.200 - [Debug] [LXC] Container's OpenSSH server closed connection
