@@ -13,7 +13,7 @@ timestamp=$4
 target_con_new="${target_con}-${config_num}-${timestamp}"
 
 num=$(python3 -c "import random; print(random.randint(1,1000))")
-hostname=server${num}
+hostname=server$config
 
 # starts container
 #sudo lxc launch ubuntu:20.04 -p $profile $con_name #> /dev/null
