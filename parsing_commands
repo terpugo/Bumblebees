@@ -33,8 +33,10 @@ list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
 if [ -z "$list_commands" ]; then
   if sudo grep -qF "Noninteractive mode" "$mitm_log"; then
-    list_commands=$(sudo grep -F "Noninteractive mode" "$mitm_log" | cut -d' ' -f10-)
-    num_commands=1
+    sudo grep "Noninteractive mode" "$mitm_log" >> "$outfile"
+    list_commands=$(sed -n '/^[[:space:]]*[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/!p' "$mitm_log")
+    num_commands=$(sed -n '/^[[:space:]]*[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/!p' "$mitm_log" | wc -l)
+    (( num_commands++ )) 
   else
     num_commands=0
   fi
@@ -47,15 +49,30 @@ echo "${num_commands}" >> "$outfile"
 echo "$list_commands" >> "$outfile"
 echo
 
+# get seconds + milliseconds since epoch for both
+#s1=$(date -d "1970-01-01 $(echo $login_time | cut -d' ' -f1)" +%s%3N)
+#s2=$(date -d "1970-01-01 $(echo $exit_time | cut -d' ' -f1)" +%s%3N)
+
+# calculate difference in ms
+#diff=$((s2 - s1))
+
+# convert to minutes, seconds, milliseconds
+#minutes=$((diff / 60000))
+#seconds=$(((diff % 60000) / 1000))
+#milliseconds=$((diff % 1000))
+
+#echo "Time difference: ${minutes}m ${seconds}s ${milliseconds}ms"
+
 # Convert to seconds since epoch (same dummy date)
-s1=$(date -d "1970-01-01 `echo $login_time | cut -d' ' -f2`" +%s)
-s2=$(date -d "1970-01-01 `echo $exit_time | cut -d' ' -f2`" +%s)
+s1=$(date -d "1970-01-01 `echo $login_time | cut -d' ' -f2`" +%s%3N)
+s2=$(date -d "1970-01-01 `echo $exit_time | cut -d' ' -f2`" +%s%3N)
 
 diff=$((s2 - s1))
-minutes=$((diff / 60))
-seconds=$((diff % 60))
+minutes=$((diff / 60000))
+seconds=$(((diff % 60000) / 1000))
+milliseconds=$((diff % 1000))
 
-echo "$minutes minutes and $seconds seconds" >> "$outfile"
+#echo "$minutes minutes $seconds seconds and $milliseconds milliseconds" >> "$outfile"
 
 sudo tail -n +2 "$outfile" > temp && sudo mv temp "$outfile"
 

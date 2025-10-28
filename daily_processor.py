@@ -49,6 +49,20 @@ def parse_positional_file(path: Path):
     login_time   = lines[3] if len(lines) > 3 else ""
     exit_time    = lines[4] if len(lines) > 4 else ""
 
+    # --- Calculate duration in milliseconds (from timestamps) ---
+    duration_ms = ""
+    if login_time and exit_time:
+        try:
+            # expected format: "YYYY-MM-DD HH:MM:SS.sss"
+            start_dt = datetime.strptime(login_time, "%Y-%m-%d %H:%M:%S.%f")
+            end_dt = datetime.strptime(exit_time, "%Y-%m-%d %H:%M:%S.%f")
+            delta = end_dt - start_dt
+            # total milliseconds, rounded to nearest integer
+            duration_ms = int(round(delta.total_seconds() * 1000.0))
+        except Exception:
+            # leave blank on parse failure
+            duration_ms = ""
+
     # Process commands and optional "X minutes and Y seconds"
     num_commands = ""
     commands     = ""
@@ -58,7 +72,7 @@ def parse_positional_file(path: Path):
     cmd_lines = lines[5:] if len(lines) > 5 else []
 
     if cmd_lines:
-        # Check if last line contains duration
+        # Check if last line contains duration in "X minutes and Y seconds"
         last = cmd_lines[-1].strip()
         m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", last)
         if m:
@@ -88,7 +102,8 @@ def parse_positional_file(path: Path):
         "commands": commands,
         "minutes": minutes,
         "seconds": seconds,
-        "total_seconds": total_seconds
+        "total_seconds": total_seconds,
+        "duration_ms": duration_ms
     }
 
 def main():
@@ -138,7 +153,7 @@ def main():
 
     df = pd.DataFrame(rows, columns=[
         "timed_out", "filename","config_num","attacker_ip","login_time","exit_time",
-        "container_id","num_commands","commands","minutes","seconds","total_seconds"
+        "container_id","num_commands","commands","minutes","seconds","total_seconds","duration_ms"
     ])
 
     xlsx_path = Path("/home/aces/Bumblebees/honeypot_data_sheets") / f"attacker_reports_{target.strftime('%Y%m%d')}.xlsx"
@@ -151,3 +166,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
