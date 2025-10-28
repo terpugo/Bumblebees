@@ -26,6 +26,10 @@ do
       then
 
         num_attacker=$(sudo cat ${auth_log} | grep "Accepted password" | wc -l)
+	#attacker_ip=
+	#/sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
+	#/sbin/iptables -I INPUT -s $attacker_ip -d 172.20.0.1 -p -tcp --dport $mitm_port -j ACCEPT
+
 
         if [ $num_attacker -gt 1 ]; then
           echo "Attacker timed out" | sudo tee -a $auth_log
