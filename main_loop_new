@@ -42,8 +42,17 @@ do
 	attacker_ip=$(sudo cat $auth_log | grep "Accepted password" | cut -d' ' -f11)
 	echo $attacker_ip
 
-	sudo /sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
-	sudo /sbin/iptables -I INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dpot $mitm_port -j ACCEPT
+	#sudo /sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
+	#sudo /sbin/iptables -I INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
+
+	# ensure attacker is explicitly allowed for new + established (put this at the top)
+        sudo /sbin/iptables -I INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
+        -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+       # insert a DROP that only applies to NEW connection attempts (won't kill ESTABLISHED)
+       sudo /sbin/iptables -I INPUT 2 -d 172.20.0.1 -p tcp --dport $mitm_port \
+       -m conntrack --ctstate NEW -j DROP
+
 	
         sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
         sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
@@ -58,9 +67,15 @@ do
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
           echo "$out" > "$data_collection"
           
-	  sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
-          sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
+	  #sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
+          #sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
 
+          
+          sudo /sbin/iptables -D INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
+          -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+          sudo /sbin/iptables -D INPUT 2 -d 172.20.0.1 -p tcp --dport $mitm_port \
+          -m conntrack --ctstate NEW -j DROP
 
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit
