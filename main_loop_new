@@ -10,6 +10,16 @@ profile=$1
 con_name=$2
 auth_log=/root/containers/${con_name}/rootfs/var/log/auth.log
 
+if [ "$profile" = "02" ]; then
+  mitm_port=10001
+elif [ "$profile" = "03" ]; then
+  mitm_port=10002
+elif [ "$profile" = "04" ]; then
+  mitm_port=10003
+else
+  mitm_port=10004
+fi
+
 while true
 do
   num=$(python3 -c "import random; print(random.randint(1,3))")
@@ -25,19 +35,16 @@ do
       if echo "$LINE" | grep -q "Accepted password"
       then
 
-        num_attacker=$(sudo cat ${auth_log} | grep "Accepted password" | wc -l)
-	#attacker_ip=
-	#/sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
-	#/sbin/iptables -I INPUT -s $attacker_ip -d 172.20.0.1 -p -tcp --dport $mitm_port -j ACCEPT
+	attacker_ip=$(sudo cat $auth_log | grep "Accepted password" | cut -d' ' -f11)
+	echo $attacker_ip
 
-
-        if [ $num_attacker -gt 1 ]; then
-          echo "Attacker timed out" | sudo tee -a $auth_log
-        else
-          sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
-          sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
-          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
-        fi
+	sudo /sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
+	sudo /sbin/iptables -I INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
+        
+        sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
+        sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
+        /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
+        
 
       fi
 
@@ -46,6 +53,9 @@ do
           # kill the tail process streaming that specific auth_log
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
           echo "$out" > "$data_collection"
+          
+	  sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
+          sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
 
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit

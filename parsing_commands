@@ -32,19 +32,32 @@ echo "$exit_time" >> "$outfile"
 list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 
 if [ -z "$list_commands" ]; then
-  if sudo grep -qF "Noninteractive mode" "$mitm_log"; then
-    sudo grep "Noninteractive mode" "$mitm_log" >> "$outfile"
-    list_commands=$(sudo sed -n '/^[[:space:]]*[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/!p' "$mitm_log")
-    num_commands=$(sudo sed -n '/^[[:space:]]*[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/!p' "$mitm_log" | wc -l)
-    (( num_commands++ )) 
+  # if we see "Noninteractive mode", dump those lines and then extract non-timestamp lines as commands
+  if sudo grep -qF "Noninteractive mode" "$mitm_log" 2>/dev/null; then
+    sudo grep "Noninteractive mode" "$mitm_log" 2>/dev/null >> "$outfile"
+
+    # commands = lines that do NOT start with YYYY-MM-DD (likely the actual commands)
+    list_commands=$(sudo grep -v -E '^[[:space:]]*[0-9]{4}-[0-9]{2}-[0-9]{2}' "$mitm_log" 2>/dev/null || true)
+
+    if [ -z "$list_commands" ]; then
+      num_commands=0
+    else
+      num_commands=$(echo "$list_commands" | sed '/^$/d' | wc -l)
+      num_commands=$(( num_commands + 1 ))
+    fi
   else
     num_commands=0
   fi
 else
-  num_commands=$(echo "$list_commands" | wc -l)
+  num_commands=$(echo "$list_commands" | sed '/^$/d' | wc -l)
 fi
 
 echo "${num_commands}" >> "$outfile"
+
+# append commands if present
+if [ -n "$list_commands" ]; then
+  echo "$list_commands" >> "$outfile"
+fi
 
 echo "$list_commands" >> "$outfile"
 echo
