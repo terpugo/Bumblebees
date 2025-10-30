@@ -68,7 +68,7 @@ diff=$((s2 - s1))
 minutes=$((diff / 60)) 
 seconds=$((diff % 60))
 
-echo "$minutes minutes and $seconds" >> "$outfile"
+echo "$minutes minutes and $seconds seconds">> "$outfile"
 
 sudo tail -n +2 "$outfile" > temp && sudo mv temp "$outfile"
 
