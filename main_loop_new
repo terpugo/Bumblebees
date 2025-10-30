@@ -71,10 +71,10 @@ do
           #sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
 
           
-          sudo /sbin/iptables -D INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
+          sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
           -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 
-          sudo /sbin/iptables -D INPUT 2 -d 172.20.0.1 -p tcp --dport $mitm_port \
+          sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port \
           -m conntrack --ctstate NEW -j DROP
 
           sudo pkill -f "tail -n0 -F ${auth_log}" || true

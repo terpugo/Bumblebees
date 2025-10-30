@@ -34,17 +34,14 @@ list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
 if [ -z "$list_commands" ]; then
   # if we see "Noninteractive mode", dump those lines and then extract non-timestamp lines as commands
   if sudo grep -qF "Noninteractive mode" "$mitm_log" 2>/dev/null; then
-    sudo grep "Noninteractive mode" "$mitm_log" 2>/dev/null >> "$outfile"
+    sudo grep "Noninteractive mode" "$mitm_log" | cut -d' ' -f10- 2>/dev/null >> "$outfile"
 
     # commands = lines that do NOT start with YYYY-MM-DD (likely the actual commands)
     list_commands=$(sudo grep -v -E '^[[:space:]]*[0-9]{4}-[0-9]{2}-[0-9]{2}' "$mitm_log" 2>/dev/null || true)
 
-    if [ -z "$list_commands" ]; then
-      num_commands=0
-    else
-      num_commands=$(echo "$list_commands" | sed '/^$/d' | wc -l)
-      num_commands=$(( num_commands + 1 ))
-    fi
+    num_commands=$(echo "$list_commands" | sed '/^$/d' | wc -l)
+    num_commands=$(( num_commands + 1 ))
+    
   else
     num_commands=0
   fi
@@ -59,11 +56,10 @@ if [ -n "$list_commands" ]; then
   echo "$list_commands" >> "$outfile"
 fi
 
-echo "$list_commands" >> "$outfile"
 echo
 
-s1=$(date -d "1970-01-01 echo $login_time | cut -d' ' -f2" +%s) 
-s2=$(date -d "1970-01-01 echo $exit_time | cut -d' ' -f2" +%s) 
+s1=$(date -d "1970-01-01 $(echo $login_time | cut -d' ' -f2)" +%s)
+s2=$(date -d "1970-01-01 $(echo $exit_time | cut -d' ' -f2)" +%s) 
 diff=$((s2 - s1)) 
 minutes=$((diff / 60)) 
 seconds=$((diff % 60))
