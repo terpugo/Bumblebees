@@ -49,13 +49,12 @@ else
   num_commands=$(echo "$list_commands" | sed '/^$/d' | wc -l)
 fi
 
-echo "${num_commands}" >> "$outfile"
-
 # append commands if present
 if [ -n "$list_commands" ]; then
   echo "$list_commands" >> "$outfile"
 fi
 
+echo "${num_commands}" >> "$outfile"
 echo
 
 s1=$(date -d "1970-01-01 $(echo $login_time | cut -d' ' -f2)" +%s)
