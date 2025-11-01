@@ -35,7 +35,7 @@ sleep 2
     sudo lxc launch c3_image -p $profile $con_name
     sudo cp -r 3/* /root/containers/$con_name/rootfs/root
 fi
-sleep 10
+sleep 12
 sudo lxc exec $con_name -- mv snap .snap
 sudo lxc exec $con_name -- hostnamectl set-hostname $hostname
 sudo lxc exec $con_name -- sudo apt-get update
