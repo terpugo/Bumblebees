@@ -56,7 +56,7 @@ do
 	
         sudo screen -dmS timer_${con_name} /home/aces/Bumblebees/time_attacker $con_name $timestamp
         sudo screen -dmS idle_${con_name} /home/aces/Bumblebees/idle_time_new $con_name 120 $timestamp
-        /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker is inside ${con_name}"
+        echo "$(date): attacker is inside ${con_name}" >> /home/aces/Bumblebees/honeypot_activity.log
         
 
       fi
@@ -91,7 +91,7 @@ do
           /home/aces/Bumblebees/deletion_script $con_name
           sleep 2
           /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp
-          /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): attacker left at $out, ${con_name} deleted, and mitm log parsed"
+          echo "$(date): attacker left at $out, ${con_name} deleted, and mitm log parsed" >> /home/aces/Bumblebees/honeypot_activity.log
 
           # break inner loop so outer while restarts
           break

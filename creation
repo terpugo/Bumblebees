@@ -35,7 +35,12 @@ sleep 2
     sudo lxc launch c3_image -p $profile $con_name
     sudo cp -r 3/* /root/containers/$con_name/rootfs/root
 fi
-sleep 12
+sleep 10
+
+if [ -n "$(sudo lxc ls $con_name | grep "STOPPED")" ]; then
+    sleep 10
+fi
+
 sudo lxc exec $con_name -- mv snap .snap
 sudo lxc exec $con_name -- hostnamectl set-hostname $hostname
 sudo lxc exec $con_name -- sudo apt-get update

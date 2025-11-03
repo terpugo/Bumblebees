@@ -12,7 +12,7 @@ message=$2
 message=$(echo "$message" | tr -d '"' | tr -d "'")
 
 # GITIGNORE THIS FILE!!!!! IMPORTANT!!!
-url=$(cat url.env)
+url=$(cat /home/aces/Bumblebees/url.env)
 
 # Formats the message properly
 get_data_json() {
@@ -22,4 +22,4 @@ EOF
 }
 
 # Sends the message to Slack webhook
-curl -X POST -H 'Content-type: application/json; charset=utf-8' --data "$(get_data_json)" $url
+/usr/bin/curl -X POST -H 'Content-type: application/json; charset=utf-8' --data "$(get_data_json)" $url

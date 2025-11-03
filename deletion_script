@@ -11,4 +11,9 @@ containerName=$1
 sudo screen -S "mitm_${containerName}" -X quit
 
 sudo lxc stop "$containerName"
+
+if [ -n $(sudo lxc ls "$containerName" | grep "RUNNING") ]; then
+    sleep 5
+fi
+
 sudo lxc delete "$containerName"
