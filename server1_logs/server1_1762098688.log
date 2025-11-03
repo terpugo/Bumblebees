@@ -1,0 +1,22 @@
+2025-11-02 10:51:55.865 - [Info] MITM Version: 1.4
+2025-11-02 10:51:55.867 - [Info] Auto Access Enabled: true
+2025-11-02 10:51:55.867 - [Debug] [Init] Auto Access Barrier: true
+2025-11-02 10:51:55.872 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-02 10:54:11.205 - [Debug] [Connection] Attacker connected: 207.90.244.20 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-02 10:54:11.473 - [Debug] [Connection] Attacker closed the connection
+2025-11-02 10:54:11.509 - [Debug] [Connection] Attacker connected: 207.90.244.20 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-02 10:54:11.580 - [Debug] [Connection] Attacker closed the connection
+2025-11-02 10:56:17.557 - [Debug] [Connection] Attacker connected: 165.154.177.119 | Client Identification: SSH-2.0-Go
+2025-11-02 10:56:18.672 - [Debug] [Auth] Attacker 165.154.177.119 trying to authenticate with "none"
+2025-11-02 10:56:18.672 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-02 10:56:19.075 - [Debug] [Auth] Attacker 165.154.177.119 trying to authenticate with "password"
+2025-11-02 10:56:19.077 - [Debug] [Auto Access] Attacker: 165.154.177.119, Threshold: 1, Attempts: 1
+2025-11-02 10:56:19.077 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-02 10:56:19.077 - [Debug] [Auto Access] Adding the following credentials: "root:------fuck------"
+2025-11-02 10:56:19.464 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-02 10:56:19.464 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-02 10:56:19.496 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-02 10:56:20.303 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -m
+2025-11-02 10:56:20.710 - [Debug] [Connection] Attacker closed connection
+2025-11-02 10:56:20.714 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-02 10:56:20.714 - [Debug] [LXC] Container's OpenSSH server closed connection

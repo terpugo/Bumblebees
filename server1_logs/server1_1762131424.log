@@ -1,0 +1,18 @@
+2025-11-02 19:57:32.793 - [Info] MITM Version: 1.4
+2025-11-02 19:57:32.795 - [Info] Auto Access Enabled: true
+2025-11-02 19:57:32.795 - [Debug] [Init] Auto Access Barrier: true
+2025-11-02 19:57:32.800 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-02 19:57:36.327 - [Debug] [Connection] Attacker connected: 196.251.88.103 | Client Identification: SSH-2.0-Go
+2025-11-02 19:57:37.377 - [Debug] [Auth] Attacker 196.251.88.103 trying to authenticate with "none"
+2025-11-02 19:57:37.377 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-02 19:57:37.615 - [Debug] [Auth] Attacker 196.251.88.103 trying to authenticate with "password"
+2025-11-02 19:57:37.617 - [Debug] [Auto Access] Attacker: 196.251.88.103, Threshold: 1, Attempts: 1
+2025-11-02 19:57:37.617 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-02 19:57:37.617 - [Debug] [Auto Access] Adding the following credentials: "root:P@ssw0rd"
+2025-11-02 19:57:37.983 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-02 19:57:37.983 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-02 19:57:38.022 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-02 19:57:38.453 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-02 19:57:38.936 - [Debug] [Connection] Attacker closed connection
+2025-11-02 19:57:38.939 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-02 19:57:38.939 - [Debug] [LXC] Container's OpenSSH server closed connection
