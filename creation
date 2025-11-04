@@ -37,9 +37,11 @@ sleep 2
 fi
 sleep 10
 
-if [ -n "$(sudo lxc ls $con_name | grep "STOPPED")" ]; then
+while [ -n "$(sudo lxc ls $con_name | grep "STOPPED")" ]; 
+do
+    /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date): $con_name not started yet, sleeping for 10 seconds and trying again"
     sleep 10
-fi
+done
 
 sudo lxc exec $con_name -- mv snap .snap
 sudo lxc exec $con_name -- hostnamectl set-hostname $hostname
@@ -52,4 +54,19 @@ sudo lxc exec $con_name -- sudo sed -i "s/#PasswordAuthentication no/PasswordAut
 sudo lxc exec $con_name -- sudo sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
 sudo lxc exec $con_name -- sudo systemctl restart ssh
 
-sudo screen -dmS "mitm_${con_name}" -L -Logfile "/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log" node /root/honeypots/MITM/mitm/index.js "${con_name}.js"
+
+sudo screen -dmS "mitm_${con_name}" -L -Logfile "/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log" node /root/honeypots/MITM/mitm/index.js "${con_name}.js" 
+
+# wait for process startup
+sleep 5
+
+# check recent logfile lines for errors
+err_lines=$(tail -n 200 "${mitm_log}" 2>/dev/null | grep -Ei 'CRITICAL|ERROR|Exception|ENOENT' || true)
+
+if [ -n "$err_lines" ]; then
+  # send a concise snippet to slack (tail a little more for context)
+  snippet=$(tail -n 200 "${mitm_log}" 2>/dev/null | sed -n '1,200p')
+  /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date +"%F %T"): MITM ${con_name} error detected — recent log snippet:
+$snippet"
+fi
+

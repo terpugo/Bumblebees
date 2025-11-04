@@ -12,8 +12,10 @@ sudo screen -S "mitm_${containerName}" -X quit
 
 sudo lxc stop "$containerName"
 
-if [ -n $(sudo lxc ls "$containerName" | grep "RUNNING") ]; then
-    sleep 5
-fi
+while [ -n "$(sudo lxc ls $containerName | grep "RUNNING")" ];
+do
+    /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date): $containerName not stopped yet, sleeping for 10 seconds and trying again"
+    sleep 10
+done
 
 sudo lxc delete "$containerName"
