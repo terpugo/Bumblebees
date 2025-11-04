@@ -13805,3 +13805,57 @@ Using PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 Using HOME=/home/aces
 Repo dir: /home/aces/Bumblebees
 Wrote Excel file: /home/aces/Bumblebees/honeypot_data_sheets/attacker_reports_20251103.xlsx
+[main bcde12f] Auto backup: 2025-11-04 12:44:01 running from crontab
+ 30 files changed, 1438 insertions(+), 6 deletions(-)
+ create mode 100644 Attacker_Data/server1_1762275755.txt
+ create mode 100644 Attacker_Data/server1_1762276220.txt
+ create mode 100644 Attacker_Data/server1_1762276429.txt
+ create mode 100644 Attacker_Data/server2_1762275755.txt
+ create mode 100644 Attacker_Data/server2_1762275913.txt
+ create mode 100644 Attacker_Data/server3_1762275755.txt
+ create mode 100644 Attacker_Data/server4_1762275755.txt
+ create mode 100644 Attacker_Data/server4_1762276067.txt
+ create mode 100644 Attacker_Data/server4_1762276834.txt
+ create mode 100644 Attacker_Data/server4_1762277023.txt
+ create mode 100644 Attacker_Data/server4_1762277092.txt
+ create mode 100644 server1_logs/server1_1762275755.log
+ create mode 100644 server1_logs/server1_1762276220.log
+ create mode 100644 server1_logs/server1_1762276429.log
+ create mode 100644 server1_logs/server1_1762276964.log
+ create mode 100644 server2_logs/server2_1762275755.log
+ create mode 100644 server2_logs/server2_1762275913.log
+ create mode 100644 server3_logs/server3_1762275755.log
+ create mode 100644 server3_logs/server3_1762276229.log
+ create mode 100644 server4_logs/server4_1762275755.log
+ create mode 100644 server4_logs/server4_1762276067.log
+ create mode 100644 server4_logs/server4_1762276834.log
+ create mode 100644 server4_logs/server4_1762277023.log
+ create mode 100644 server4_logs/server4_1762277092.log
+ create mode 100644 server4_logs/server4_1762277186.log
+remote: error: GH013: Repository rule violations found for refs/heads/main.        
+remote: 
+remote: - GITHUB PUSH PROTECTION        
+remote:   —————————————————————————————————————————        
+remote:     Resolve the following violations before pushing again        
+remote: 
+remote:     - Push cannot contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to resolve a blocked push        
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push        
+remote:             
+remote:             
+remote:       —— Slack Incoming Webhook URL ————————————————————————        
+remote:        locations:        
+remote:          - commit: 8821e48165840836ef13f2d1301e737cdf555b35        
+remote:            path: url_error.env:1        
+remote:             
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.        
+remote:        https://github.com/terpugo/Bumblebees/security/secret-scanning/unblock-secret/3501vPUAVbsTzpLFdfvuRvwAEOK        
+remote:             
+remote: 
+remote: 
+To https://github.com/terpugo/Bumblebees.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/terpugo/Bumblebees.git'
+git push failed

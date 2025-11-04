@@ -74,7 +74,7 @@ seconds=$((diff % 60))
 
 echo "$minutes minutes and $seconds seconds">> "$outfile"
 
-sudo tail -n +2 "$outfile" > temp && sudo mv temp "$outfile"
+sed -i '1d' $outfile
 
 
 
