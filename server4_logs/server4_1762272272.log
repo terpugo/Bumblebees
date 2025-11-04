@@ -1,0 +1,20 @@
+2025-11-04 11:04:55.354 - [Info] MITM Version: 1.4
+2025-11-04 11:04:55.357 - [Info] Auto Access Enabled: true
+2025-11-04 11:04:55.357 - [Debug] [Init] Auto Access Barrier: true
+Error: ENOENT: no such file or directory, open '/var/snap/lxd/common/mntns/var/snap/lxd/common/lxd/storage-pools/default/containers/server4/rootfs/etc/ssh/ssh_host_ecdsa_key'
+[90m    at Object.openSync (node:fs:596:3)[39m
+[90m    at Object.readFileSync (node:fs:464:35)[39m
+    at readKeys [90m(/root/[39mhoneypots/MITM/mitm/keys.js:19:18[90m)[39m
+    at readCTKeys [90m(/root/[39mhoneypots/MITM/mitm/keys.js:29:15[90m)[39m
+    at Object.loadKeys [90m(/root/[39mhoneypots/MITM/mitm/keys.js:49:12[90m)[39m
+    at Object.<anonymous> [90m(/root/[39mhoneypots/MITM/mitm/index.js:136:12[90m)[39m
+[90m    at Module._compile (node:internal/modules/cjs/loader:1364:14)[39m
+[90m    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)[39m
+[90m    at Module.load (node:internal/modules/cjs/loader:1203:32)[39m
+[90m    at Module._load (node:internal/modules/cjs/loader:1019:12)[39m {
+  errno: [33m-2[39m,
+  syscall: [32m'open'[39m,
+  code: [32m'ENOENT'[39m,
+  path: [32m'/var/snap/lxd/common/mntns/var/snap/lxd/common/lxd/storage-pools/default/containers/server4/rootfs/etc/ssh/ssh_host_ecdsa_key'[39m
+}
+CRITICAL ERROR: Could not read the keys from the container! Is the container mounted/running and is openssh-server installed?

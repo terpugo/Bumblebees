@@ -1,0 +1,21 @@
+2025-11-04 12:48:13.318 - [Info] MITM Version: 1.4
+2025-11-04 12:48:13.320 - [Info] Auto Access Enabled: true
+2025-11-04 12:48:13.320 - [Debug] [Init] Auto Access Barrier: true
+2025-11-04 12:48:13.325 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-04 12:52:15.303 - [Debug] [Connection] Attacker connected: 78.25.127.202 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-04 12:52:17.370 - [Debug] [Auth] Attacker 78.25.127.202 trying to authenticate with "password"
+2025-11-04 12:52:17.371 - [Debug] [Auto Access] Attacker: 78.25.127.202, Threshold: 1, Attempts: 1
+2025-11-04 12:52:17.371 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-04 12:52:17.372 - [Debug] [Auto Access] Adding the following credentials: "supervisor:ubuntu"
+2025-11-04 12:52:17.698 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-04 12:52:17.698 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-04 12:52:17.731 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-04 12:52:17.771 - [Debug] [Connection] Attacker connected: 45.140.17.88 | Client Identification: SSH-2.0-Go
+2025-11-04 12:52:18.688 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "none"
+2025-11-04 12:52:18.688 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-04 12:52:19.014 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "password"
+2025-11-04 12:52:19.014 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-04 12:52:19.014 - [Debug] [Auth] Attacker: 45.140.17.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-04 12:52:19.251 - [Debug] [Connection] Attacker closed connection
+2025-11-04 12:52:19.255 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-04 12:52:19.255 - [Debug] [LXC] Container's OpenSSH server closed connection
