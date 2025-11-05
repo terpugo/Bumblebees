@@ -37,11 +37,11 @@ sleep 2
 fi
 sleep 10
 
-while [ -n "$(sudo lxc ls $con_name | grep "STOPPED")" ]; 
-do
+while sudo lxc info "$con_name" | grep -q STOPPED; do
     /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date): $con_name not started yet, sleeping for 10 seconds and trying again"
     sleep 10
 done
+
 
 sudo lxc exec $con_name -- mv snap .snap
 sudo lxc exec $con_name -- hostnamectl set-hostname $hostname
