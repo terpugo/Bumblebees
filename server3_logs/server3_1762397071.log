@@ -1,0 +1,21 @@
+2025-11-05 21:44:57.828 - [Info] MITM Version: 1.4
+2025-11-05 21:44:57.830 - [Info] Auto Access Enabled: true
+2025-11-05 21:44:57.830 - [Debug] [Init] Auto Access Barrier: true
+2025-11-05 21:44:57.836 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-05 21:45:17.885 - [Debug] [Connection] Attacker connected: 113.192.60.129 | Client Identification: SSH-2.0-PuTTY_KiTTY
+2025-11-05 21:45:21.169 - [Debug] [Auth] Attacker 113.192.60.129 trying to authenticate with "none"
+2025-11-05 21:45:21.169 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-05 21:45:23.653 - [Debug] [Auth] Attacker 113.192.60.129 trying to authenticate with "password"
+2025-11-05 21:45:23.654 - [Debug] [Auto Access] Attacker: 113.192.60.129, Threshold: 1, Attempts: 1
+2025-11-05 21:45:23.654 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-05 21:45:23.655 - [Debug] [Auto Access] Adding the following credentials: "uma:sugipl"
+2025-11-05 21:45:23.991 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-05 21:45:23.992 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-05 21:45:24.023 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-05 21:45:25.013 - [Debug] [SHELL] Opened shell for attacker
+2025-11-05 21:45:25.015 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-11-05 21:45:31.430 - [Debug] [Connection] Attacker closed connection
+2025-11-05 21:45:31.433 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-05 21:45:31.434 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-05 21:45:31.434 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-11-05 21:45:31.434 - [Debug] [SHELL] Honeypot ended shell
