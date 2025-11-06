@@ -7,8 +7,20 @@ then
 fi
 
 containerName=$1
+log=/home/aces/Bumblebees/error.log
 
-sudo screen -S "mitm_${containerName}" -X quit 2> /home/aces/Bumblebees/error.log
+sudo screen -S "mitm_${containerName}" -X quit 2>> "$log"
 
-sudo lxc stop "$containerName" 2> /home/aces/Bumblebees/error.log
-sudo lxc delete "$containerName" 2> /home/aces/Bumblebees/error.log
+sudo lxc stop "$containerName" 2>> "$log"
+
+# if still running, force-stop
+if sudo lxc info "$containerName" | grep -q "Running"; then
+    echo "$(date): graceful stop failed, forcing stop $containerName" >> "$log"
+    sudo lxc stop "$containerName" --force 2>> "$log" || sudo lxc stop -k "$containerName" 2>> "$log" || true
+fi
+
+# delete (force if necessary)
+sudo lxc delete "$containerName" --force 2>> "$log" || sudo lxc delete "$containerName" 2>> "$log" || true
+
+# cleanup possible leftovers
+sudo rm -rf /root/containers/"$containerName" 2>> "$log" || true

@@ -39,7 +39,7 @@ do
       if echo "$LINE" | grep -q "Accepted password"
       then
 
-	attacker_ip=$(sudo cat $auth_log | grep "Accepted password" | cut -d' ' -f11)
+	attacker_ip=$(sudo cat $auth_log | grep "Accepted password" | sed -n 's/.* from \([0-9]\{1,3\}\(\.[0-9]\{1,3\}\)\{3\}\).*/\1/p')
 	echo $attacker_ip
 
 	#sudo /sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
@@ -61,7 +61,8 @@ do
 
       fi
 
-      if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out"; then
+      if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out" \
+      || echo "$LINE" | grep -q "Attacker was idle"; then
 
           # kill the tail process streaming that specific auth_log
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
@@ -82,6 +83,12 @@ do
           sudo screen -S "idle_${con_name}" -X quit
 
           if [[ "$LINE" == *"Attacker timed out"* ]]; then
+            echo "yes" >> "$data_collection"
+          else
+            echo "no" >> "$data_collection"
+          fi
+
+	  if [[ "$LINE" == *"Attacker was idle"* ]]; then
             echo "yes" >> "$data_collection"
           else
             echo "no" >> "$data_collection"

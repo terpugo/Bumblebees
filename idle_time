@@ -1,8 +1,8 @@
-#!/bin/bash
-# time_attacker (stop when attacker found idle)
+#!/usr/bin/env bash
+set -euo pipefail
 
 if [ $# -ne 3 ]; then
-  echo "Usage: container_name idle_allowed(timestamp format ok for sleep, e.g. 7m) timestamp"
+  echo "Usage: $0 container_name idle_allowed(timestamp like 30s|7m|1h) timestamp"
   exit 1
 fi
 
@@ -13,20 +13,95 @@ timestamp=$3
 auth_log="/root/containers/${con_name}/rootfs/var/log/auth.log"
 mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
+# ---- convert idle_allowed to seconds (supports s/m/h)
+num=${idle_allowed%%[smh]}
+suf=${idle_allowed#"$num"}
+if [ -z "$suf" ] || [ "$suf" = "s" ]; then
+  idle_secs=$num
+elif [ "$suf" = "m" ]; then
+  idle_secs=$(( num * 60 ))
+elif [ "$suf" = "h" ]; then
+  idle_secs=$(( num * 3600 ))
+else
+  echo "Invalid idle_allowed format (use Ns|Nm|Nh)"
+  exit 2
+fi
+
+# ---- helper: monotonic "now" in seconds with fractions from /proc/uptime
+now_mono() {
+  # prints seconds as float, e.g. 12345.67
+  awk '{printf "%.3f", $1}' /proc/uptime
+}
+
+# ---- helper: float compare (returns 0 if a >= b)
+float_ge() {
+  awk -v a="$1" -v b="$2" 'BEGIN { exit !(a >= b) }'
+}
+
+# ---- Use inotifywait if present for near-instant detection (no polling overshoot)
+USE_INOTIFY=false
+if command -v inotifywait >/dev/null 2>&1; then
+  USE_INOTIFY=true
+fi
+
+# normalize mitm_log existence (create if missing so inotify can watch it)
+if [ ! -e "$mitm_log" ]; then
+  mkdir -p "$(dirname "$mitm_log")"
+  : > "$mitm_log"
+fi
+
+# Capture initial "last seen" content (tail -n 1 might be empty)
+last_line_before=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+
+# set absolute expiry using monotonic clock
+expiry=$(awk -v now="$(now_mono)" -v add="$idle_secs" 'BEGIN { printf "%.3f", now + add }')
+
 while true; do
-
-  last_line_before=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
-
-  sleep "$idle_allowed"
-
-  last_line_after=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
-
-  if [ "$last_line_before" = "$last_line_after" ]; then
-    sudo echo "Attacker timed out" >> $auth_log
-    # Stop looping because attacker is idle
-    exit 0
+  if [ "$USE_INOTIFY" = true ]; then
+    # compute remaining whole seconds for inotifywait timeout (min 1)
+    now=$(now_mono)
+    # remaining could be fractional => take ceil to avoid 0
+    rem=$(awk -v e="$expiry" -v n="$now" 'BEGIN { r = e - n; if (r < 0) r = 0; printf "%d", (r == int(r) ? r : int(r)+1) }')
+    # wait for modify event or timeout
+    if inotifywait -qq -t "$rem" -e modify "$mitm_log"; then
+      # file modified -> reset expiry
+      last_line_after=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+      if [ "$last_line_before" != "$last_line_after" ]; then
+        last_line_before=$last_line_after
+        expiry=$(awk -v now="$(now_mono)" -v add="$idle_secs" 'BEGIN { printf "%.3f", now + add }')
+        continue
+      else
+        # modified but last line same (rare), still extend expiry
+        expiry=$(awk -v now="$(now_mono)" -v add="$idle_secs" 'BEGIN { printf "%.3f", now + add }')
+        continue
+      fi
+    else
+      # inotifywait timed out -> re-check expiry immediately
+      now=$(now_mono)
+      if float_ge "$now" "$expiry"; then
+        printf '%s\n' "Attacker timed out" | sudo tee -a "$auth_log" >/dev/null
+        exit 0
+      else
+        # not yet expired (race), loop again to wait remaining
+        continue
+      fi
+    fi
+  else
+    # Polling fallback (tight poll, 0.5s) using monotonic time to avoid accumulation drift
+    sleep_interval=0.5
+    sleep "$sleep_interval"
+    last_line_after=$(tail -n 1 "$mitm_log" 2>/dev/null || true)
+    if [ "$last_line_before" != "$last_line_after" ]; then
+      last_line_before=$last_line_after
+      expiry=$(awk -v now="$(now_mono)" -v add="$idle_secs" 'BEGIN { printf "%.3f", now + add }')
+      continue
+    fi
+    now=$(now_mono)
+    if float_ge "$now" "$expiry"; then
+      printf '%s\n' "Attacker was idle" | sudo tee -a "$auth_log" >/dev/null
+      exit 0
+    fi
+    # otherwise keep looping
   fi
-
-  # if attacker still active, loop again
 done
 
