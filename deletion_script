@@ -8,14 +8,7 @@ fi
 
 containerName=$1
 
-sudo screen -S "mitm_${containerName}" -X quit
+sudo screen -S "mitm_${containerName}" -X quit 2> /home/aces/Bumblebees/error.log
 
-sudo lxc stop "$containerName"
-
-while sudo lxc info "$containerName" | grep -q Running; do
-    /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date): $containerName not stopped yet, sleeping for 10 seconds and trying again"
-    sleep 10
-done
-
-
-sudo lxc delete "$containerName"
+sudo lxc stop "$containerName" 2> /home/aces/Bumblebees/error.log
+sudo lxc delete "$containerName" 2> /home/aces/Bumblebees/error.log

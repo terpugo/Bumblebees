@@ -34,7 +34,7 @@ do
   mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
   # stream only new lines; check both connect and disconnect in same loop
-  sudo tail -n0 -F ${auth_log} | while read -r LINE
+  sudo tail -n0 -F ${auth_log} | while read -r LINE 2> /home/aces/Bumblebees/error.log
   do
       if echo "$LINE" | grep -q "Accepted password"
       then
@@ -88,9 +88,9 @@ do
           fi
 
 
-          /home/aces/Bumblebees/deletion_script $con_name
+          /home/aces/Bumblebees/deletion_script $con_name 2> /home/aces/Bumblebees/error.log
           sleep 2
-          /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp
+          /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp 2> /home/aces/Bumblebees/error.log
           echo "$(date): attacker left at $out, ${con_name} deleted, and mitm log parsed" >> /home/aces/Bumblebees/honeypot_activity.log
 
           # break inner loop so outer while restarts
@@ -99,5 +99,5 @@ do
   done
 
   # tiny pause
-  sleep 1
+  sleep 2
 done

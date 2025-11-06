@@ -22,25 +22,20 @@ hostname=server$config
 if [ "$config" == 1 ]; then
 sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c1_banner'|" /root/honeypots/MITM/config"/${con_name}.js"
 sleep 2
-    sudo lxc launch c1_image -p $profile $con_name
+    sudo lxc launch c1_image -p $profile $con_name 2> /home/aces/Bumblebees/error.log
     sudo cp -r 1/* /root/containers/$con_name/rootfs/root
   elif [ "$config" == 2 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c2_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
 sleep 2
-    sudo lxc launch c2_image -p $profile $con_name
+    sudo lxc launch c2_image -p $profile $con_name 2> /home/aces/Bumblebees/error.log
     sudo cp -r 2/* /root/containers/$con_name/rootfs/root
   elif [ "$config" == 3 ]; then
   sudo sed -i "s|bannerFile[[:space:]]*:[[:space:]]*'[^']*'|bannerFile : '/home/aces/Bumblebees/c3_banner'|" /root/honeypots/MITM/config/"${con_name}.js"
 sleep 2
-    sudo lxc launch c3_image -p $profile $con_name
+    sudo lxc launch c3_image -p $profile $con_name 2> /home/aces/Bumblebees/error.log
     sudo cp -r 3/* /root/containers/$con_name/rootfs/root
 fi
 sleep 10
-
-while sudo lxc info "$con_name" | grep -q STOPPED; do
-    /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date): $con_name not started yet, sleeping for 10 seconds and trying again"
-    sleep 10
-done
 
 
 sudo lxc exec $con_name -- mv snap .snap
@@ -55,18 +50,5 @@ sudo lxc exec $con_name -- sudo sed -i "s/PasswordAuthentication no/PasswordAuth
 sudo lxc exec $con_name -- sudo systemctl restart ssh
 
 
-sudo screen -dmS "mitm_${con_name}" -L -Logfile "/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log" node /root/honeypots/MITM/mitm/index.js "${con_name}.js" 
-
-# wait for process startup
-sleep 5
-
-# check recent logfile lines for errors
-err_lines=$(tail -n 200 "${mitm_log}" 2>/dev/null | grep -Ei 'CRITICAL|ERROR|Exception|ENOENT' || true)
-
-if [ -n "$err_lines" ]; then
-  # send a concise snippet to slack (tail a little more for context)
-  snippet=$(tail -n 200 "${mitm_log}" 2>/dev/null | sed -n '1,200p')
-  /home/aces/Bumblebees/slack_error.sh C09QG120EEA "$(date +"%F %T"): MITM ${con_name} error detected — recent log snippet:
-$snippet"
-fi
+sudo screen -dmS "mitm_${con_name}" -L -Logfile "/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log" node /root/honeypots/MITM/mitm/index.js "${con_name}.js" 2> /home/aces/Bumblebees/error.log
 
