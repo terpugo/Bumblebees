@@ -1,0 +1,17 @@
+2025-11-06 21:39:55.901 - [Info] MITM Version: 1.4
+2025-11-06 21:39:55.902 - [Info] Auto Access Enabled: true
+2025-11-06 21:39:55.903 - [Debug] [Init] Auto Access Barrier: true
+2025-11-06 21:39:55.907 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-06 21:40:01.760 - [Debug] [Connection] Attacker connected: 180.76.97.132 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-06 21:40:03.079 - [Debug] [Auth] Attacker 180.76.97.132 trying to authenticate with "password"
+2025-11-06 21:40:03.080 - [Debug] [Auto Access] Attacker: 180.76.97.132, Threshold: 1, Attempts: 1
+2025-11-06 21:40:03.081 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-06 21:40:03.081 - [Debug] [Auto Access] Adding the following credentials: "shopify:shopify"
+2025-11-06 21:40:03.443 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-06 21:40:03.443 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-06 21:40:03.480 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-06 21:40:04.418 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-06 21:41:22.558 - [Debug] [Connection] Client error on ssh server
+2025-11-06 21:41:22.559 - [Debug] [Connection] Attacker closed connection
+2025-11-06 21:41:22.562 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-06 21:41:22.563 - [Debug] [LXC] Container's OpenSSH server closed connection
