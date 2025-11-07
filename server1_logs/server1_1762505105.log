@@ -1,0 +1,19 @@
+2025-11-07 03:45:30.463 - [Info] MITM Version: 1.4
+2025-11-07 03:45:30.465 - [Info] Auto Access Enabled: true
+2025-11-07 03:45:30.466 - [Debug] [Init] Auto Access Barrier: true
+2025-11-07 03:45:30.470 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-07 03:56:33.214 - [Debug] [Connection] Attacker connected: 83.255.9.170 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-07 03:56:34.307 - [Debug] [Auth] Attacker 83.255.9.170 trying to authenticate with "none"
+2025-11-07 03:56:34.307 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-07 03:56:34.720 - [Debug] [Connection] Attacker closed the connection
+2025-11-07 04:05:43.251 - [Debug] [Connection] Attacker connected: 79.121.9.47 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-07 04:05:44.744 - [Debug] [Auth] Attacker 79.121.9.47 trying to authenticate with "password"
+2025-11-07 04:05:44.745 - [Debug] [Auto Access] Attacker: 79.121.9.47, Threshold: 1, Attempts: 1
+2025-11-07 04:05:44.746 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-07 04:05:44.746 - [Debug] [Auto Access] Adding the following credentials: "root:dottie"
+2025-11-07 04:05:45.075 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-07 04:05:45.075 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-07 04:05:45.109 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-07 04:05:46.428 - [Debug] [Connection] Attacker closed connection
+2025-11-07 04:05:46.430 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-07 04:05:46.431 - [Debug] [LXC] Container's OpenSSH server closed connection
