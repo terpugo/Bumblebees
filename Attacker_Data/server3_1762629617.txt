@@ -1,0 +1,28 @@
+no
+no
+server3
+3
+209.38.26.14
+2025-11-08 14:21:17.129
+2025-11-08 14:21:22.295
+19
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+uname=$(uname -s -v -n -m 2>/dev/null)
+arch=$(uname -m 2>/dev/null)
+uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)
+cpus=$( (nproc || grep -c "^processor" /proc/cpuinfo) 2>/dev/null | head -1)
+cpu_model=$( (grep -m1 -E "model name|Hardware" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' )
+gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50)
+cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)
+ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)
+last_output=$(last 2>/dev/null | head -n 10)
+echo "UNAME:$uname"
+echo "ARCH:$arch"
+echo "UPTIME:$uptime"
+echo "CPUS:$cpus"
+echo "CPU_MODEL:$cpu_model"
+echo "GPU:$gpu_info"
+echo "CAT_HELP:$cat_help"
+echo "LS_HELP:$ls_help"
+echo "LAST:$last_output"
+0 minutes and 5 seconds
