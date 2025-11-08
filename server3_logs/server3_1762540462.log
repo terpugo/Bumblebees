@@ -1,0 +1,22 @@
+2025-11-07 13:34:48.701 - [Info] MITM Version: 1.4
+2025-11-07 13:34:48.704 - [Info] Auto Access Enabled: true
+2025-11-07 13:34:48.704 - [Debug] [Init] Auto Access Barrier: true
+2025-11-07 13:34:48.709 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-07 13:39:32.279 - [Debug] [Connection] Attacker connected: 3.131.215.38 | Client Identification: SSH-2.0-Go
+2025-11-07 13:39:42.279 - [Debug] [Connection] Attacker closed the connection
+2025-11-07 13:52:39.776 - [Debug] [Connection] Attacker connected: 2.57.121.112 | Client Identification: SSH-2.0-libssh2_1.9.0
+2025-11-07 13:52:41.195 - [Debug] [Auth] Attacker 2.57.121.112 trying to authenticate with "password"
+2025-11-07 13:52:41.196 - [Debug] [Auth] Attacker authentication error: Unknown authentication method
+2025-11-07 13:52:41.196 - [Debug] [Auth] Attacker: 2.57.121.112 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-07 13:52:41.686 - [Debug] [Connection] Attacker closed the connection
+2025-11-07 14:00:26.317 - [Debug] [Connection] Attacker connected: 2.57.121.112 | Client Identification: SSH-2.0-libssh2_1.9.0
+2025-11-07 14:00:27.638 - [Debug] [Auth] Attacker 2.57.121.112 trying to authenticate with "password"
+2025-11-07 14:00:27.640 - [Debug] [Auto Access] Attacker: 2.57.121.112, Threshold: 1, Attempts: 1
+2025-11-07 14:00:27.640 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-07 14:00:27.641 - [Debug] [Auto Access] Adding the following credentials: "admin:zaxscdvf"
+2025-11-07 14:00:28.076 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-07 14:00:28.076 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-07 14:00:28.116 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-07 14:00:29.120 - [Debug] [Connection] Attacker closed connection
+2025-11-07 14:00:29.124 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-07 14:00:29.124 - [Debug] [LXC] Container's OpenSSH server closed connection
