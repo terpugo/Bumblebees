@@ -46,7 +46,7 @@ while true; do
   # --- end minimal change
 
   # If we reach here, file unchanged for idle_allowed => attacker idle
-  printf '%s\n' "Attacker timed out" | sudo tee -a "$auth_log" >/dev/null
+  printf '%s\n' "Attacker was idle" | sudo tee -a "$auth_log" >/dev/null
   # Stop looping because attacker is idle
   exit 0
 
