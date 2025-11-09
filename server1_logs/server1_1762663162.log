@@ -1,0 +1,28 @@
+2025-11-08 23:39:43.319 - [Info] MITM Version: 1.4
+2025-11-08 23:39:43.322 - [Info] Auto Access Enabled: true
+2025-11-08 23:39:43.323 - [Debug] [Init] Auto Access Barrier: true
+2025-11-08 23:39:43.330 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-08 23:40:16.312 - [Debug] [Connection] Attacker connected: 10.206.34.190 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-11-08 23:40:17.772 - [Debug] [Auth] Attacker 10.206.34.190 trying to authenticate with "none"
+2025-11-08 23:40:17.772 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-08 23:40:17.866 - [Debug] [Auth] Attacker 10.206.34.190 trying to authenticate with "publickey"
+2025-11-08 23:40:17.867 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-08 23:40:17.867 - [Debug] [Auth] Attacker: 10.206.34.190 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-08 23:40:19.750 - [Debug] [Auth] Attacker 10.206.34.190 trying to authenticate with "password"
+2025-11-08 23:40:19.754 - [Debug] [Auto Access] Attacker: 10.206.34.190, Threshold: 1, Attempts: 1
+2025-11-08 23:40:19.754 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-08 23:40:19.754 - [Debug] [Auto Access] Adding the following credentials: "12345:hi"
+2025-11-08 23:40:20.178 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-08 23:40:20.179 - [Debug] [Auth] Attacker: 10.206.34.190 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-08 23:40:21.758 - [Debug] [Auth] Attacker 10.206.34.190 trying to authenticate with "password"
+2025-11-08 23:40:21.759 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-08 23:40:21.759 - [Debug] [Auth] Attacker: 10.206.34.190 has so far made 3 attempts. Remaining: 3 attempts
+2025-11-08 23:40:22.462 - [Debug] [Auth] Attacker 10.206.34.190 trying to authenticate with "password"
+2025-11-08 23:40:22.462 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-08 23:40:22.463 - [Debug] [Auth] Attacker: 10.206.34.190 has so far made 4 attempts. Remaining: 2 attempts
+2025-11-08 23:40:22.547 - [Debug] [Connection] Attacker closed the connection
+2025-11-08 23:41:52.487 - [Debug] [Connection] Attacker connected: 34.84.255.4 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-08 23:41:54.729 - [Debug] [Auth] Attacker 34.84.255.4 trying to authenticate with "password"
+2025-11-08 23:41:54.730 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-08 23:41:54.730 - [Debug] [Auth] Attacker: 34.84.255.4 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-08 23:41:55.250 - [Debug] [Connection] Attacker closed the connection
