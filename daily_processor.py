@@ -6,7 +6,7 @@ Process daily attacker report .txt files written in the new positional format an
 write attacker_reports_YYYYMMDD.xlsx.
 
 New positional format (expected lines):
-  0: yes/no for timed_out
+  0: yes/no for timed_out (optionally followed by a second yes/no for idle)
   1: con_name
   2: config_num
   3: attacker_ip
@@ -37,12 +37,26 @@ def day_range_for_date(target_date: datetime):
 
 def parse_positional_file(path: Path):
     text = path.read_text(encoding="utf-8", errors="replace")
+    # keep empty-but-not-whitespace lines removed to match previous behaviour
     lines = [ln.rstrip("\n") for ln in text.splitlines() if ln.strip()]
 
-    # First line is timed_out (yes/no)
-    timed_out = lines.pop(0) if lines else "no"
+    # --- Detect one-or-two yes/no flag lines at the start ---
+    timed_out_flag = None
+    idle_flag = None
 
-    # Assign standard fields safely
+    def is_yesno(s):
+        return s.strip().lower() in ("yes", "no")
+
+    if lines and is_yesno(lines[0]):
+        timed_out_flag = lines.pop(0).strip().lower()
+        if lines and is_yesno(lines[0]):
+            idle_flag = lines.pop(0).strip().lower()
+
+    # If no explicit flags, default to "no" (preserves previous behavior)
+    if timed_out_flag is None:
+        timed_out_flag = "no"
+
+    # Assign standard fields safely (after popping any flags)
     con_name     = lines[0] if len(lines) > 0 else ""
     config_num   = lines[1] if len(lines) > 1 else ""
     attacker_ip  = lines[2] if len(lines) > 2 else ""
@@ -57,10 +71,8 @@ def parse_positional_file(path: Path):
             start_dt = datetime.strptime(login_time, "%Y-%m-%d %H:%M:%S.%f")
             end_dt = datetime.strptime(exit_time, "%Y-%m-%d %H:%M:%S.%f")
             delta = end_dt - start_dt
-            # total milliseconds, rounded to nearest integer
             duration_ms = int(round(delta.total_seconds() * 1000.0))
         except Exception:
-            # leave blank on parse failure
             duration_ms = ""
 
     # Process commands and optional "X minutes and Y seconds"
@@ -90,8 +102,19 @@ def parse_positional_file(path: Path):
 
     total_seconds = minutes * 60 + seconds
 
+    # --- Apply idle adjustment if idle_flag indicated idle ---
+    if idle_flag == "yes":
+        total_seconds = max(0, total_seconds - 120)
+        minutes = total_seconds // 60
+        seconds = total_seconds % 60
+        if isinstance(duration_ms, int) and duration_ms != "":
+            duration_ms = max(0, duration_ms - 120000)
+
+    # Determine final timed_out value: yes if either flag is yes
+    timed_out_final = "yes" if (timed_out_flag == "yes" or idle_flag == "yes") else "no"
+
     return {
-        "timed_out": timed_out,
+        "timed_out": timed_out_final,
         "filename": path.name,
         "config_num": config_num,
         "attacker_ip": attacker_ip,
@@ -132,13 +155,20 @@ def main():
 
     rows = []
     for p in sorted(outdir.glob("*.txt")):
+        # prefer timestamp embedded in filename (e.g. server4_1762624832.txt)
+        ts = None
         try:
-            mtime = int(p.stat().st_mtime)
-        except Exception as e:
-            print(f"Skipping {p.name}: cannot stat file ({e})", file=sys.stderr)
-            continue
+            ts_candidate = p.stem.split('_')[-1]
+            ts = int(ts_candidate)
+        except Exception:
+            # fallback to mtime
+            try:
+                ts = int(p.stat().st_mtime)
+            except Exception as e:
+                print(f"Skipping {p.name}: cannot stat file ({e})", file=sys.stderr)
+                continue
 
-        if not (start_ts <= mtime < end_ts):
+        if not (start_ts <= ts < end_ts):
             continue
 
         try:
@@ -156,7 +186,9 @@ def main():
         "container_id","num_commands","commands","minutes","seconds","total_seconds","duration_ms"
     ])
 
-    xlsx_path = Path("/home/aces/Bumblebees/honeypot_data_sheets") / f"attacker_reports_{target.strftime('%Y%m%d')}.xlsx"
+    xlsx_dir = Path("/home/aces/Bumblebees/honeypot_data_sheets")
+    xlsx_dir.mkdir(parents=True, exist_ok=True)
+    xlsx_path = xlsx_dir / f"attacker_reports_{target.strftime('%Y%m%d')}.xlsx"
     try:
         df.to_excel(xlsx_path, index=False)
         print(f"Wrote Excel file: {xlsx_path}")
@@ -166,4 +198,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
