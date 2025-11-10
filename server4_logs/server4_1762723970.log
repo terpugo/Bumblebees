@@ -1,0 +1,41 @@
+2025-11-09 16:33:16.207 - [Info] MITM Version: 1.4
+2025-11-09 16:33:16.209 - [Info] Auto Access Enabled: true
+2025-11-09 16:33:16.210 - [Debug] [Init] Auto Access Barrier: true
+2025-11-09 16:33:16.215 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-09 16:33:21.765 - [Debug] [Connection] Attacker connected: 134.199.153.174 | Client Identification: SSH-2.0-Go
+2025-11-09 16:33:23.111 - [Debug] [Auth] Attacker 134.199.153.174 trying to authenticate with "none"
+2025-11-09 16:33:23.111 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-09 16:33:23.587 - [Debug] [Auth] Attacker 134.199.153.174 trying to authenticate with "password"
+2025-11-09 16:33:23.589 - [Debug] [Auto Access] Attacker: 134.199.153.174, Threshold: 1, Attempts: 1
+2025-11-09 16:33:23.589 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-09 16:33:23.589 - [Debug] [Auto Access] Adding the following credentials: "test:123abc"
+2025-11-09 16:33:24.055 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-09 16:33:24.055 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-09 16:33:24.090 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-09 16:33:24.783 - [Debug] [Connection] Attacker connected: 49.124.153.9 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-09 16:33:25.037 - [Debug] [EXEC] Noninteractive mode attacker command: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+uname=$(uname -s -v -n -m 2>/dev/null)
+arch=$(uname -m 2>/dev/null)
+uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)
+cpus=$( (nproc || grep -c "^processor" /proc/cpuinfo) 2>/dev/null | head -1)
+cpu_model=$( (grep -m1 -E "model name|Hardware" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' )
+gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50)
+cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)
+ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)
+last_output=$(last 2>/dev/null | head -n 10)
+echo "UNAME:$uname"
+echo "ARCH:$arch"
+echo "UPTIME:$uptime"
+echo "CPUS:$cpus"
+echo "CPU_MODEL:$cpu_model"
+echo "GPU:$gpu_info"
+echo "CAT_HELP:$cat_help"
+echo "LS_HELP:$ls_help"
+echo "LAST:$last_output"
+2025-11-09 16:33:27.113 - [Debug] [Auth] Attacker 49.124.153.9 trying to authenticate with "password"
+2025-11-09 16:33:27.113 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-09 16:33:27.113 - [Debug] [Auth] Attacker: 49.124.153.9 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-09 16:33:28.004 - [Debug] [Connection] Attacker closed the connection
+2025-11-09 16:33:28.858 - [Debug] [Connection] Attacker closed connection
+2025-11-09 16:33:28.861 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-09 16:33:28.862 - [Debug] [LXC] Container's OpenSSH server closed connection

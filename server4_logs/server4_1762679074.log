@@ -1,0 +1,20 @@
+2025-11-09 04:04:59.570 - [Info] MITM Version: 1.4
+2025-11-09 04:04:59.572 - [Info] Auto Access Enabled: true
+2025-11-09 04:04:59.572 - [Debug] [Init] Auto Access Barrier: true
+2025-11-09 04:04:59.577 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-09 04:07:01.841 - [Debug] [Connection] Attacker connected: 116.118.20.160 | Client Identification: SSH-2.0-phpseclib_1.0 (openssl)
+2025-11-09 04:07:03.340 - [Debug] [Auth] Attacker 116.118.20.160 trying to authenticate with "password"
+2025-11-09 04:07:03.341 - [Debug] [Auto Access] Attacker: 116.118.20.160, Threshold: 1, Attempts: 1
+2025-11-09 04:07:03.341 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-09 04:07:03.341 - [Debug] [Auto Access] Adding the following credentials: "root:128.8.238"
+2025-11-09 04:07:03.639 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-09 04:07:03.640 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-09 04:07:03.674 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-09 04:07:05.224 - [Debug] [SHELL] Opened shell for attacker
+2025-11-09 04:07:05.225 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-11-09 04:07:15.273 - [Debug] [SHELL] Attacker ended the shell
+2025-11-09 04:07:16.542 - [Debug] [Connection] Attacker closed connection
+2025-11-09 04:07:16.544 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-09 04:07:16.545 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-09 04:07:16.545 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-11-09 04:07:16.545 - [Debug] [SHELL] Honeypot ended shell
