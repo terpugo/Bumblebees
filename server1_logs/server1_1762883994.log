@@ -1,0 +1,22 @@
+2025-11-11 13:00:22.814 - [Info] MITM Version: 1.4
+2025-11-11 13:00:22.816 - [Info] Auto Access Enabled: true
+2025-11-11 13:00:22.817 - [Debug] [Init] Auto Access Barrier: true
+2025-11-11 13:00:22.822 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-11 13:02:58.385 - [Debug] [Connection] Attacker connected: 207.90.244.24 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-11 13:02:58.544 - [Debug] [Connection] Attacker closed the connection
+2025-11-11 13:02:58.580 - [Debug] [Connection] Attacker connected: 207.90.244.24 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-11 13:02:58.650 - [Debug] [Connection] Attacker closed the connection
+2025-11-11 13:05:11.800 - [Debug] [Connection] Attacker connected: 45.186.251.70 | Client Identification: SSH-2.0-Go
+2025-11-11 13:05:12.681 - [Debug] [Auth] Attacker 45.186.251.70 trying to authenticate with "none"
+2025-11-11 13:05:12.681 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-11 13:05:12.999 - [Debug] [Auth] Attacker 45.186.251.70 trying to authenticate with "password"
+2025-11-11 13:05:13.001 - [Debug] [Auto Access] Attacker: 45.186.251.70, Threshold: 1, Attempts: 1
+2025-11-11 13:05:13.001 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-11 13:05:13.001 - [Debug] [Auto Access] Adding the following credentials: "astone:parasoltree"
+2025-11-11 13:05:13.394 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-11 13:05:13.394 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-11 13:05:13.450 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-11 13:05:14.089 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-11 13:05:15.366 - [Debug] [Connection] Attacker closed connection
+2025-11-11 13:05:15.370 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-11 13:05:15.370 - [Debug] [LXC] Container's OpenSSH server closed connection
