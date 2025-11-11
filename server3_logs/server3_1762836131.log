@@ -1,0 +1,26 @@
+2025-11-10 23:42:39.721 - [Info] MITM Version: 1.4
+2025-11-10 23:42:39.725 - [Info] Auto Access Enabled: true
+2025-11-10 23:42:39.725 - [Debug] [Init] Auto Access Barrier: true
+2025-11-10 23:42:39.731 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-10 23:43:25.841 - [Debug] [Connection] Attacker connected: 41.216.178.119 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-10 23:43:27.434 - [Debug] [Auth] Attacker 41.216.178.119 trying to authenticate with "password"
+2025-11-10 23:43:27.436 - [Debug] [Auto Access] Attacker: 41.216.178.119, Threshold: 1, Attempts: 1
+2025-11-10 23:43:27.436 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-10 23:43:27.436 - [Debug] [Auto Access] Adding the following credentials: "root:LeitboGi0ro"
+2025-11-10 23:43:27.911 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-10 23:43:27.912 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-10 23:43:27.963 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-10 23:43:29.085 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-10 23:43:30.736 - [Debug] [Connection] Attacker connected: 41.216.178.119 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-10 23:43:32.347 - [Debug] [Auth] Attacker 41.216.178.119 trying to authenticate with "password"
+2025-11-10 23:43:32.348 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-10 23:43:32.348 - [Debug] [Auth] Attacker: 41.216.178.119 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-10 23:43:32.913 - [Debug] [Connection] Attacker closed the connection
+2025-11-10 23:43:33.164 - [Debug] [Connection] Attacker connected: 41.216.178.119 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-10 23:43:34.752 - [Debug] [Auth] Attacker 41.216.178.119 trying to authenticate with "password"
+2025-11-10 23:43:34.753 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-11-10 23:43:34.753 - [Debug] [Auth] Attacker: 41.216.178.119 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-10 23:43:35.307 - [Debug] [Connection] Attacker closed the connection
+2025-11-10 23:43:35.825 - [Debug] [Connection] Attacker closed connection
+2025-11-10 23:43:35.828 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-10 23:43:35.828 - [Debug] [LXC] Container's OpenSSH server closed connection
