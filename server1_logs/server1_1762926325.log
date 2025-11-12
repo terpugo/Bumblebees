@@ -1,0 +1,15 @@
+2025-11-12 00:45:51.226 - [Info] MITM Version: 1.4
+2025-11-12 00:45:51.229 - [Info] Auto Access Enabled: true
+2025-11-12 00:45:51.229 - [Debug] [Init] Auto Access Barrier: true
+2025-11-12 00:45:51.234 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-12 00:49:20.098 - [Debug] [Connection] Attacker connected: 105.73.190.94 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-12 00:49:21.272 - [Debug] [Auth] Attacker 105.73.190.94 trying to authenticate with "password"
+2025-11-12 00:49:21.273 - [Debug] [Auto Access] Attacker: 105.73.190.94, Threshold: 1, Attempts: 1
+2025-11-12 00:49:21.273 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-12 00:49:21.273 - [Debug] [Auto Access] Adding the following credentials: "ftpuser:ftppass"
+2025-11-12 00:49:21.668 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-12 00:49:21.669 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-12 00:49:21.707 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-12 00:49:22.482 - [Debug] [Connection] Attacker closed connection
+2025-11-12 00:49:22.485 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-12 00:49:22.485 - [Debug] [LXC] Container's OpenSSH server closed connection
