@@ -1,0 +1,23 @@
+2025-11-12 15:08:01.809 - [Info] MITM Version: 1.4
+2025-11-12 15:08:01.811 - [Info] Auto Access Enabled: true
+2025-11-12 15:08:01.812 - [Debug] [Init] Auto Access Barrier: true
+2025-11-12 15:08:01.817 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-12 15:16:30.848 - [Debug] [Connection] Attacker connected: 139.19.117.131 | Client Identification: SSH-2.0-Go
+2025-11-12 15:16:31.499 - [Debug] [Auth] Attacker 139.19.117.131 trying to authenticate with "publickey"
+2025-11-12 15:16:31.499 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 15:16:31.500 - [Debug] [Auth] Attacker: 139.19.117.131 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-12 15:16:31.746 - [Debug] [Auth] Attacker 139.19.117.131 trying to authenticate with "publickey"
+2025-11-12 15:16:31.746 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 15:16:31.747 - [Debug] [Auth] Attacker: 139.19.117.131 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-12 15:16:40.845 - [Debug] [Connection] Attacker closed the connection
+2025-11-12 15:18:21.421 - [Debug] [Connection] Attacker connected: 2.57.121.112 | Client Identification: SSH-2.0-libssh2_1.9.0
+2025-11-12 15:18:22.196 - [Debug] [Auth] Attacker 2.57.121.112 trying to authenticate with "password"
+2025-11-12 15:18:22.197 - [Debug] [Auto Access] Attacker: 2.57.121.112, Threshold: 1, Attempts: 1
+2025-11-12 15:18:22.197 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-12 15:18:22.197 - [Debug] [Auto Access] Adding the following credentials: "admin:451236"
+2025-11-12 15:18:22.522 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-12 15:18:22.522 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-12 15:18:22.562 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-12 15:18:23.148 - [Debug] [Connection] Attacker closed connection
+2025-11-12 15:18:23.151 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-12 15:18:23.151 - [Debug] [LXC] Container's OpenSSH server closed connection

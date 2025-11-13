@@ -1,0 +1,23 @@
+2025-11-12 21:15:41.904 - [Info] MITM Version: 1.4
+2025-11-12 21:15:41.906 - [Info] Auto Access Enabled: true
+2025-11-12 21:15:41.906 - [Debug] [Init] Auto Access Barrier: true
+2025-11-12 21:15:41.911 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-12 21:16:32.691 - [Debug] [Connection] Attacker connected: 139.19.117.197 | Client Identification: SSH-2.0-Go
+2025-11-12 21:16:33.329 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-11-12 21:16:33.329 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 21:16:33.330 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-12 21:16:33.568 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-11-12 21:16:33.568 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 21:16:33.569 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-12 21:16:42.690 - [Debug] [Connection] Attacker closed the connection
+2025-11-12 21:20:29.318 - [Debug] [Connection] Attacker connected: 216.194.174.27 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-12 21:20:30.472 - [Debug] [Auth] Attacker 216.194.174.27 trying to authenticate with "password"
+2025-11-12 21:20:30.473 - [Debug] [Auto Access] Attacker: 216.194.174.27, Threshold: 1, Attempts: 1
+2025-11-12 21:20:30.473 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-12 21:20:30.473 - [Debug] [Auto Access] Adding the following credentials: "admin:qwerty123"
+2025-11-12 21:20:30.834 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-12 21:20:30.834 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-12 21:20:30.874 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-12 21:20:31.579 - [Debug] [Connection] Attacker closed connection
+2025-11-12 21:20:31.582 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-12 21:20:31.582 - [Debug] [LXC] Container's OpenSSH server closed connection

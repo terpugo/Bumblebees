@@ -1,0 +1,27 @@
+2025-11-12 13:22:09.656 - [Info] MITM Version: 1.4
+2025-11-12 13:22:09.659 - [Info] Auto Access Enabled: true
+2025-11-12 13:22:09.659 - [Debug] [Init] Auto Access Barrier: true
+2025-11-12 13:22:09.664 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-12 13:22:10.756 - [Debug] [Connection] Attacker connected: 139.19.117.197 | Client Identification: SSH-2.0-Go
+2025-11-12 13:22:11.398 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-11-12 13:22:11.398 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 13:22:11.399 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-12 13:22:11.637 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-11-12 13:22:11.637 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-12 13:22:11.638 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-12 13:22:20.754 - [Debug] [Connection] Attacker closed the connection
+2025-11-12 13:25:33.292 - [Debug] [Connection] Attacker connected: 64.62.156.119 | Client Identification: SSH-2.0-Go
+2025-11-12 13:25:33.726 - [Debug] [Auth] Attacker 64.62.156.119 trying to authenticate with "none"
+2025-11-12 13:25:33.726 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-12 13:25:37.293 - [Debug] [Connection] Attacker closed the connection
+2025-11-12 13:29:02.220 - [Debug] [Connection] Attacker connected: 222.236.155.146 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-12 13:29:05.410 - [Debug] [Auth] Attacker 222.236.155.146 trying to authenticate with "password"
+2025-11-12 13:29:05.411 - [Debug] [Auto Access] Attacker: 222.236.155.146, Threshold: 1, Attempts: 1
+2025-11-12 13:29:05.411 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-12 13:29:05.411 - [Debug] [Auto Access] Adding the following credentials: "user:12344"
+2025-11-12 13:29:05.733 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-12 13:29:05.733 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-12 13:29:05.771 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-12 13:29:07.604 - [Debug] [Connection] Attacker closed connection
+2025-11-12 13:29:07.607 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-12 13:29:07.607 - [Debug] [LXC] Container's OpenSSH server closed connection
