@@ -1,0 +1,26 @@
+2025-11-13 18:43:53.554 - [Info] MITM Version: 1.4
+2025-11-13 18:43:53.557 - [Info] Auto Access Enabled: true
+2025-11-13 18:43:53.557 - [Debug] [Init] Auto Access Barrier: true
+2025-11-13 18:43:53.562 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-13 18:46:12.429 - [Debug] [Connection] Attacker connected: 222.120.176.6 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-13 18:46:15.006 - [Debug] [Auth] Attacker 222.120.176.6 trying to authenticate with "none"
+2025-11-13 18:46:15.006 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-13 18:46:15.942 - [Debug] [Connection] Attacker closed the connection
+2025-11-13 18:53:29.182 - [Debug] [Connection] Attacker connected: 112.65.27.43 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-13 18:53:32.213 - [Debug] [Auth] Attacker 112.65.27.43 trying to authenticate with "none"
+2025-11-13 18:53:32.213 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-13 18:53:33.081 - [Debug] [Connection] Attacker closed the connection
+2025-11-13 19:02:48.888 - [Debug] [Connection] Attacker connected: 45.140.17.88 | Client Identification: SSH-2.0-Go
+2025-11-13 19:02:49.801 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "none"
+2025-11-13 19:02:49.801 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-13 19:02:50.149 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "password"
+2025-11-13 19:02:50.157 - [Debug] [Auto Access] Attacker: 45.140.17.88, Threshold: 1, Attempts: 1
+2025-11-13 19:02:50.157 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-13 19:02:50.158 - [Debug] [Auto Access] Adding the following credentials: "root:123"
+2025-11-13 19:02:50.816 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-13 19:02:50.816 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-13 19:02:50.819 - [Debug] [Connection] Attacker connected: 31.131.202.68 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-13 19:02:50.854 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-13 19:02:51.529 - [Debug] [Connection] Attacker closed connection
+2025-11-13 19:02:51.532 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-13 19:02:51.533 - [Debug] [LXC] Container's OpenSSH server closed connection

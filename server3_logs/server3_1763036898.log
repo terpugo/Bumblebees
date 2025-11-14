@@ -1,0 +1,25 @@
+2025-11-13 07:28:45.774 - [Info] MITM Version: 1.4
+2025-11-13 07:28:45.776 - [Info] Auto Access Enabled: true
+2025-11-13 07:28:45.776 - [Debug] [Init] Auto Access Barrier: true
+2025-11-13 07:28:45.781 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-13 07:44:29.693 - [Debug] [Connection] Attacker connected: 139.19.117.130 | Client Identification: SSH-2.0-Go
+2025-11-13 07:44:30.323 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-11-13 07:44:30.324 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-13 07:44:30.324 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-13 07:44:30.562 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-11-13 07:44:30.563 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-13 07:44:30.563 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-13 07:44:39.689 - [Debug] [Connection] Attacker closed the connection
+2025-11-13 08:00:33.557 - [Debug] [Connection] Attacker connected: 45.140.17.88 | Client Identification: SSH-2.0-Go
+2025-11-13 08:00:34.420 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "none"
+2025-11-13 08:00:34.420 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-13 08:00:34.746 - [Debug] [Auth] Attacker 45.140.17.88 trying to authenticate with "password"
+2025-11-13 08:00:34.748 - [Debug] [Auto Access] Attacker: 45.140.17.88, Threshold: 1, Attempts: 1
+2025-11-13 08:00:34.748 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-13 08:00:34.748 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-13 08:00:35.158 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-13 08:00:35.158 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-13 08:00:35.197 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-13 08:00:35.846 - [Debug] [Connection] Attacker closed connection
+2025-11-13 08:00:35.848 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-13 08:00:35.849 - [Debug] [LXC] Container's OpenSSH server closed connection
