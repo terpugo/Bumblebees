@@ -1,0 +1,25 @@
+2025-11-15 11:45:26.890 - [Info] MITM Version: 1.4
+2025-11-15 11:45:26.894 - [Info] Auto Access Enabled: true
+2025-11-15 11:45:26.894 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 11:45:26.901 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-15 11:49:34.749 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-15 11:49:35.456 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-15 11:49:35.462 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-15 11:49:35.463 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-15 11:49:35.734 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-15 11:49:35.734 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-15 11:49:35.735 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-15 11:49:44.683 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 11:53:12.422 - [Debug] [Connection] Attacker connected: 189.56.0.19 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-15 11:53:15.606 - [Debug] [Auth] Attacker 189.56.0.19 trying to authenticate with "password"
+2025-11-15 11:53:15.629 - [Debug] [Auto Access] Attacker: 189.56.0.19, Threshold: 1, Attempts: 1
+2025-11-15 11:53:15.629 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 11:53:15.630 - [Debug] [Auto Access] Adding the following credentials: "ubnt:p@ssword"
+2025-11-15 11:53:21.035 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 11:53:21.038 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-15 11:53:21.055 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 11:53:21.175 - [Info] Exiting...
+2025-11-15 11:53:21.175 - [Debug] Cleaning up...
+2025-11-15 11:53:21.175 - [Error] Exception occurred: 
+No auth in progress
+2025-11-15 11:53:21.176 - [Debug] Cleaning up LXC Streams: 0

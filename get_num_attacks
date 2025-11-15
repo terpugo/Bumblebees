@@ -1,14 +1,24 @@
 #!/bin/bash
 
-num_server1=$(sudo cat /home/aces/Bumblebees/honeypot_activity.log | grep "attacker is inside" | grep "server1" | wc -l)
-num_server2=$(sudo cat /home/aces/Bumblebees/honeypot_activity.log | grep "attacker is inside" | grep "server2" | wc -l)
-num_server3=$(sudo cat /home/aces/Bumblebees/honeypot_activity.log | grep "attacker is inside" | grep "server3" | wc -l)
-num_server4=$(sudo cat /home/aces/Bumblebees/honeypot_activity.log | grep "attacker is inside" | grep "server4" | wc -l)
+log="/home/aces/Bumblebees/honeypot_activity.log"
 
-echo 
+num_server1=$(sudo grep -c "attacker is inside.*server1" "$log")
+num_server2=$(sudo grep -c "attacker is inside.*server2" "$log")
+num_server3=$(sudo grep -c "attacker is inside.*server3" "$log")
+num_server4=$(sudo grep -c "attacker is inside.*server4" "$log")
+
+echo
 echo "$num_server1 attacks on server1"
 echo "$num_server2 attacks on server2"
 echo "$num_server3 attacks on server3"
 echo "$num_server4 attacks on server4"
 
-truncate -s 0 /home/aces/Bumblebees/honeypot_activity.log
+# If ANY count is zero → reboot
+if [[ $num_server1 -eq 0 || $num_server2 -eq 0 || $num_server3 -eq 0 || $num_server4 -eq 0 ]]; then
+    echo "One or more servers have zero attacks. Rebooting..."
+    sudo reboot
+fi
+
+# Clear log
+truncate -s 0 "$log"
+

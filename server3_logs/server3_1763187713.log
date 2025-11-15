@@ -1,0 +1,30 @@
+2025-11-15 01:22:37.773 - [Info] MITM Version: 1.4
+2025-11-15 01:22:37.777 - [Info] Auto Access Enabled: true
+2025-11-15 01:22:37.777 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 01:22:37.783 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-15 01:26:51.172 - [Debug] [Connection] Attacker connected: 125.141.84.135 | Client Identification: SSH-2.0-SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2025-11-15 01:27:09.450 - [Debug] [Auth] Attacker 125.141.84.135 trying to authenticate with "password"
+2025-11-15 01:27:09.462 - [Debug] [Auto Access] Attacker: 125.141.84.135, Threshold: 1, Attempts: 1
+2025-11-15 01:27:09.462 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 01:27:09.462 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-15 01:27:10.484 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 01:27:10.484 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-15 01:27:10.561 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-15 01:27:11.824 - [Debug] [SHELL] Opened shell for attacker
+2025-11-15 01:27:11.828 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-11-15 01:27:12.433 - [Debug] [SHELL] Attacker Keystroke: sh[LF]shell[LF]enable[LF]
+2025-11-15 01:27:12.436 - [Debug] [SHELL] line from reader: sh
+2025-11-15 01:27:12.437 - [Debug] [SHELL] Keystroke buffer: 115,104,10,115,104,101,108,108,10,101,110,97,98,108,101,10
+2025-11-15 01:27:12.437 - [Debug] [SHELL] line from reader: shell
+2025-11-15 01:27:12.437 - [Debug] [SHELL] Keystroke buffer: 
+2025-11-15 01:27:12.437 - [Debug] [SHELL] line from reader: enable
+2025-11-15 01:27:12.437 - [Debug] [SHELL] Keystroke buffer: 
+2025-11-15 01:27:12.632 - [Debug] [SHELL] Attacker Keystroke: cat[Space]/bin/echo||while[Space]read[Space]i;[Space]do[Space]echo[Space]$i;[Space]done[Space]<[Space]/proc/self/exe;[LF]
+2025-11-15 01:27:12.635 - [Debug] [SHELL] line from reader: cat /bin/echo||while read i; do echo $i; done < /proc/self/exe;
+2025-11-15 01:27:12.635 - [Debug] [SHELL] Keystroke buffer: 99,97,116,32,47,98,105,110,47,101,99,104,111,124,124,119,104,105,108,101,32,114,101,97,100,32,105,59,32,100,111,32,101,99,104,111,32,36,105,59,32,100,111,110,101,32,60,32,47,112,114,111,99,47,115,101,108,102,47,101,120,101,59,10
+2025-11-15 01:28:13.677 - [Debug] [Connection] Client error on ssh server
+2025-11-15 01:28:13.695 - [Debug] [Connection] Attacker closed connection
+2025-11-15 01:28:14.133 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-15 01:28:14.134 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-15 01:28:14.135 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-11-15 01:28:14.135 - [Debug] [SHELL] Honeypot ended shell

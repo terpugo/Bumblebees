@@ -1,0 +1,26 @@
+2025-11-15 10:52:04.563 - [Info] MITM Version: 1.4
+2025-11-15 10:52:04.567 - [Info] Auto Access Enabled: true
+2025-11-15 10:52:04.567 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 10:52:04.574 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-15 10:52:56.945 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-15 10:52:57.639 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-15 10:52:57.640 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-15 10:52:57.641 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-15 10:52:57.902 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-15 10:52:57.902 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-15 10:52:57.903 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-15 10:53:06.942 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 10:53:15.019 - [Debug] [Connection] Attacker connected: 96.1.40.151 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-15 10:53:15.924 - [Debug] [Auth] Attacker 96.1.40.151 trying to authenticate with "password"
+2025-11-15 10:53:15.935 - [Debug] [Auto Access] Attacker: 96.1.40.151, Threshold: 1, Attempts: 1
+2025-11-15 10:53:15.936 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 10:53:15.936 - [Debug] [Auto Access] Adding the following credentials: "blank:password"
+2025-11-15 10:53:20.341 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 10:53:20.345 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-15 10:53:20.355 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 10:53:20.412 - [Info] Exiting...
+2025-11-15 10:53:20.412 - [Debug] Cleaning up...
+2025-11-15 10:53:20.412 - [Error] Exception occurred: 
+No auth in progress
+2025-11-15 10:53:20.413 - [Debug] Cleaning up LXC Streams: 0
+2025-11-15 10:53:20.847 - [Debug] [Connection] Attacker connected: 186.94.103.78 | Client Identification: SSH-2.0-OpenSSH_7.4

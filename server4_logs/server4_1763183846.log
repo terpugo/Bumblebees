@@ -1,0 +1,22 @@
+2025-11-15 00:18:18.155 - [Info] MITM Version: 1.4
+2025-11-15 00:18:18.159 - [Info] Auto Access Enabled: true
+2025-11-15 00:18:18.159 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 00:18:18.166 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-15 00:18:19.003 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-15 00:18:19.900 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-15 00:18:19.900 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-15 00:18:20.216 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-15 00:18:20.231 - [Debug] [Auto Access] Attacker: 91.215.85.88, Threshold: 1, Attempts: 1
+2025-11-15 00:18:20.231 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 00:18:20.231 - [Debug] [Auto Access] Adding the following credentials: "support:support"
+2025-11-15 00:18:25.047 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 00:18:25.056 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-15 00:18:25.074 - [Debug] [Connection] Attacker connected: 27.128.170.160 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-15 00:18:25.075 - [Debug] [Connection] Attacker connected: 185.213.165.126 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-15 00:18:25.207 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-15 00:18:25.842 - [Debug] [Connection] Attacker closed connection
+2025-11-15 00:18:26.077 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-15 00:18:26.077 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-15 00:18:26.166 - [Debug] [Auth] Attacker 185.213.165.126 trying to authenticate with "password"
+2025-11-15 00:18:26.167 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-15 00:18:26.167 - [Debug] [Auth] Attacker: 185.213.165.126 has so far made 1 attempts. Remaining: 5 attempts

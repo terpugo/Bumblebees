@@ -1,0 +1,23 @@
+2025-11-15 10:15:10.611 - [Info] MITM Version: 1.4
+2025-11-15 10:15:10.615 - [Info] Auto Access Enabled: true
+2025-11-15 10:15:10.615 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 10:15:10.621 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-15 10:25:16.233 - [Debug] [Connection] Attacker connected: 111.202.32.193 | Client Identification: SSH-2.0-libssh_0.7.4
+2025-11-15 10:25:47.273 - [Debug] [Connection] Attacker connected: 111.202.32.193 | Client Identification: SSH-2.0-libssh_0.7.4
+2025-11-15 10:26:18.156 - [Debug] [Connection] Attacker connected: 111.202.32.193 | Client Identification: SSH-2.0-libssh_0.7.4
+2025-11-15 10:26:49.119 - [Debug] [Connection] Attacker connected: 111.202.32.193 | Client Identification: SSH-2.0-libssh_0.7.4
+2025-11-15 10:27:20.260 - [Debug] [Connection] Attacker connected: 111.202.32.193 | Client Identification: SSH-2.0-libssh_0.7.4
+2025-11-15 10:32:10.615 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 10:38:47.980 - [Debug] [Connection] Attacker connected: 38.143.238.41 | Client Identification: SSH-2.0-OpenSSH
+2025-11-15 10:38:49.130 - [Debug] [Connection] Attacker connected: 38.143.238.41 | Client Identification: SSH-2.0-OpenSSH
+2025-11-15 10:38:51.704 - [Debug] [Auth] Attacker 38.143.238.41 trying to authenticate with "password"
+2025-11-15 10:38:51.717 - [Debug] [Auto Access] Attacker: 38.143.238.41, Threshold: 1, Attempts: 1
+2025-11-15 10:38:51.717 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 10:38:51.717 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-15 10:38:56.010 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 10:38:56.012 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-15 10:38:56.255 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-15 10:38:57.429 - [Debug] [EXEC] Noninteractive mode attacker command: mount -o remount,rw /||sudo mount -o remount,rw /;mkdir -p /dev/shm/rondo/rondo2 /mnt/rondo/rondo2 /tmp/rondo/rondo2 /var/tmp/rondo/rondo2 rondo/rondo2;cd /tmp/rondo||cd /var/tmp/rondo||cd /dev/shm/rondo||cd /mnt/rondo||cd rondo;ls -F
+2025-11-15 10:38:59.556 - [Debug] [Connection] Attacker closed connection
+2025-11-15 10:38:59.560 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-15 10:38:59.561 - [Debug] [LXC] Container's OpenSSH server closed connection
