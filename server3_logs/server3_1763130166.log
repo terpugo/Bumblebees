@@ -1,0 +1,33 @@
+2025-11-14 09:23:14.530 - [Info] MITM Version: 1.4
+2025-11-14 09:23:14.533 - [Info] Auto Access Enabled: true
+2025-11-14 09:23:14.534 - [Debug] [Init] Auto Access Barrier: true
+2025-11-14 09:23:14.540 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-14 09:26:43.697 - [Debug] [Connection] Attacker connected: 139.19.117.130 | Client Identification: SSH-2.0-Go
+2025-11-14 09:26:44.406 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-11-14 09:26:44.407 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-14 09:26:44.408 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-14 09:26:44.666 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-11-14 09:26:44.666 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-14 09:26:44.666 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-14 09:26:53.693 - [Debug] [Connection] Attacker closed the connection
+2025-11-14 09:30:47.349 - [Debug] [Connection] Attacker connected: 116.99.168.245 | Client Identification: SSH-2.0-AsyncSSH_2.1.0
+2025-11-14 09:32:23.743 - [Debug] [Connection] Attacker closed the connection
+2025-11-14 09:33:04.185 - [Debug] [Connection] Attacker connected: 116.99.168.245 | Client Identification: SSH-2.0-AsyncSSH_2.1.0
+2025-11-14 09:33:17.905 - [Debug] [Connection] Attacker connected: 116.99.168.245 | Client Identification: SSH-2.0-AsyncSSH_2.1.0
+2025-11-14 09:33:24.746 - [Debug] [Auth] Attacker 116.99.168.245 trying to authenticate with "none"
+2025-11-14 09:33:24.746 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-14 09:33:37.703 - [Debug] [Auth] Attacker 116.99.168.245 trying to authenticate with "none"
+2025-11-14 09:33:37.703 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-14 09:33:39.819 - [Debug] [Auth] Attacker 116.99.168.245 trying to authenticate with "password"
+2025-11-14 09:33:39.822 - [Debug] [Auto Access] Attacker: 116.99.168.245, Threshold: 1, Attempts: 1
+2025-11-14 09:33:39.822 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-14 09:33:39.822 - [Debug] [Auto Access] Adding the following credentials: "root:admin"
+2025-11-14 09:33:40.339 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-14 09:33:40.339 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-14 09:33:40.387 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-14 09:34:44.284 - [Debug] [Auth] Attacker 116.99.168.245 trying to authenticate with "password"
+2025-11-14 09:34:44.286 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-14 09:34:44.286 - [Debug] [Auth] Attacker: 116.99.168.245 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-14 09:34:46.818 - [Debug] [Connection] Attacker closed connection
+2025-11-14 09:34:46.828 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-14 09:34:46.829 - [Debug] [LXC] Container's OpenSSH server closed connection

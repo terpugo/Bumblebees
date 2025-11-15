@@ -1,0 +1,31 @@
+#!/bin/bash
+#!/bin/bash
+
+# Directory containing your server log files
+DIR="/home/aces/Bumblebees/Attacker_Data"
+cd "$DIR" || exit 1
+
+# Get today's date
+today=$(date +%Y-%m-%d)
+
+# Loop over all server log files
+for f in server*_[0-9]*.txt; do
+    [ -e "$f" ] || continue  # skip if no files match
+
+    # Extract UNIX timestamp from filename
+    ts=$(echo "$f" | sed -E 's/.*_([0-9]+)\.txt/\1/')
+
+    # Convert timestamp → YYYY-MM-DD
+    day=$(date -d "@$ts" +%Y-%m-%d)
+
+    # Skip files from today
+    if [ "$day" = "$today" ]; then
+        continue
+    fi
+
+    # Add to daily archive (append if exists) and remove original
+    tar -czf "${day}.tar.gz" --append --remove-files "$f" 2>/dev/null || tar -czf "${day}.tar.gz" --remove-files "$f"
+done
+
+echo "All completed-day server logs have been compressed and originals removed."
+

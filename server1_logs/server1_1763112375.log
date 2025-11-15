@@ -1,0 +1,22 @@
+2025-11-14 04:26:44.341 - [Info] MITM Version: 1.4
+2025-11-14 04:26:44.344 - [Info] Auto Access Enabled: true
+2025-11-14 04:26:44.344 - [Debug] [Init] Auto Access Barrier: true
+2025-11-14 04:26:44.349 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-14 04:28:46.011 - [Debug] [Connection] Attacker connected: 65.49.1.210 | Client Identification: SSH-2.0-Go
+2025-11-14 04:28:46.465 - [Debug] [Auth] Attacker 65.49.1.210 trying to authenticate with "none"
+2025-11-14 04:28:46.465 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-14 04:28:50.011 - [Debug] [Connection] Attacker closed the connection
+2025-11-14 04:33:16.796 - [Debug] [Connection] Attacker connected: 193.32.162.145 | Client Identification: SSH-2.0-Go
+2025-11-14 04:33:17.509 - [Debug] [Auth] Attacker 193.32.162.145 trying to authenticate with "none"
+2025-11-14 04:33:17.509 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-14 04:33:17.731 - [Debug] [Auth] Attacker 193.32.162.145 trying to authenticate with "password"
+2025-11-14 04:33:17.733 - [Debug] [Auto Access] Attacker: 193.32.162.145, Threshold: 1, Attempts: 1
+2025-11-14 04:33:17.734 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-14 04:33:17.734 - [Debug] [Auto Access] Adding the following credentials: "solana:geyser"
+2025-11-14 04:33:18.169 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-14 04:33:18.169 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-14 04:33:18.213 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-14 04:33:18.707 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-14 04:33:19.153 - [Debug] [Connection] Attacker closed connection
+2025-11-14 04:33:19.156 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-14 04:33:19.156 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,19 @@
+2025-11-14 05:03:58.233 - [Info] MITM Version: 1.4
+2025-11-14 05:03:58.235 - [Info] Auto Access Enabled: true
+2025-11-14 05:03:58.235 - [Debug] [Init] Auto Access Barrier: true
+2025-11-14 05:03:58.241 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-14 05:04:59.635 - [Debug] [Connection] Attacker connected: 103.103.53.44 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-14 05:05:01.930 - [Debug] [Connection] Attacker connected: 118.26.153.102 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-14 05:05:02.248 - [Debug] [Auth] Attacker 103.103.53.44 trying to authenticate with "password"
+2025-11-14 05:05:02.250 - [Debug] [Auto Access] Attacker: 103.103.53.44, Threshold: 1, Attempts: 1
+2025-11-14 05:05:02.250 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-14 05:05:02.250 - [Debug] [Auto Access] Adding the following credentials: "admin:a123456"
+2025-11-14 05:05:02.739 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-14 05:05:02.739 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-14 05:05:02.789 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-14 05:05:04.427 - [Debug] [Connection] Attacker closed connection
+2025-11-14 05:05:04.430 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-14 05:05:04.430 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-14 05:05:04.445 - [Debug] [Auth] Attacker 118.26.153.102 trying to authenticate with "password"
+2025-11-14 05:05:04.445 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-14 05:05:04.445 - [Debug] [Auth] Attacker: 118.26.153.102 has so far made 1 attempts. Remaining: 5 attempts
