@@ -1,0 +1,22 @@
+2025-11-15 23:54:34.494 - [Info] MITM Version: 1.4
+2025-11-15 23:54:34.497 - [Info] Auto Access Enabled: true
+2025-11-15 23:54:34.497 - [Debug] [Init] Auto Access Barrier: true
+2025-11-15 23:54:34.502 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-15 23:55:03.429 - [Debug] [Connection] Attacker connected: 218.22.187.66 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-15 23:55:05.716 - [Debug] [Auth] Attacker 218.22.187.66 trying to authenticate with "password"
+2025-11-15 23:55:05.718 - [Debug] [Auto Access] Attacker: 218.22.187.66, Threshold: 1, Attempts: 1
+2025-11-15 23:55:05.718 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-15 23:55:05.718 - [Debug] [Auto Access] Adding the following credentials: "centos:999999"
+2025-11-15 23:55:06.165 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-15 23:55:06.166 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-15 23:55:06.169 - [Debug] [Connection] Attacker connected: 138.68.161.183 | Client Identification: SSH-2.0-Go
+2025-11-15 23:55:06.208 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-15 23:55:06.772 - [Debug] [Auth] Attacker 138.68.161.183 trying to authenticate with "none"
+2025-11-15 23:55:06.772 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-15 23:55:07.000 - [Debug] [Auth] Attacker 138.68.161.183 trying to authenticate with "password"
+2025-11-15 23:55:07.000 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-15 23:55:07.001 - [Debug] [Auth] Attacker: 138.68.161.183 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-15 23:55:07.277 - [Debug] [Connection] Attacker closed the connection
+2025-11-15 23:55:07.789 - [Debug] [Connection] Attacker closed connection
+2025-11-15 23:55:07.792 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-15 23:55:07.792 - [Debug] [LXC] Container's OpenSSH server closed connection
