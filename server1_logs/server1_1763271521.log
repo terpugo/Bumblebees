@@ -1,0 +1,22 @@
+2025-11-16 00:39:08.952 - [Info] MITM Version: 1.4
+2025-11-16 00:39:08.955 - [Info] Auto Access Enabled: true
+2025-11-16 00:39:08.955 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 00:39:08.960 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-16 00:41:25.019 - [Debug] [Connection] Attacker connected: 182.225.134.13 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-16 00:41:27.033 - [Debug] [Connection] Attacker connected: 167.71.165.170 | Client Identification: SSH-2.0-Go
+2025-11-16 00:41:27.135 - [Debug] [Auth] Attacker 167.71.165.170 trying to authenticate with "none"
+2025-11-16 00:41:27.135 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 00:41:27.194 - [Debug] [Auth] Attacker 167.71.165.170 trying to authenticate with "password"
+2025-11-16 00:41:27.196 - [Debug] [Auto Access] Attacker: 167.71.165.170, Threshold: 1, Attempts: 1
+2025-11-16 00:41:27.197 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 00:41:27.197 - [Debug] [Auto Access] Adding the following credentials: "solana:SoL"
+2025-11-16 00:41:27.967 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 00:41:27.968 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-16 00:41:27.970 - [Debug] [Auth] Attacker 182.225.134.13 trying to authenticate with "password"
+2025-11-16 00:41:27.971 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-16 00:41:27.971 - [Debug] [Auth] Attacker: 182.225.134.13 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-16 00:41:28.036 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 00:41:28.158 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-16 00:41:28.650 - [Debug] [Connection] Attacker closed connection
+2025-11-16 00:41:28.653 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 00:41:28.653 - [Debug] [LXC] Container's OpenSSH server closed connection

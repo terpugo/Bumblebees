@@ -1,0 +1,19 @@
+2025-11-16 02:19:05.611 - [Info] MITM Version: 1.4
+2025-11-16 02:19:05.613 - [Info] Auto Access Enabled: true
+2025-11-16 02:19:05.613 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 02:19:05.618 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-16 02:28:49.058 - [Debug] [Connection] Attacker connected: 64.226.86.7 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-16 02:28:49.628 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 02:28:50.024 - [Debug] [Connection] Attacker connected: 64.226.86.7 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-16 02:28:50.230 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 02:38:21.076 - [Debug] [Connection] Attacker connected: 152.52.213.98 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-16 02:38:23.549 - [Debug] [Auth] Attacker 152.52.213.98 trying to authenticate with "password"
+2025-11-16 02:38:23.561 - [Debug] [Auto Access] Attacker: 152.52.213.98, Threshold: 1, Attempts: 1
+2025-11-16 02:38:23.562 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 02:38:23.562 - [Debug] [Auto Access] Adding the following credentials: "debian:123321"
+2025-11-16 02:38:24.051 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 02:38:24.051 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-16 02:38:24.109 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 02:38:25.997 - [Debug] [Connection] Attacker closed connection
+2025-11-16 02:38:26.001 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 02:38:26.001 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,22 @@
+2025-11-16 09:14:19.853 - [Info] MITM Version: 1.4
+2025-11-16 09:14:19.857 - [Info] Auto Access Enabled: true
+2025-11-16 09:14:19.857 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 09:14:19.863 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-16 09:14:47.159 - [Debug] [Connection] Attacker connected: 182.93.7.194 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-16 09:14:48.547 - [Debug] [Auth] Attacker 182.93.7.194 trying to authenticate with "password"
+2025-11-16 09:14:48.955 - [Debug] [Auto Access] Attacker: 182.93.7.194, Threshold: 1, Attempts: 1
+2025-11-16 09:14:48.957 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 09:14:48.957 - [Debug] [Auto Access] Adding the following credentials: "uploader:uploader"
+2025-11-16 09:14:56.038 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 09:14:56.071 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-16 09:14:56.140 - [Debug] [Connection] Attacker connected: 129.212.178.248 | Client Identification: SSH-2.0-Go
+2025-11-16 09:14:56.357 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 09:14:56.389 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "none"
+2025-11-16 09:14:56.389 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 09:14:56.485 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "password"
+2025-11-16 09:14:56.486 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-16 09:14:56.486 - [Debug] [Auth] Attacker: 129.212.178.248 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-16 09:14:56.538 - [Debug] [Connection] Attacker closed connection
+2025-11-16 09:14:56.556 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 09:14:58.083 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 09:14:58.084 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,23 @@
+2025-11-16 06:02:24.130 - [Info] MITM Version: 1.4
+2025-11-16 06:02:24.132 - [Info] Auto Access Enabled: true
+2025-11-16 06:02:24.133 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 06:02:24.138 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-16 06:02:59.790 - [Debug] [Connection] Attacker connected: 195.66.25.224 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-16 06:03:00.337 - [Debug] [Connection] Attacker connected: 129.212.178.248 | Client Identification: SSH-2.0-Go
+2025-11-16 06:03:00.570 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "none"
+2025-11-16 06:03:00.571 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 06:03:00.572 - [Debug] [Auth] Attacker 195.66.25.224 trying to authenticate with "password"
+2025-11-16 06:03:00.576 - [Debug] [Auto Access] Attacker: 195.66.25.224, Threshold: 1, Attempts: 1
+2025-11-16 06:03:00.576 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 06:03:00.576 - [Debug] [Auto Access] Adding the following credentials: "user:qwert12345"
+2025-11-16 06:03:01.220 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 06:03:01.220 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-16 06:03:01.223 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "password"
+2025-11-16 06:03:01.223 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-16 06:03:01.224 - [Debug] [Auth] Attacker: 129.212.178.248 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-16 06:03:01.261 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 06:03:01.329 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 06:03:01.837 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-16 06:03:14.784 - [Debug] [Connection] Attacker closed connection
+2025-11-16 06:03:14.806 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 06:03:14.808 - [Debug] [LXC] Container's OpenSSH server closed connection
