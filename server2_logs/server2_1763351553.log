@@ -1,0 +1,21 @@
+2025-11-16 22:53:00.977 - [Info] MITM Version: 1.4
+2025-11-16 22:53:00.979 - [Info] Auto Access Enabled: true
+2025-11-16 22:53:00.979 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 22:53:00.984 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-16 22:54:35.749 - [Debug] [Connection] Attacker connected: 138.68.164.83 | Client Identification: SSH-2.0-Go
+2025-11-16 22:54:36.108 - [Debug] [Connection] Attacker connected: 143.110.252.152 | Client Identification: SSH-2.0-Go
+2025-11-16 22:54:37.266 - [Debug] [Auth] Attacker 138.68.164.83 trying to authenticate with "none"
+2025-11-16 22:54:37.267 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 22:54:37.550 - [Debug] [Auth] Attacker 138.68.164.83 trying to authenticate with "password"
+2025-11-16 22:54:37.553 - [Debug] [Auto Access] Attacker: 138.68.164.83, Threshold: 1, Attempts: 1
+2025-11-16 22:54:37.553 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 22:54:37.553 - [Debug] [Auto Access] Adding the following credentials: "gwei:gwei"
+2025-11-16 22:54:38.036 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 22:54:38.036 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-16 22:54:38.074 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 22:54:38.538 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-16 22:54:38.794 - [Debug] [Auth] Attacker 143.110.252.152 trying to authenticate with "none"
+2025-11-16 22:54:38.795 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 22:54:39.037 - [Debug] [Connection] Attacker closed connection
+2025-11-16 22:54:39.040 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 22:54:39.041 - [Debug] [LXC] Container's OpenSSH server closed connection

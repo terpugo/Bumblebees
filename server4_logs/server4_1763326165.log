@@ -1,0 +1,22 @@
+2025-11-16 15:49:54.279 - [Info] MITM Version: 1.4
+2025-11-16 15:49:54.281 - [Info] Auto Access Enabled: true
+2025-11-16 15:49:54.282 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 15:49:54.287 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-16 15:50:28.409 - [Debug] [Connection] Attacker connected: 128.199.118.234 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-16 15:50:30.845 - [Debug] [Connection] Attacker connected: 129.212.178.248 | Client Identification: SSH-2.0-Go
+2025-11-16 15:50:30.929 - [Debug] [Auth] Attacker 128.199.118.234 trying to authenticate with "password"
+2025-11-16 15:50:30.930 - [Debug] [Auto Access] Attacker: 128.199.118.234, Threshold: 1, Attempts: 1
+2025-11-16 15:50:30.931 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 15:50:30.931 - [Debug] [Auto Access] Adding the following credentials: "debian:debian2001"
+2025-11-16 15:50:31.379 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 15:50:31.379 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-16 15:50:31.425 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 15:50:31.485 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "none"
+2025-11-16 15:50:31.486 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 15:50:31.593 - [Debug] [Auth] Attacker 129.212.178.248 trying to authenticate with "password"
+2025-11-16 15:50:31.594 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-16 15:50:31.594 - [Debug] [Auth] Attacker: 129.212.178.248 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-16 15:50:31.698 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 15:50:33.571 - [Debug] [Connection] Attacker closed connection
+2025-11-16 15:50:33.574 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 15:50:33.575 - [Debug] [LXC] Container's OpenSSH server closed connection

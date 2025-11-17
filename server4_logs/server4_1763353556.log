@@ -1,0 +1,33 @@
+2025-11-16 23:26:24.648 - [Info] MITM Version: 1.4
+2025-11-16 23:26:24.650 - [Info] Auto Access Enabled: true
+2025-11-16 23:26:24.650 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 23:26:24.655 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-16 23:26:46.597 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-16 23:26:47.284 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-16 23:26:47.285 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-16 23:26:47.286 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-16 23:26:47.540 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-16 23:26:47.540 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-16 23:26:47.541 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 2 attempts. Remaining: 4 attempts
+2025-11-16 23:26:56.595 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 23:27:04.675 - [Debug] [Connection] Attacker connected: 143.110.252.152 | Client Identification: SSH-2.0-Go
+2025-11-16 23:27:08.513 - [Debug] [Auth] Attacker 143.110.252.152 trying to authenticate with "none"
+2025-11-16 23:27:08.513 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 23:27:09.676 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 23:29:14.706 - [Debug] [Connection] Attacker connected: 143.110.252.152 | Client Identification: SSH-2.0-Go
+2025-11-16 23:29:19.262 - [Debug] [Auth] Attacker 143.110.252.152 trying to authenticate with "none"
+2025-11-16 23:29:19.262 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 23:29:19.707 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 23:30:57.733 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-16 23:30:58.573 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-16 23:30:58.573 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 23:30:58.882 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-16 23:30:58.884 - [Debug] [Auto Access] Attacker: 91.215.85.88, Threshold: 1, Attempts: 1
+2025-11-16 23:30:58.884 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 23:30:58.884 - [Debug] [Auto Access] Adding the following credentials: "root:123"
+2025-11-16 23:30:59.375 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 23:30:59.375 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-16 23:30:59.419 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 23:31:00.035 - [Debug] [Connection] Attacker closed connection
+2025-11-16 23:31:00.038 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 23:31:00.039 - [Debug] [LXC] Container's OpenSSH server closed connection

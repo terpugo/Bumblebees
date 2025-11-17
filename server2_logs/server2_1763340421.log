@@ -1,0 +1,22 @@
+2025-11-16 19:47:28.182 - [Info] MITM Version: 1.4
+2025-11-16 19:47:28.184 - [Info] Auto Access Enabled: true
+2025-11-16 19:47:28.184 - [Debug] [Init] Auto Access Barrier: true
+2025-11-16 19:47:28.189 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-16 19:55:45.500 - [Debug] [Connection] Attacker connected: 71.6.146.185 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-16 19:55:46.333 - [Debug] [Connection] Attacker connected: 71.6.146.185 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-16 19:55:46.934 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 19:55:48.631 - [Debug] [Connection] Attacker closed the connection
+2025-11-16 20:08:47.663 - [Debug] [Connection] Attacker connected: 167.71.185.244 | Client Identification: SSH-2.0-Go
+2025-11-16 20:08:47.849 - [Debug] [Auth] Attacker 167.71.185.244 trying to authenticate with "none"
+2025-11-16 20:08:47.849 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-16 20:08:47.955 - [Debug] [Auth] Attacker 167.71.185.244 trying to authenticate with "password"
+2025-11-16 20:08:47.958 - [Debug] [Auto Access] Attacker: 167.71.185.244, Threshold: 1, Attempts: 1
+2025-11-16 20:08:47.958 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-16 20:08:47.958 - [Debug] [Auto Access] Adding the following credentials: "solana:solana"
+2025-11-16 20:08:48.417 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-16 20:08:48.417 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-16 20:08:48.462 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-16 20:08:48.750 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-16 20:08:48.972 - [Debug] [Connection] Attacker closed connection
+2025-11-16 20:08:48.975 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-16 20:08:48.976 - [Debug] [LXC] Container's OpenSSH server closed connection
