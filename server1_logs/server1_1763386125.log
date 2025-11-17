@@ -1,0 +1,19 @@
+2025-11-17 08:29:15.817 - [Info] MITM Version: 1.4
+2025-11-17 08:29:15.820 - [Info] Auto Access Enabled: true
+2025-11-17 08:29:15.820 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 08:29:15.826 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-17 08:30:03.158 - [Debug] [Connection] Attacker connected: 139.59.36.233 | Client Identification: SSH-2.0-Go
+2025-11-17 08:30:04.643 - [Debug] [Auth] Attacker 139.59.36.233 trying to authenticate with "none"
+2025-11-17 08:30:04.643 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 08:30:05.167 - [Debug] [Auth] Attacker 139.59.36.233 trying to authenticate with "password"
+2025-11-17 08:30:05.179 - [Debug] [Auto Access] Attacker: 139.59.36.233, Threshold: 1, Attempts: 1
+2025-11-17 08:30:05.179 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 08:30:05.179 - [Debug] [Auto Access] Adding the following credentials: "john:12345678"
+2025-11-17 08:30:10.757 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 08:30:10.760 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-17 08:30:10.770 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 08:30:10.829 - [Info] Exiting...
+2025-11-17 08:30:10.829 - [Debug] Cleaning up...
+2025-11-17 08:30:10.829 - [Error] Exception occurred: 
+No auth in progress
+2025-11-17 08:30:10.830 - [Debug] Cleaning up LXC Streams: 0

@@ -1,0 +1,24 @@
+2025-11-17 10:40:34.181 - [Info] MITM Version: 1.4
+2025-11-17 10:40:34.184 - [Info] Auto Access Enabled: true
+2025-11-17 10:40:34.184 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 10:40:34.191 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-17 10:41:16.953 - [Debug] [Connection] Attacker connected: 139.59.36.233 | Client Identification: SSH-2.0-Go
+2025-11-17 10:41:17.069 - [Debug] [Connection] Attacker connected: 103.183.75.239 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-17 10:41:18.517 - [Debug] [Auth] Attacker 139.59.36.233 trying to authenticate with "none"
+2025-11-17 10:41:18.517 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 10:41:19.043 - [Debug] [Auth] Attacker 139.59.36.233 trying to authenticate with "password"
+2025-11-17 10:41:19.098 - [Debug] [Auto Access] Attacker: 139.59.36.233, Threshold: 1, Attempts: 1
+2025-11-17 10:41:19.098 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 10:41:19.098 - [Debug] [Auto Access] Adding the following credentials: "daniel:daniel"
+2025-11-17 10:41:22.467 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 10:41:22.470 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-17 10:41:22.484 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 10:41:22.487 - [Debug] [Auth] Attacker 103.183.75.239 trying to authenticate with "password"
+2025-11-17 10:41:22.487 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-17 10:41:22.489 - [Debug] [Auth] Attacker: 103.183.75.239 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-17 10:41:22.544 - [Info] Exiting...
+2025-11-17 10:41:22.544 - [Debug] Cleaning up...
+2025-11-17 10:41:22.545 - [Error] Exception occurred: 
+No auth in progress
+2025-11-17 10:41:22.545 - [Debug] Cleaning up LXC Streams: 0
+2025-11-17 10:41:23.060 - [Debug] [Connection] Attacker closed the connection

@@ -1,0 +1,24 @@
+2025-11-17 04:13:50.685 - [Info] MITM Version: 1.4
+2025-11-17 04:13:50.687 - [Info] Auto Access Enabled: true
+2025-11-17 04:13:50.688 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 04:13:50.692 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-17 04:15:26.491 - [Debug] [Connection] Attacker connected: 138.68.164.83 | Client Identification: SSH-2.0-Go
+2025-11-17 04:15:27.262 - [Debug] [Auth] Attacker 138.68.164.83 trying to authenticate with "none"
+2025-11-17 04:15:27.263 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 04:15:27.491 - [Debug] [Auth] Attacker 138.68.164.83 trying to authenticate with "password"
+2025-11-17 04:15:27.497 - [Debug] [Auto Access] Attacker: 138.68.164.83, Threshold: 1, Attempts: 1
+2025-11-17 04:15:27.497 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 04:15:27.497 - [Debug] [Auto Access] Adding the following credentials: "seichain:seichain"
+2025-11-17 04:15:28.019 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 04:15:28.020 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-17 04:15:28.024 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-17 04:15:28.064 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-17 04:15:28.661 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-17 04:15:28.915 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-17 04:15:28.915 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 04:15:29.235 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-17 04:15:29.235 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-17 04:15:29.235 - [Debug] [Auth] Attacker: 91.215.85.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-17 04:15:29.252 - [Debug] [Connection] Attacker closed connection
+2025-11-17 04:15:29.256 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-17 04:15:29.256 - [Debug] [LXC] Container's OpenSSH server closed connection

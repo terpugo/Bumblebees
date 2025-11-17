@@ -1,0 +1,25 @@
+2025-11-17 09:10:05.735 - [Info] MITM Version: 1.4
+2025-11-17 09:10:05.739 - [Info] Auto Access Enabled: true
+2025-11-17 09:10:05.739 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 09:10:05.746 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-17 09:10:41.623 - [Debug] [Connection] Attacker connected: 159.65.144.224 | Client Identification: SSH-2.0-Go
+2025-11-17 09:10:43.108 - [Debug] [Auth] Attacker 159.65.144.224 trying to authenticate with "none"
+2025-11-17 09:10:43.108 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 09:10:43.626 - [Debug] [Auth] Attacker 159.65.144.224 trying to authenticate with "password"
+2025-11-17 09:10:43.642 - [Debug] [Auto Access] Attacker: 159.65.144.224, Threshold: 1, Attempts: 1
+2025-11-17 09:10:43.643 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 09:10:43.643 - [Debug] [Auto Access] Adding the following credentials: "samuel:samuel"
+2025-11-17 09:10:50.899 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 09:10:50.901 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-17 09:10:50.914 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 09:10:50.917 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-17 09:10:51.159 - [Info] Exiting...
+2025-11-17 09:10:51.159 - [Debug] Cleaning up...
+2025-11-17 09:10:51.159 - [Error] Exception occurred: 
+No auth in progress
+2025-11-17 09:10:51.168 - [Debug] Cleaning up LXC Streams: 0
+2025-11-17 09:10:51.798 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-17 09:10:51.799 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 09:10:52.120 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-17 09:10:52.122 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-17 09:10:52.122 - [Debug] [Auth] Attacker: 91.215.85.88 has so far made 1 attempts. Remaining: 5 attempts
