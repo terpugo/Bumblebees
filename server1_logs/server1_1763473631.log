@@ -1,0 +1,36 @@
+2025-11-18 08:47:38.017 - [Info] MITM Version: 1.4
+2025-11-18 08:47:38.019 - [Info] Auto Access Enabled: true
+2025-11-18 08:47:38.020 - [Debug] [Init] Auto Access Barrier: true
+2025-11-18 08:47:38.026 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-18 08:48:00.957 - [Debug] [Connection] Attacker connected: 167.172.32.43 | Client Identification: SSH-2.0-Go
+2025-11-18 08:48:01.662 - [Debug] [Auth] Attacker 167.172.32.43 trying to authenticate with "none"
+2025-11-18 08:48:01.662 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-18 08:48:01.980 - [Debug] [Auth] Attacker 167.172.32.43 trying to authenticate with "password"
+2025-11-18 08:48:01.982 - [Debug] [Auto Access] Attacker: 167.172.32.43, Threshold: 1, Attempts: 1
+2025-11-18 08:48:01.982 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-18 08:48:01.982 - [Debug] [Auto Access] Adding the following credentials: "root:root4444"
+2025-11-18 08:48:02.308 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-18 08:48:02.308 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-18 08:48:02.343 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-18 08:48:02.836 - [Debug] [EXEC] Noninteractive mode attacker command: export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+uname=$(uname -s -v -n -m 2>/dev/null)
+arch=$(uname -m 2>/dev/null)
+uptime=$(cat /proc/uptime 2>/dev/null | cut -d. -f1)
+cpus=$( (nproc || grep -c "^processor" /proc/cpuinfo) 2>/dev/null | head -1)
+cpu_model=$( (grep -m1 -E "model name|Hardware" /proc/cpuinfo | cut -d: -f2- | sed 's/^ *//;s/ *$//' ; lscpu 2>/dev/null | awk -F: '/Model name/ {gsub(/^ +| +$/,"",$2); print $2; exit}' ; dmidecode -s processor-version 2>/dev/null | head -n1 ; uname -p 2>/dev/null) | awk 'NF{print; exit}' )
+gpu_info=$( (lspci 2>/dev/null | grep -i vga; lspci 2>/dev/null | grep -i nvidia) 2>/dev/null | head -n50)
+cat_help=$( (cat --help 2>&1 | tr '\n' ' ') || cat --help 2>&1)
+ls_help=$( (ls --help 2>&1 | tr '\n' ' ') || ls --help 2>&1)
+last_output=$(last 2>/dev/null | head -n 10)
+echo "UNAME:$uname"
+echo "ARCH:$arch"
+echo "UPTIME:$uptime"
+echo "CPUS:$cpus"
+echo "CPU_MODEL:$cpu_model"
+echo "GPU:$gpu_info"
+echo "CAT_HELP:$cat_help"
+echo "LS_HELP:$ls_help"
+echo "LAST:$last_output"
+2025-11-18 08:48:04.926 - [Debug] [Connection] Attacker closed connection
+2025-11-18 08:48:04.930 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-18 08:48:04.930 - [Debug] [LXC] Container's OpenSSH server closed connection
