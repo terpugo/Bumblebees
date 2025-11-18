@@ -1,0 +1,22 @@
+2025-11-17 21:13:16.441 - [Info] MITM Version: 1.4
+2025-11-17 21:13:16.443 - [Info] Auto Access Enabled: true
+2025-11-17 21:13:16.443 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 21:13:16.447 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-17 21:14:08.796 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-17 21:14:09.493 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-17 21:14:09.494 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-17 21:14:09.494 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-17 21:14:18.793 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 21:14:50.432 - [Debug] [Connection] Attacker connected: 27.8.44.166 | Client Identification: SSH-2.0-Go
+2025-11-17 21:14:52.658 - [Debug] [Auth] Attacker 27.8.44.166 trying to authenticate with "none"
+2025-11-17 21:14:52.658 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-17 21:14:53.379 - [Debug] [Auth] Attacker 27.8.44.166 trying to authenticate with "password"
+2025-11-17 21:14:53.380 - [Debug] [Auto Access] Attacker: 27.8.44.166, Threshold: 1, Attempts: 1
+2025-11-17 21:14:53.380 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 21:14:53.380 - [Debug] [Auto Access] Adding the following credentials: "root:ubuntu"
+2025-11-17 21:14:53.700 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 21:14:53.700 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-17 21:14:53.732 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-17 21:14:55.828 - [Debug] [Connection] Attacker closed connection
+2025-11-17 21:14:55.831 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-17 21:14:55.831 - [Debug] [LXC] Container's OpenSSH server closed connection

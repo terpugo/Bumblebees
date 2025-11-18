@@ -1,0 +1,20 @@
+2025-11-17 22:14:01.923 - [Info] MITM Version: 1.4
+2025-11-17 22:14:01.925 - [Info] Auto Access Enabled: true
+2025-11-17 22:14:01.925 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 22:14:01.930 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-17 22:14:10.558 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-17 22:14:11.242 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-17 22:14:11.243 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-17 22:14:11.243 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-17 22:14:20.556 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 22:21:32.810 - [Debug] [Connection] Attacker connected: 121.168.116.150 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-17 22:21:35.338 - [Debug] [Auth] Attacker 121.168.116.150 trying to authenticate with "password"
+2025-11-17 22:21:35.340 - [Debug] [Auto Access] Attacker: 121.168.116.150, Threshold: 1, Attempts: 1
+2025-11-17 22:21:35.340 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 22:21:35.340 - [Debug] [Auto Access] Adding the following credentials: "ubnt:ubnt2006"
+2025-11-17 22:21:35.670 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 22:21:35.670 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-17 22:21:35.706 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-17 22:21:37.917 - [Debug] [Connection] Attacker closed connection
+2025-11-17 22:21:37.920 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-17 22:21:37.920 - [Debug] [LXC] Container's OpenSSH server closed connection

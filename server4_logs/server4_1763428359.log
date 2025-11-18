@@ -1,0 +1,21 @@
+2025-11-17 20:13:03.827 - [Info] MITM Version: 1.4
+2025-11-17 20:13:03.829 - [Info] Auto Access Enabled: true
+2025-11-17 20:13:03.829 - [Debug] [Init] Auto Access Barrier: true
+2025-11-17 20:13:03.833 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-17 20:17:17.864 - [Debug] [Connection] Attacker connected: 139.19.117.129 | Client Identification: SSH-2.0-Go
+2025-11-17 20:17:18.558 - [Debug] [Auth] Attacker 139.19.117.129 trying to authenticate with "publickey"
+2025-11-17 20:17:18.559 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-17 20:17:18.560 - [Debug] [Auth] Attacker: 139.19.117.129 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-17 20:17:27.863 - [Debug] [Connection] Attacker closed the connection
+2025-11-17 20:17:53.952 - [Debug] [Connection] Attacker connected: 109.122.251.178 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-17 20:17:55.013 - [Debug] [Auth] Attacker 109.122.251.178 trying to authenticate with "password"
+2025-11-17 20:17:55.014 - [Debug] [Auto Access] Attacker: 109.122.251.178, Threshold: 1, Attempts: 1
+2025-11-17 20:17:55.014 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-17 20:17:55.014 - [Debug] [Auto Access] Adding the following credentials: "rustserver:12345678"
+2025-11-17 20:17:55.370 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-17 20:17:55.370 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-17 20:17:55.399 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-17 20:17:56.077 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-17 20:18:13.367 - [Debug] [Connection] Attacker closed connection
+2025-11-17 20:18:13.369 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-17 20:18:13.370 - [Debug] [LXC] Container's OpenSSH server closed connection
