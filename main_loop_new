@@ -65,6 +65,12 @@ do
       || echo "$LINE" | grep -q "Attacker was idle"; then
 
           # kill the tail process streaming that specific auth_log
+
+	  if [[ "$LINE" == *"Disconnected from user"* ]]; then
+		  exit_time=$(sudo cat $mitm_log | grep "Attacker closed connection" )
+          else 
+		  exit_time=$(sudo cat $mitm_log | tail -1 | )
+	  fi 
           out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
           echo "$out" > "$data_collection"
           
