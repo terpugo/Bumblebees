@@ -40,7 +40,7 @@ do
       then
 
 	attacker_ip=$(sudo cat $auth_log | grep "Accepted password" | sed -n 's/.* from \([0-9]\{1,3\}\(\.[0-9]\{1,3\}\)\{3\}\).*/\1/p')
-	echo $attacker_ip
+	#echo $attacker_ip
 
 	#sudo /sbin/iptables -I INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
 	#sudo /sbin/iptables -I INPUT 1 -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
@@ -64,38 +64,26 @@ do
       if echo "$LINE" | grep -q "Disconnected from user" || echo "$LINE" | grep -q "Attacker timed out" \
       || echo "$LINE" | grep -q "Attacker was idle"; then
 
-          # kill the tail process streaming that specific auth_log
-
-	  if [[ "$LINE" == *"Disconnected from user"* ]]; then
-		  exit_time=$(sudo cat $mitm_log | grep "Attacker closed connection" )
-          else 
-		  exit_time=$(sudo cat $mitm_log | tail -1 | )
-	  fi 
-          out=$(date +"%Y-%m-%d %H:%M:%S.%3N")
-          echo "$out" > "$data_collection"
           
 	  #sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port -j DROP
           #sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port -j ACCEPT
-
-          
-          sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
-          -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-
-          sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port \
-          -m conntrack --ctstate NEW -j DROP
 
           sudo pkill -f "tail -n0 -F ${auth_log}" || true
           sudo screen -S "timer_${con_name}" -X quit
           sudo screen -S "idle_${con_name}" -X quit
 
+	  timed_out=no
+
           if [[ "$LINE" == *"Attacker timed out"* ]]; then
             echo "yes" >> "$data_collection"
+	    timed_out=yes
           else
             echo "no" >> "$data_collection"
           fi
 
 	  if [[ "$LINE" == *"Attacker was idle"* ]]; then
             echo "yes" >> "$data_collection"
+	    timed_out=yes
           else
             echo "no" >> "$data_collection"
           fi
@@ -103,8 +91,15 @@ do
 
           /home/aces/Bumblebees/deletion_script $con_name 2> /home/aces/Bumblebees/error.log
           sleep 2
-          /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp 2> /home/aces/Bumblebees/error.log
+          /home/aces/Bumblebees/parsing_commands $con_name $num $timestamp $timed_out 2> /home/aces/Bumblebees/error.log
           echo "$(date): attacker left at $out, ${con_name} deleted, and mitm log parsed" >> /home/aces/Bumblebees/honeypot_activity.log
+
+	  # delete iptable rules after container has been deleted to prevent "no auth in progress"
+	  sudo /sbin/iptables -D INPUT -s $attacker_ip -d 172.20.0.1 -p tcp --dport $mitm_port \
+          -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+          sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port \
+          -m conntrack --ctstate NEW -j DROP
 
           # break inner loop so outer while restarts
           break

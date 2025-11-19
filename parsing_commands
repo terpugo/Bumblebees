@@ -1,14 +1,15 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]
+if [ $# -ne 4 ]
 then
-  echo "Usage: <container name> <configuration number> <timestamp>"
+  echo "Usage: <container name> <configuration number> <timestamp> <timed out status>"
   exit 1
 fi
 
 con_name=$1
 config_num=$2
 timestamp=$3
+timed_out=$4
 
 mitm_log="/home/aces/Bumblebees/${con_name}_logs/${con_name}_${timestamp}.log"
 
@@ -20,13 +21,17 @@ outfile="${OUTDIR}/${con_name}_${timestamp}.txt"
 echo "$con_name" >> "$outfile"
 echo "$config_num" >> "$outfile"
 
-attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8 | head -1)
+attacker_ip=$(sudo cat ${mitm_log} | grep "Attacker connected" | cut -d' ' -f8 | tail -1)
 echo "$attacker_ip" >> "$outfile"
 
 login_time=$(sudo cat ${mitm_log} | grep "Attacker authenticated" | cut -d' ' -f1-2 | head -1)
 echo "$login_time" >> "$outfile"
 
-exit_time=$(sudo cat ${outfile} | head -1 | cut -d' ' -f1-2)
+if [[ "$timed_out" == "no" ]]; then
+	exit_time=$(sudo cat $mitm_log | grep "Attacker closed connection" | cut -d' ' -f1-2)
+else
+	exit_time=$(sudo cat $mitm_log | grep "SHELL" | tail -1 | cut -d' ' -f1-2)
+fi
 echo "$exit_time" >> "$outfile"
 
 list_commands=$(sudo cat ${mitm_log} | grep "line from read" | cut -d' ' -f9-)
@@ -74,7 +79,7 @@ seconds=$((diff % 60))
 
 echo "$minutes minutes and $seconds seconds">> "$outfile"
 
-sed -i '1d' $outfile
+#sed -i '1d' $outfile
 
 
 

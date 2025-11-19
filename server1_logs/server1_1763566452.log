@@ -1,0 +1,63 @@
+2025-11-19 10:34:37.351 - [Info] MITM Version: 1.4
+2025-11-19 10:34:37.353 - [Info] Auto Access Enabled: true
+2025-11-19 10:34:37.353 - [Debug] [Init] Auto Access Barrier: true
+2025-11-19 10:34:37.357 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-19 10:34:39.045 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-11-19 10:34:41.076 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-11-19 10:34:41.076 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-19 10:34:41.139 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-11-19 10:34:41.140 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-19 10:34:41.140 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 10:34:42.214 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 10:34:44.210 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-11-19 10:34:44.278 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-11-19 10:34:44.278 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-19 10:34:44.340 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-11-19 10:34:44.340 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-19 10:34:44.340 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 10:34:47.374 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 10:34:50.479 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-11-19 10:34:50.552 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-11-19 10:34:50.552 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-19 10:34:50.615 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-11-19 10:34:50.615 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-19 10:34:50.616 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 10:34:53.136 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 10:34:55.128 - [Debug] [Connection] Attacker connected: 10.173.150.42 | Client Identification: SSH-2.0-OpenSSH_for_Windows_9.5
+2025-11-19 10:34:55.199 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "none"
+2025-11-19 10:34:55.199 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-19 10:34:55.246 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "publickey"
+2025-11-19 10:34:55.246 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-11-19 10:34:55.247 - [Debug] [Auth] Attacker: 10.173.150.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 10:34:58.094 - [Debug] [Auth] Attacker 10.173.150.42 trying to authenticate with "password"
+2025-11-19 10:34:58.095 - [Debug] [Auto Access] Attacker: 10.173.150.42, Threshold: 1, Attempts: 1
+2025-11-19 10:34:58.096 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-19 10:34:58.096 - [Debug] [Auto Access] Adding the following credentials: "subomi:silly"
+2025-11-19 10:34:58.424 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-19 10:34:58.424 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-19 10:34:58.452 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-19 10:34:58.798 - [Debug] [SHELL] Opened shell for attacker
+2025-11-19 10:34:58.800 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-11-19 10:35:02.241 - [Debug] [SHELL] Attacker Keystroke: e
+2025-11-19 10:35:02.456 - [Debug] [SHELL] Attacker Keystroke: c
+2025-11-19 10:35:02.479 - [Debug] [SHELL] Attacker Keystroke: h
+2025-11-19 10:35:02.595 - [Debug] [SHELL] Attacker Keystroke: o
+2025-11-19 10:35:02.702 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-11-19 10:35:02.843 - [Debug] [SHELL] Attacker Keystroke: h
+2025-11-19 10:35:02.894 - [Debug] [SHELL] Attacker Keystroke: i
+2025-11-19 10:35:03.106 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-11-19 10:35:03.107 - [Debug] [SHELL] line from reader: echo hi
+2025-11-19 10:35:03.107 - [Debug] [SHELL] Keystroke buffer: 101,99,104,111,32,104,105,13
+2025-11-19 10:35:04.704 - [Debug] [SHELL] Attacker Keystroke: e
+2025-11-19 10:35:04.865 - [Debug] [SHELL] Attacker Keystroke: x
+2025-11-19 10:35:04.977 - [Debug] [SHELL] Attacker Keystroke: i
+2025-11-19 10:35:05.122 - [Debug] [SHELL] Attacker Keystroke: t
+2025-11-19 10:35:05.230 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-11-19 10:35:05.231 - [Debug] [SHELL] line from reader: exit
+2025-11-19 10:35:05.231 - [Debug] [SHELL] Keystroke buffer: 101,120,105,116,13
+2025-11-19 10:35:05.624 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-11-19 10:35:05.624 - [Debug] [SHELL] Honeypot ended shell
+2025-11-19 10:35:05.676 - [Debug] [SHELL] Attacker ended the shell
+2025-11-19 10:35:05.677 - [Debug] [Connection] Attacker closed connection
+2025-11-19 10:35:05.680 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-19 10:35:05.680 - [Debug] [LXC] Container's OpenSSH server closed connection

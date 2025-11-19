@@ -13,11 +13,11 @@ echo "$num_server2 attacks on server2"
 echo "$num_server3 attacks on server3"
 echo "$num_server4 attacks on server4"
 
-# If ANY count is zero → reboot
-#if [[ $num_server1 -eq 0 || $num_server2 -eq 0 || $num_server3 -eq 0 || $num_server4 -eq 0 ]]; then
-#    echo "One or more servers have zero attacks. Rebooting..."
-#    sudo reboot
-#fi
+ If ANY count is zero → reboot
+if [[ $num_server1 -eq 0 || $num_server2 -eq 0 || $num_server3 -eq 0 || $num_server4 -eq 0 ]]; then
+    echo "One or more servers have zero attacks. Rebooting..."
+    sudo reboot
+fi
 
 # Clear log
 truncate -s 0 "$log"
