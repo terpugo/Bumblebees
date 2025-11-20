@@ -1,0 +1,21 @@
+2025-11-19 20:47:19.169 - [Info] MITM Version: 1.4
+2025-11-19 20:47:19.170 - [Info] Auto Access Enabled: true
+2025-11-19 20:47:19.171 - [Debug] [Init] Auto Access Barrier: true
+2025-11-19 20:47:19.174 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-19 20:53:37.509 - [Debug] [Connection] Attacker connected: 206.189.130.118 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-19 20:53:38.728 - [Debug] [Connection] Attacker connected: 212.19.117.204 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-19 20:53:39.000 - [Debug] [Auth] Attacker 206.189.130.118 trying to authenticate with "password"
+2025-11-19 20:53:39.002 - [Debug] [Auto Access] Attacker: 206.189.130.118, Threshold: 1, Attempts: 1
+2025-11-19 20:53:39.002 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-19 20:53:39.002 - [Debug] [Auto Access] Adding the following credentials: "teamspeak:team"
+2025-11-19 20:53:39.398 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-19 20:53:39.399 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-19 20:53:39.435 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-19 20:53:39.641 - [Debug] [Auth] Attacker 212.19.117.204 trying to authenticate with "password"
+2025-11-19 20:53:39.641 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-19 20:53:39.642 - [Debug] [Auth] Attacker: 212.19.117.204 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 20:53:39.881 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 20:53:40.480 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-19 20:53:58.268 - [Debug] [Connection] Attacker closed connection
+2025-11-19 20:53:58.272 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-19 20:53:58.272 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,21 @@
+2025-11-19 17:03:12.277 - [Info] MITM Version: 1.4
+2025-11-19 17:03:12.280 - [Info] Auto Access Enabled: true
+2025-11-19 17:03:12.280 - [Debug] [Init] Auto Access Barrier: true
+2025-11-19 17:03:12.285 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-19 17:04:17.594 - [Debug] [Connection] Attacker connected: 103.230.176.152 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-19 17:04:18.506 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-19 17:04:19.408 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-19 17:04:19.408 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-19 17:04:19.746 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-19 17:04:19.747 - [Debug] [Auto Access] Attacker: 91.215.85.88, Threshold: 1, Attempts: 1
+2025-11-19 17:04:19.748 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-19 17:04:19.748 - [Debug] [Auto Access] Adding the following credentials: "www:cloud9"
+2025-11-19 17:04:20.137 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-19 17:04:20.137 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-19 17:04:20.140 - [Debug] [Auth] Attacker 103.230.176.152 trying to authenticate with "password"
+2025-11-19 17:04:20.141 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-19 17:04:20.142 - [Debug] [Auth] Attacker: 103.230.176.152 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 17:04:20.171 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-19 17:04:20.837 - [Debug] [Connection] Attacker closed connection
+2025-11-19 17:04:20.840 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-19 17:04:20.841 - [Debug] [LXC] Container's OpenSSH server closed connection

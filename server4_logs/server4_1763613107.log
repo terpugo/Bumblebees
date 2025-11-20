@@ -1,0 +1,26 @@
+2025-11-19 23:32:14.704 - [Info] MITM Version: 1.4
+2025-11-19 23:32:14.706 - [Info] Auto Access Enabled: true
+2025-11-19 23:32:14.706 - [Debug] [Init] Auto Access Barrier: true
+2025-11-19 23:32:14.712 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-19 23:32:34.096 - [Debug] [Connection] Attacker connected: 45.66.52.41 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-19 23:32:34.871 - [Debug] [Connection] Attacker connected: 110.39.9.137 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-19 23:32:35.357 - [Debug] [Auth] Attacker 45.66.52.41 trying to authenticate with "password"
+2025-11-19 23:32:35.358 - [Debug] [Auto Access] Attacker: 45.66.52.41, Threshold: 1, Attempts: 1
+2025-11-19 23:32:35.358 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-19 23:32:35.358 - [Debug] [Auto Access] Adding the following credentials: "sammy:sammy123"
+2025-11-19 23:32:35.825 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-19 23:32:35.825 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-19 23:32:35.858 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-19 23:32:35.917 - [Debug] [Connection] Attacker connected: 39.115.195.164 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-19 23:32:36.291 - [Debug] [Auth] Attacker 110.39.9.137 trying to authenticate with "password"
+2025-11-19 23:32:36.291 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-19 23:32:36.292 - [Debug] [Auth] Attacker: 110.39.9.137 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 23:32:36.755 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 23:32:36.763 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-19 23:32:37.011 - [Debug] [Auth] Attacker 39.115.195.164 trying to authenticate with "password"
+2025-11-19 23:32:37.012 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-19 23:32:37.012 - [Debug] [Auth] Attacker: 39.115.195.164 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-19 23:32:37.403 - [Debug] [Connection] Attacker closed the connection
+2025-11-19 23:32:54.461 - [Debug] [Connection] Attacker closed connection
+2025-11-19 23:32:54.468 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-19 23:32:54.469 - [Debug] [LXC] Container's OpenSSH server closed connection

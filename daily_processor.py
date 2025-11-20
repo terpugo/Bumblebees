@@ -37,7 +37,6 @@ def day_range_for_date(target_date: datetime):
 
 def parse_positional_file(path: Path):
     text = path.read_text(encoding="utf-8", errors="replace")
-    # keep empty-but-not-whitespace lines removed to match previous behaviour
     lines = [ln.rstrip("\n") for ln in text.splitlines() if ln.strip()]
 
     # --- Detect one-or-two yes/no flag lines at the start ---
@@ -52,22 +51,19 @@ def parse_positional_file(path: Path):
         if lines and is_yesno(lines[0]):
             idle_flag = lines.pop(0).strip().lower()
 
-    # If no explicit flags, default to "no" (preserves previous behavior)
     if timed_out_flag is None:
         timed_out_flag = "no"
 
-    # Assign standard fields safely (after popping any flags)
     con_name     = lines[0] if len(lines) > 0 else ""
     config_num   = lines[1] if len(lines) > 1 else ""
     attacker_ip  = lines[2] if len(lines) > 2 else ""
     login_time   = lines[3] if len(lines) > 3 else ""
     exit_time    = lines[4] if len(lines) > 4 else ""
 
-    # --- Calculate duration in milliseconds (from timestamps) ---
+    # --- duration_ms calculation ---
     duration_ms = ""
     if login_time and exit_time:
         try:
-            # expected format: "YYYY-MM-DD HH:MM:SS.sss"
             start_dt = datetime.strptime(login_time, "%Y-%m-%d %H:%M:%S.%f")
             end_dt = datetime.strptime(exit_time, "%Y-%m-%d %H:%M:%S.%f")
             delta = end_dt - start_dt
@@ -75,7 +71,7 @@ def parse_positional_file(path: Path):
         except Exception:
             duration_ms = ""
 
-    # Process commands and optional "X minutes and Y seconds"
+    # Process commands + optional "X minutes and Y seconds"
     num_commands = ""
     commands     = ""
     minutes      = 0
@@ -84,7 +80,6 @@ def parse_positional_file(path: Path):
     cmd_lines = lines[5:] if len(lines) > 5 else []
 
     if cmd_lines:
-        # Check if last line contains duration in "X minutes and Y seconds"
         last = cmd_lines[-1].strip()
         m = re.search(r"([0-9]+)\s+minutes?\s+and\s+([0-9]+)\s+seconds", last)
         if m:
@@ -92,7 +87,6 @@ def parse_positional_file(path: Path):
             seconds = int(m.group(2))
             cmd_lines = cmd_lines[:-1]
 
-        # If first line of cmd_lines is a number, that's num_commands
         if cmd_lines and cmd_lines[0].strip().isdigit():
             num_commands = cmd_lines.pop(0).strip()
 
@@ -102,15 +96,9 @@ def parse_positional_file(path: Path):
 
     total_seconds = minutes * 60 + seconds
 
-    # --- Apply idle adjustment if idle_flag indicated idle ---
-    if idle_flag == "yes":
-        total_seconds = max(0, total_seconds - 120)
-        minutes = total_seconds // 60
-        seconds = total_seconds % 60
-        if isinstance(duration_ms, int) and duration_ms != "":
-            duration_ms = max(0, duration_ms - 120000)
+    # --- no idle adjustment anymore ---
 
-    # Determine final timed_out value: yes if either flag is yes
+    # Final timed_out = yes if either flag is yes
     timed_out_final = "yes" if (timed_out_flag == "yes" or idle_flag == "yes") else "no"
 
     return {
@@ -155,13 +143,11 @@ def main():
 
     rows = []
     for p in sorted(outdir.glob("*.txt")):
-        # prefer timestamp embedded in filename (e.g. server4_1762624832.txt)
         ts = None
         try:
             ts_candidate = p.stem.split('_')[-1]
             ts = int(ts_candidate)
         except Exception:
-            # fallback to mtime
             try:
                 ts = int(p.stat().st_mtime)
             except Exception as e:
