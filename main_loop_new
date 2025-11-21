@@ -101,6 +101,8 @@ do
           sudo /sbin/iptables -D INPUT -d 172.20.0.1 -p tcp --dport $mitm_port \
           -m conntrack --ctstate NEW -j DROP
 
+	  # if an attacker attempts to connect but does not get authenticated and inside container
+
           # break inner loop so outer while restarts
           break
       fi
