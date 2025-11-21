@@ -1,0 +1,25 @@
+2025-11-21 00:30:57.839 - [Info] MITM Version: 1.4
+2025-11-21 00:30:57.842 - [Info] Auto Access Enabled: true
+2025-11-21 00:30:57.842 - [Debug] [Init] Auto Access Barrier: true
+2025-11-21 00:30:57.854 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-21 00:31:30.930 - [Debug] [Connection] Attacker connected: 193.46.255.217 | Client Identification: SSH-2.0-PUTTY
+2025-11-21 00:31:31.657 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 00:33:48.298 - [Debug] [Connection] Attacker connected: 193.46.255.99 | Client Identification: SSH-2.0-PUTTY
+2025-11-21 00:33:48.980 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 00:39:08.977 - [Debug] [Connection] Attacker connected: 59.26.132.170 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-21 00:39:09.732 - [Debug] [Connection] Attacker connected: 85.133.253.204 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-21 00:39:10.278 - [Debug] [Auth] Attacker 59.26.132.170 trying to authenticate with "password"
+2025-11-21 00:39:10.279 - [Debug] [Auto Access] Attacker: 59.26.132.170, Threshold: 1, Attempts: 1
+2025-11-21 00:39:10.279 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-21 00:39:10.279 - [Debug] [Auto Access] Adding the following credentials: "admin:admin21"
+2025-11-21 00:39:10.625 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-21 00:39:10.625 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-21 00:39:10.663 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-21 00:39:11.031 - [Debug] [Auth] Attacker 85.133.253.204 trying to authenticate with "password"
+2025-11-21 00:39:11.031 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-21 00:39:11.032 - [Debug] [Auth] Attacker: 85.133.253.204 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-21 00:39:11.378 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 00:39:11.586 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-21 00:39:29.103 - [Debug] [Connection] Attacker closed connection
+2025-11-21 00:39:29.106 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-21 00:39:29.107 - [Debug] [LXC] Container's OpenSSH server closed connection
