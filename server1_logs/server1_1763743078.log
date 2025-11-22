@@ -1,0 +1,22 @@
+2025-11-21 11:38:24.515 - [Info] MITM Version: 1.4
+2025-11-21 11:38:24.518 - [Info] Auto Access Enabled: true
+2025-11-21 11:38:24.518 - [Debug] [Init] Auto Access Barrier: true
+2025-11-21 11:38:24.524 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-21 11:46:22.256 - [Debug] [Connection] Attacker connected: 24.199.126.56 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-21 11:46:22.550 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 11:46:22.620 - [Debug] [Connection] Attacker connected: 24.199.126.56 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-21 11:46:22.752 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 11:55:33.635 - [Debug] [Connection] Attacker connected: 147.185.132.69 | Client Identification: SSH-2.0-ZGrab ZGrab SSH Survey
+2025-11-21 11:55:35.549 - [Debug] [Connection] Attacker closed the connection
+2025-11-21 11:55:39.285 - [Debug] [Connection] Attacker connected: 42.200.66.164 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-21 11:55:40.660 - [Debug] [Auth] Attacker 42.200.66.164 trying to authenticate with "password"
+2025-11-21 11:55:40.662 - [Debug] [Auto Access] Attacker: 42.200.66.164, Threshold: 1, Attempts: 1
+2025-11-21 11:55:40.662 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-21 11:55:40.662 - [Debug] [Auto Access] Adding the following credentials: "access:123"
+2025-11-21 11:55:41.247 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-21 11:55:41.247 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-21 11:55:41.292 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-21 11:55:42.264 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-21 11:55:59.925 - [Debug] [Connection] Attacker closed connection
+2025-11-21 11:55:59.929 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-21 11:55:59.930 - [Debug] [LXC] Container's OpenSSH server closed connection
