@@ -102,6 +102,11 @@ do
           -m conntrack --ctstate NEW -j DROP
 
 	  # if an attacker attempts to connect but does not get authenticated and inside container
+	  if sudo grep -q "No auth in progress" ${mitm_log}; then
+		  sudo rm $data_collection
+		  /home/aces/Bumblebees/slack.sh C09MYJC3M4N "$(date): found \"no auth in progress\" in $mitm_log, deleted data file" 
+	  fi 
+
 
           # break inner loop so outer while restarts
           break

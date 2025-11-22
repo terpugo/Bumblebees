@@ -30,7 +30,7 @@ echo "$login_time" >> "$outfile"
 if [[ "$timed_out" == "no" ]]; then
 	exit_time=$(sudo cat $mitm_log | grep "Attacker closed connection" | cut -d' ' -f1-2)
 else
-	exit_time=$(sudo cat $mitm_log | grep "SHELL" | tail -1 | cut -d' ' -f1-2)
+	exit_time=$(sudo cat $mitm_log | tail -1 | cut -d' ' -f1-2)
 fi
 echo "$exit_time" >> "$outfile"
 
