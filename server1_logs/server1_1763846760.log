@@ -1,0 +1,15 @@
+2025-11-22 16:26:26.341 - [Info] MITM Version: 1.4
+2025-11-22 16:26:26.343 - [Info] Auto Access Enabled: true
+2025-11-22 16:26:26.343 - [Debug] [Init] Auto Access Barrier: true
+2025-11-22 16:26:26.348 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-22 16:30:59.380 - [Debug] [Connection] Attacker connected: 185.101.16.250 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-22 16:31:00.810 - [Debug] [Auth] Attacker 185.101.16.250 trying to authenticate with "password"
+2025-11-22 16:31:00.811 - [Debug] [Auto Access] Attacker: 185.101.16.250, Threshold: 1, Attempts: 1
+2025-11-22 16:31:00.811 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-22 16:31:00.811 - [Debug] [Auto Access] Adding the following credentials: "test:test666"
+2025-11-22 16:31:01.171 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-22 16:31:01.171 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-22 16:31:01.206 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-22 16:31:32.797 - [Debug] [Connection] Attacker closed connection
+2025-11-22 16:31:32.800 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-22 16:31:32.801 - [Debug] [LXC] Container's OpenSSH server closed connection

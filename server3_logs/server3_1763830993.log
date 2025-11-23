@@ -1,0 +1,27 @@
+2025-11-22 12:03:39.861 - [Info] MITM Version: 1.4
+2025-11-22 12:03:39.864 - [Info] Auto Access Enabled: true
+2025-11-22 12:03:39.864 - [Debug] [Init] Auto Access Barrier: true
+2025-11-22 12:03:39.869 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-22 12:04:09.602 - [Debug] [Connection] Attacker connected: 185.180.141.37 | Client Identification: SSH-2.0-Go
+2025-11-22 12:04:17.602 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 12:08:08.549 - [Debug] [Connection] Attacker connected: 159.89.124.112 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-22 12:08:09.081 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 12:08:09.107 - [Debug] [Connection] Attacker connected: 159.89.124.112 | Client Identification: SSH-2.0-paramiko_2.11.0
+2025-11-22 12:08:09.274 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 12:13:12.106 - [Debug] [Connection] Attacker connected: 64.62.156.110 | Client Identification: SSH-2.0-Go
+2025-11-22 12:13:12.544 - [Debug] [Auth] Attacker 64.62.156.110 trying to authenticate with "none"
+2025-11-22 12:13:12.544 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-22 12:13:16.111 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 12:25:58.605 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-22 12:25:59.568 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-22 12:25:59.568 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-22 12:25:59.913 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-22 12:25:59.914 - [Debug] [Auto Access] Attacker: 91.215.85.88, Threshold: 1, Attempts: 1
+2025-11-22 12:25:59.914 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-22 12:25:59.915 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-22 12:26:00.481 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-22 12:26:00.481 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-22 12:26:00.523 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-22 12:26:01.191 - [Debug] [Connection] Attacker closed connection
+2025-11-22 12:26:01.194 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-22 12:26:01.194 - [Debug] [LXC] Container's OpenSSH server closed connection

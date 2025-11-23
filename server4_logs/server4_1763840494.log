@@ -1,0 +1,16 @@
+2025-11-22 14:42:01.418 - [Info] MITM Version: 1.4
+2025-11-22 14:42:01.421 - [Info] Auto Access Enabled: true
+2025-11-22 14:42:01.421 - [Debug] [Init] Auto Access Barrier: true
+2025-11-22 14:42:01.427 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-22 14:44:29.047 - [Debug] [Connection] Attacker connected: 92.118.39.95 | Client Identification: SSH-2.0-Go
+2025-11-22 14:44:29.856 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "none"
+2025-11-22 14:44:29.856 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-22 14:44:30.106 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "password"
+2025-11-22 14:44:30.108 - [Debug] [Auto Access] Attacker: 92.118.39.95, Threshold: 1, Attempts: 1
+2025-11-22 14:44:30.108 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-22 14:44:30.108 - [Debug] [Auto Access] Adding the following credentials: "mina:mina"
+2025-11-22 14:44:30.962 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-22 14:44:30.962 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-22 14:44:30.999 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-22 14:44:31.546 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-22 14:44:32.049 - [Debug] [Connection] Attacker closed connection

@@ -1,0 +1,28 @@
+2025-11-22 23:19:13.531 - [Info] MITM Version: 1.4
+2025-11-22 23:19:13.534 - [Info] Auto Access Enabled: true
+2025-11-22 23:19:13.534 - [Debug] [Init] Auto Access Barrier: true
+2025-11-22 23:19:13.539 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-22 23:19:19.443 - [Debug] [Connection] Attacker connected: 45.78.217.152 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-22 23:19:22.893 - [Debug] [Connection] Attacker connected: 45.78.229.147 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-22 23:19:23.434 - [Debug] [Connection] Attacker connected: 80.94.92.171 | Client Identification: SSH-2.0-Go
+2025-11-22 23:19:23.618 - [Debug] [Auth] Attacker 45.78.217.152 trying to authenticate with "password"
+2025-11-22 23:19:23.619 - [Debug] [Auto Access] Attacker: 45.78.217.152, Threshold: 1, Attempts: 1
+2025-11-22 23:19:23.620 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-22 23:19:23.620 - [Debug] [Auto Access] Adding the following credentials: "root:Pa$sword#"
+2025-11-22 23:19:23.958 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-22 23:19:23.958 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-22 23:19:23.995 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-22 23:19:24.498 - [Debug] [Auth] Attacker 45.78.229.147 trying to authenticate with "password"
+2025-11-22 23:19:24.499 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-11-22 23:19:24.499 - [Debug] [Auth] Attacker: 45.78.229.147 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-22 23:19:24.878 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "none"
+2025-11-22 23:19:24.878 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-22 23:19:25.038 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 23:19:25.052 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-22 23:19:26.823 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "password"
+2025-11-22 23:19:26.823 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-22 23:19:26.823 - [Debug] [Auth] Attacker: 80.94.92.171 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-22 23:19:27.252 - [Debug] [Connection] Attacker closed the connection
+2025-11-22 23:19:42.891 - [Debug] [Connection] Attacker closed connection
+2025-11-22 23:19:42.893 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-22 23:19:42.893 - [Debug] [LXC] Container's OpenSSH server closed connection
