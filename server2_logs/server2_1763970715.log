@@ -1,0 +1,25 @@
+2025-11-24 02:52:33.532 - [Info] MITM Version: 1.4
+2025-11-24 02:52:33.535 - [Info] Auto Access Enabled: true
+2025-11-24 02:52:33.535 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 02:52:33.541 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-24 02:53:45.486 - [Debug] [Connection] Attacker connected: 188.166.3.173 | Client Identification: SSH-2.0-Go
+2025-11-24 02:53:48.135 - [Debug] [Connection] Attacker connected: 165.22.210.143 | Client Identification: SSH-2.0-Go
+2025-11-24 02:53:48.896 - [Debug] [Auth] Attacker 188.166.3.173 trying to authenticate with "none"
+2025-11-24 02:53:48.896 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-24 02:53:49.564 - [Debug] [Auth] Attacker 165.22.210.143 trying to authenticate with "none"
+2025-11-24 02:53:49.564 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-24 02:53:50.073 - [Debug] [Auth] Attacker 165.22.210.143 trying to authenticate with "password"
+2025-11-24 02:53:50.112 - [Debug] [Auto Access] Attacker: 165.22.210.143, Threshold: 1, Attempts: 1
+2025-11-24 02:53:50.112 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 02:53:50.113 - [Debug] [Auto Access] Adding the following credentials: "sgf:sgf"
+2025-11-24 02:53:54.445 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 02:53:54.450 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-24 02:53:54.465 - [Debug] [Connection] Attacker closed the connection
+2025-11-24 02:53:54.473 - [Debug] [Auth] Attacker 188.166.3.173 trying to authenticate with "password"
+2025-11-24 02:53:54.473 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-24 02:53:54.474 - [Debug] [Auth] Attacker: 188.166.3.173 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-24 02:53:54.542 - [Info] Exiting...
+2025-11-24 02:53:54.542 - [Debug] Cleaning up...
+2025-11-24 02:53:54.543 - [Error] Exception occurred: 
+No auth in progress
+2025-11-24 02:53:54.544 - [Debug] Cleaning up LXC Streams: 0
