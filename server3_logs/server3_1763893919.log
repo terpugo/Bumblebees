@@ -1,0 +1,21 @@
+2025-11-23 05:32:27.747 - [Info] MITM Version: 1.4
+2025-11-23 05:32:27.750 - [Info] Auto Access Enabled: true
+2025-11-23 05:32:27.750 - [Debug] [Init] Auto Access Barrier: true
+2025-11-23 05:32:27.755 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-23 05:34:02.851 - [Debug] [Connection] Attacker connected: 103.144.3.40 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-23 05:34:03.125 - [Debug] [Connection] Attacker connected: 45.78.194.166 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-23 05:34:03.280 - [Debug] [Auth] Attacker 103.144.3.40 trying to authenticate with "password"
+2025-11-23 05:34:03.281 - [Debug] [Auto Access] Attacker: 103.144.3.40, Threshold: 1, Attempts: 1
+2025-11-23 05:34:03.281 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-23 05:34:03.281 - [Debug] [Auto Access] Adding the following credentials: "root:asd123ASD"
+2025-11-23 05:34:03.679 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-23 05:34:03.680 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-23 05:34:03.709 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-23 05:34:03.968 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-23 05:34:07.093 - [Debug] [Auth] Attacker 45.78.194.166 trying to authenticate with "password"
+2025-11-23 05:34:07.094 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-11-23 05:34:07.094 - [Debug] [Auth] Attacker: 45.78.194.166 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-23 05:34:08.865 - [Debug] [Connection] Attacker closed the connection
+2025-11-23 05:34:20.573 - [Debug] [Connection] Attacker closed connection
+2025-11-23 05:34:20.576 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-23 05:34:20.577 - [Debug] [LXC] Container's OpenSSH server closed connection

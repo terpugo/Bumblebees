@@ -1,0 +1,22 @@
+2025-11-23 10:24:54.892 - [Info] MITM Version: 1.4
+2025-11-23 10:24:54.895 - [Info] Auto Access Enabled: true
+2025-11-23 10:24:54.895 - [Debug] [Init] Auto Access Barrier: true
+2025-11-23 10:24:54.900 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-23 10:30:40.248 - [Debug] [Connection] Attacker connected: 206.168.34.116 | Client Identification: SSH-2.0-Go
+2025-11-23 10:30:55.249 - [Debug] [Connection] Attacker closed the connection
+2025-11-23 10:35:37.556 - [Debug] [Connection] Attacker connected: 195.96.138.104 | Client Identification: SSH-2.0-paramiko_4.0.0
+2025-11-23 10:35:38.094 - [Debug] [Auth] Attacker 195.96.138.104 trying to authenticate with "password"
+2025-11-23 10:35:38.095 - [Debug] [Auto Access] Attacker: 195.96.138.104, Threshold: 1, Attempts: 1
+2025-11-23 10:35:38.096 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-23 10:35:38.096 - [Debug] [Auto Access] Adding the following credentials: "admin:admin"
+2025-11-23 10:35:38.546 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-23 10:35:38.546 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-23 10:35:38.588 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-23 10:35:39.201 - [Debug] [SHELL] Opened shell for attacker
+2025-11-23 10:35:39.203 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-11-23 10:35:40.696 - [Debug] [SHELL] Attacker ended the shell
+2025-11-23 10:35:40.698 - [Debug] [Connection] Attacker closed connection
+2025-11-23 10:35:40.701 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-23 10:35:40.702 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-11-23 10:35:40.702 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-11-23 10:35:40.702 - [Debug] [SHELL] Honeypot ended shell

