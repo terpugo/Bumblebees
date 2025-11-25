@@ -1,0 +1,20 @@
+2025-11-24 20:03:12.680 - [Info] MITM Version: 1.4
+2025-11-24 20:03:12.684 - [Info] Auto Access Enabled: true
+2025-11-24 20:03:12.684 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 20:03:12.690 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-24 20:11:07.274 - [Debug] [Connection] Attacker connected: 88.175.224.253 | Client Identification: SSH-2.0-paramiko_4.0.0
+2025-11-24 20:11:07.278 - [Debug] [Connection] Attacker connected: 88.175.224.253 | Client Identification: SSH-2.0-paramiko_4.0.0
+2025-11-24 20:11:08.433 - [Debug] [Auth] Attacker 88.175.224.253 trying to authenticate with "password"
+2025-11-24 20:11:08.435 - [Debug] [Auto Access] Attacker: 88.175.224.253, Threshold: 1, Attempts: 1
+2025-11-24 20:11:08.435 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 20:11:08.435 - [Debug] [Auto Access] Adding the following credentials: "pi:raspberry"
+2025-11-24 20:11:08.732 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 20:11:08.732 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-24 20:11:08.735 - [Debug] [Auth] Attacker 88.175.224.253 trying to authenticate with "password"
+2025-11-24 20:11:08.736 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-24 20:11:08.737 - [Debug] [Auth] Attacker: 88.175.224.253 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-24 20:11:08.768 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-24 20:11:09.149 - [Debug] [Connection] Attacker closed the connection
+2025-11-24 20:11:09.489 - [Debug] [Connection] Attacker closed connection
+2025-11-24 20:11:09.493 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-24 20:11:09.494 - [Debug] [LXC] Container's OpenSSH server closed connection
