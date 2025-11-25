@@ -1,0 +1,16 @@
+2025-11-24 12:19:40.957 - [Info] MITM Version: 1.4
+2025-11-24 12:19:40.959 - [Info] Auto Access Enabled: true
+2025-11-24 12:19:40.960 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 12:19:40.965 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-24 12:20:23.355 - [Debug] [Connection] Attacker connected: 68.183.93.67 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-24 12:20:24.781 - [Debug] [Auth] Attacker 68.183.93.67 trying to authenticate with "password"
+2025-11-24 12:20:24.782 - [Debug] [Auto Access] Attacker: 68.183.93.67, Threshold: 1, Attempts: 1
+2025-11-24 12:20:24.783 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 12:20:24.783 - [Debug] [Auto Access] Adding the following credentials: "nextcloud:nextcloud"
+2025-11-24 12:20:25.188 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 12:20:25.188 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-24 12:20:25.229 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-24 12:20:26.229 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-24 12:20:39.934 - [Debug] [Connection] Attacker closed connection
+2025-11-24 12:20:39.937 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-24 12:20:39.937 - [Debug] [LXC] Container's OpenSSH server closed connection

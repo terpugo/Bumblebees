@@ -1,0 +1,22 @@
+2025-11-24 08:06:08.057 - [Info] MITM Version: 1.4
+2025-11-24 08:06:08.059 - [Info] Auto Access Enabled: true
+2025-11-24 08:06:08.059 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 08:06:08.064 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-24 08:10:36.029 - [Debug] [Connection] Attacker connected: 221.120.57.173 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-24 08:10:37.657 - [Debug] [Connection] Attacker connected: 167.99.213.252 | Client Identification: SSH-2.0-Go
+2025-11-24 08:10:38.276 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "none"
+2025-11-24 08:10:38.276 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-24 08:10:38.342 - [Debug] [Auth] Attacker 221.120.57.173 trying to authenticate with "password"
+2025-11-24 08:10:38.343 - [Debug] [Auto Access] Attacker: 221.120.57.173, Threshold: 1, Attempts: 1
+2025-11-24 08:10:38.343 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 08:10:38.343 - [Debug] [Auto Access] Adding the following credentials: "user:user666"
+2025-11-24 08:10:38.803 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 08:10:38.803 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-24 08:10:38.806 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "password"
+2025-11-24 08:10:38.807 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-24 08:10:38.807 - [Debug] [Auth] Attacker: 167.99.213.252 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-24 08:10:38.848 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-24 08:10:39.062 - [Debug] [Connection] Attacker closed the connection
+2025-11-24 08:10:40.620 - [Debug] [Connection] Attacker closed connection
+2025-11-24 08:10:40.624 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-24 08:10:40.625 - [Debug] [LXC] Container's OpenSSH server closed connection

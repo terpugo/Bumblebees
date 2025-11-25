@@ -1,0 +1,22 @@
+2025-11-24 09:15:37.247 - [Info] MITM Version: 1.4
+2025-11-24 09:15:37.249 - [Info] Auto Access Enabled: true
+2025-11-24 09:15:37.249 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 09:15:37.254 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-24 09:17:09.039 - [Debug] [Connection] Attacker connected: 203.92.36.109 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-24 09:17:11.860 - [Debug] [Auth] Attacker 203.92.36.109 trying to authenticate with "password"
+2025-11-24 09:17:11.861 - [Debug] [Auto Access] Attacker: 203.92.36.109, Threshold: 1, Attempts: 1
+2025-11-24 09:17:11.861 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 09:17:11.861 - [Debug] [Auto Access] Adding the following credentials: "user:111111"
+2025-11-24 09:17:12.259 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 09:17:12.259 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-24 09:17:12.298 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-24 09:17:12.379 - [Debug] [Connection] Attacker connected: 167.99.213.252 | Client Identification: SSH-2.0-Go
+2025-11-24 09:17:13.262 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "none"
+2025-11-24 09:17:13.262 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-24 09:17:13.542 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "password"
+2025-11-24 09:17:13.543 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-11-24 09:17:13.543 - [Debug] [Auth] Attacker: 167.99.213.252 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-24 09:17:13.766 - [Debug] [Connection] Attacker closed the connection
+2025-11-24 09:17:14.459 - [Debug] [Connection] Attacker closed connection
+2025-11-24 09:17:14.463 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-24 09:17:14.463 - [Debug] [LXC] Container's OpenSSH server closed connection

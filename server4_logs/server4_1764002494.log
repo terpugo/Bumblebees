@@ -1,0 +1,24 @@
+2025-11-24 11:42:02.638 - [Info] MITM Version: 1.4
+2025-11-24 11:42:02.640 - [Info] Auto Access Enabled: true
+2025-11-24 11:42:02.640 - [Debug] [Init] Auto Access Barrier: true
+2025-11-24 11:42:02.645 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-24 11:42:21.493 - [Debug] [Connection] Attacker connected: 198.235.24.79 | Client Identification: SSH-2.0-ZGrab ZGrab SSH Survey
+2025-11-24 11:42:23.662 - [Debug] [Connection] Attacker closed the connection
+2025-11-24 11:43:42.352 - [Debug] [Connection] Attacker connected: 167.99.213.252 | Client Identification: SSH-2.0-Go
+2025-11-24 11:43:42.799 - [Debug] [Connection] Attacker connected: 68.183.93.67 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-24 11:43:43.044 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "none"
+2025-11-24 11:43:43.045 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-24 11:43:43.270 - [Debug] [Auth] Attacker 167.99.213.252 trying to authenticate with "password"
+2025-11-24 11:43:43.272 - [Debug] [Auto Access] Attacker: 167.99.213.252, Threshold: 1, Attempts: 1
+2025-11-24 11:43:43.272 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-24 11:43:43.272 - [Debug] [Auto Access] Adding the following credentials: "root:2c00l4yallNegrJos99"
+2025-11-24 11:43:43.706 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-24 11:43:43.706 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-24 11:43:43.745 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-24 11:43:44.246 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-24 11:43:44.700 - [Debug] [Auth] Attacker 68.183.93.67 trying to authenticate with "password"
+2025-11-24 11:43:44.700 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-11-24 11:43:44.701 - [Debug] [Auth] Attacker: 68.183.93.67 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-24 11:43:44.745 - [Debug] [Connection] Attacker closed connection
+2025-11-24 11:43:44.748 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-24 11:43:44.749 - [Debug] [LXC] Container's OpenSSH server closed connection
