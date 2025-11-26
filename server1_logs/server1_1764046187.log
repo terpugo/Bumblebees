@@ -2,3 +2,14 @@
 2025-11-24 23:50:13.312 - [Info] Auto Access Enabled: true
 2025-11-24 23:50:13.313 - [Debug] [Init] Auto Access Barrier: true
 2025-11-24 23:50:13.318 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-25 00:00:27.800 - [Debug] [Connection] Attacker connected: 197.251.249.75 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-25 00:00:29.900 - [Debug] [Auth] Attacker 197.251.249.75 trying to authenticate with "password"
+2025-11-25 00:00:29.901 - [Debug] [Auto Access] Attacker: 197.251.249.75, Threshold: 1, Attempts: 1
+2025-11-25 00:00:29.901 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-25 00:00:29.901 - [Debug] [Auto Access] Adding the following credentials: "ubnt:444444"
+2025-11-25 00:00:30.270 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-25 00:00:30.270 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-25 00:00:30.307 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-25 00:00:31.869 - [Debug] [Connection] Attacker closed connection
+2025-11-25 00:00:31.873 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-25 00:00:31.873 - [Debug] [LXC] Container's OpenSSH server closed connection

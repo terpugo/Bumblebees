@@ -1,0 +1,22 @@
+2025-11-25 14:15:37.723 - [Info] MITM Version: 1.4
+2025-11-25 14:15:37.725 - [Info] Auto Access Enabled: true
+2025-11-25 14:15:37.725 - [Debug] [Init] Auto Access Barrier: true
+2025-11-25 14:15:37.730 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-25 14:17:26.680 - [Debug] [Connection] Attacker connected: 200.37.179.83 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-25 14:17:28.335 - [Debug] [Auth] Attacker 200.37.179.83 trying to authenticate with "password"
+2025-11-25 14:17:28.336 - [Debug] [Auto Access] Attacker: 200.37.179.83, Threshold: 1, Attempts: 1
+2025-11-25 14:17:28.336 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-25 14:17:28.337 - [Debug] [Auto Access] Adding the following credentials: "config:77777"
+2025-11-25 14:17:29.321 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-25 14:17:29.322 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-25 14:17:29.327 - [Debug] [Connection] Attacker connected: 138.68.235.255 | Client Identification: SSH-2.0-Go
+2025-11-25 14:17:29.358 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-25 14:17:29.771 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "none"
+2025-11-25 14:17:29.771 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-25 14:17:29.944 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "password"
+2025-11-25 14:17:29.944 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-25 14:17:29.944 - [Debug] [Auth] Attacker: 138.68.235.255 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-25 14:17:30.115 - [Debug] [Connection] Attacker closed the connection
+2025-11-25 14:17:30.592 - [Debug] [Connection] Attacker closed connection
+2025-11-25 14:17:30.595 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-25 14:17:30.595 - [Debug] [LXC] Container's OpenSSH server closed connection
