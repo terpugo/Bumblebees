@@ -1,0 +1,16 @@
+2025-11-25 19:31:11.475 - [Info] MITM Version: 1.4
+2025-11-25 19:31:11.477 - [Info] Auto Access Enabled: true
+2025-11-25 19:31:11.477 - [Debug] [Init] Auto Access Barrier: true
+2025-11-25 19:31:11.483 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-25 19:31:48.880 - [Debug] [Connection] Attacker connected: 154.221.27.234 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-25 19:31:50.309 - [Debug] [Auth] Attacker 154.221.27.234 trying to authenticate with "password"
+2025-11-25 19:31:50.310 - [Debug] [Auto Access] Attacker: 154.221.27.234, Threshold: 1, Attempts: 1
+2025-11-25 19:31:50.311 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-25 19:31:50.311 - [Debug] [Auto Access] Adding the following credentials: "dolphinscheduler:dolphinscheduler"
+2025-11-25 19:31:50.700 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-25 19:31:50.701 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-25 19:31:50.735 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-25 19:31:51.740 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-25 19:32:05.466 - [Debug] [Connection] Attacker closed connection
+2025-11-25 19:32:05.470 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-25 19:32:05.470 - [Debug] [LXC] Container's OpenSSH server closed connection
