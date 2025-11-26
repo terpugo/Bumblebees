@@ -1,0 +1,16 @@
+2025-11-26 00:52:19.176 - [Info] MITM Version: 1.4
+2025-11-26 00:52:19.178 - [Info] Auto Access Enabled: true
+2025-11-26 00:52:19.178 - [Debug] [Init] Auto Access Barrier: true
+2025-11-26 00:52:19.184 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-26 00:53:34.457 - [Debug] [Connection] Attacker connected: 47.198.79.182 | Client Identification: SSH-2.0-OpenSSH
+2025-11-26 00:53:35.059 - [Debug] [Auth] Attacker 47.198.79.182 trying to authenticate with "password"
+2025-11-26 00:53:35.060 - [Debug] [Auto Access] Attacker: 47.198.79.182, Threshold: 1, Attempts: 1
+2025-11-26 00:53:35.060 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-26 00:53:35.060 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-26 00:53:35.414 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-26 00:53:35.414 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-26 00:53:35.452 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-26 00:53:40.938 - [Debug] [EXEC] Noninteractive mode attacker command: mount -o remount,rw /||sudo mount -o remount,rw /;mkdir -p /dev/shm/rondo/rondo2 /mnt/rondo/rondo2 /tmp/rondo/rondo2 /var/tmp/rondo/rondo2 rondo/rondo2;cd /tmp/rondo||cd /var/tmp/rondo||cd /dev/shm/rondo||cd /mnt/rondo||cd rondo;ls -F
+2025-11-26 00:53:42.947 - [Debug] [Connection] Attacker closed connection
+2025-11-26 00:53:42.949 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-26 00:53:42.950 - [Debug] [LXC] Container's OpenSSH server closed connection
