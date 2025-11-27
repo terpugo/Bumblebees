@@ -1,0 +1,18 @@
+2025-11-27 00:28:09.727 - [Info] MITM Version: 1.4
+2025-11-27 00:28:09.729 - [Info] Auto Access Enabled: true
+2025-11-27 00:28:09.729 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 00:28:09.735 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-27 00:28:13.804 - [Debug] [Connection] Attacker connected: 138.68.235.255 | Client Identification: SSH-2.0-Go
+2025-11-27 00:28:14.442 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "none"
+2025-11-27 00:28:14.443 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-27 00:28:14.607 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "password"
+2025-11-27 00:28:14.608 - [Debug] [Auto Access] Attacker: 138.68.235.255, Threshold: 1, Attempts: 1
+2025-11-27 00:28:14.608 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 00:28:14.608 - [Debug] [Auto Access] Adding the following credentials: "phpmyadmin:phpmyadmin"
+2025-11-27 00:28:15.026 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 00:28:15.026 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-27 00:28:15.060 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 00:28:15.547 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-27 00:28:16.308 - [Debug] [Connection] Attacker closed connection
+2025-11-27 00:28:16.311 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 00:28:16.312 - [Debug] [LXC] Container's OpenSSH server closed connection

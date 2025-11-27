@@ -1,0 +1,22 @@
+2025-11-27 04:36:03.422 - [Info] MITM Version: 1.4
+2025-11-27 04:36:03.425 - [Info] Auto Access Enabled: true
+2025-11-27 04:36:03.425 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 04:36:03.430 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-27 04:38:40.461 - [Debug] [Connection] Attacker connected: 222.102.214.75 | Client Identification: SSH-2.0-SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2025-11-27 04:38:44.727 - [Debug] [Connection] Attacker closed the connection
+2025-11-27 04:43:35.350 - [Debug] [Connection] Attacker connected: 142.93.252.174 | Client Identification: SSH-2.0-Go
+2025-11-27 04:43:45.356 - [Debug] [Connection] Attacker closed the connection
+2025-11-27 04:44:20.986 - [Debug] [Connection] Attacker connected: 138.68.235.255 | Client Identification: SSH-2.0-Go
+2025-11-27 04:44:21.414 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "none"
+2025-11-27 04:44:21.414 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-27 04:44:21.727 - [Debug] [Auth] Attacker 138.68.235.255 trying to authenticate with "password"
+2025-11-27 04:44:21.730 - [Debug] [Auto Access] Attacker: 138.68.235.255, Threshold: 1, Attempts: 1
+2025-11-27 04:44:21.731 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 04:44:21.731 - [Debug] [Auto Access] Adding the following credentials: "dvs:dvs"
+2025-11-27 04:44:22.405 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 04:44:22.405 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-27 04:44:22.445 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 04:44:22.750 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-11-27 04:44:23.747 - [Debug] [Connection] Attacker closed connection
+2025-11-27 04:44:23.751 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 04:44:23.752 - [Debug] [LXC] Container's OpenSSH server closed connection

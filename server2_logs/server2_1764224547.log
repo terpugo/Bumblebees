@@ -1,0 +1,22 @@
+2025-11-27 01:22:55.741 - [Info] MITM Version: 1.4
+2025-11-27 01:22:55.743 - [Info] Auto Access Enabled: true
+2025-11-27 01:22:55.743 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 01:22:55.749 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-27 01:23:41.725 - [Debug] [Connection] Attacker connected: 80.94.92.169 | Client Identification: SSH-2.0-Go
+2025-11-27 01:23:42.827 - [Debug] [Auth] Attacker 80.94.92.169 trying to authenticate with "none"
+2025-11-27 01:23:42.827 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-27 01:23:43.084 - [Debug] [Auth] Attacker 80.94.92.169 trying to authenticate with "password"
+2025-11-27 01:23:43.086 - [Debug] [Auto Access] Attacker: 80.94.92.169, Threshold: 1, Attempts: 1
+2025-11-27 01:23:43.087 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 01:23:43.087 - [Debug] [Auto Access] Adding the following credentials: "sol:!@#$%^"
+2025-11-27 01:23:43.804 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 01:23:43.804 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-27 01:23:43.844 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 01:23:44.012 - [Debug] [Connection] Attacker connected: 77.235.115.42 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-27 01:23:44.494 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-27 01:23:45.106 - [Debug] [Auth] Attacker 77.235.115.42 trying to authenticate with "password"
+2025-11-27 01:23:45.107 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-27 01:23:45.107 - [Debug] [Auth] Attacker: 77.235.115.42 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-27 01:23:45.328 - [Debug] [Connection] Attacker closed connection
+2025-11-27 01:23:45.332 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 01:23:45.332 - [Debug] [LXC] Container's OpenSSH server closed connection

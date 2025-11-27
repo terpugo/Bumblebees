@@ -1,0 +1,34 @@
+2025-11-27 03:34:18.292 - [Info] MITM Version: 1.4
+2025-11-27 03:34:18.294 - [Info] Auto Access Enabled: true
+2025-11-27 03:34:18.294 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 03:34:18.300 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-27 03:34:33.423 - [Debug] [Connection] Attacker connected: 101.126.55.95 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-27 03:34:36.689 - [Debug] [Connection] Attacker connected: 14.103.25.86 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-27 03:34:37.637 - [Debug] [Connection] Attacker connected: 14.103.127.243 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-27 03:34:38.301 - [Debug] [Auth] Attacker 101.126.55.95 trying to authenticate with "password"
+2025-11-27 03:34:38.303 - [Debug] [Auto Access] Attacker: 101.126.55.95, Threshold: 1, Attempts: 1
+2025-11-27 03:34:38.303 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 03:34:38.303 - [Debug] [Auto Access] Adding the following credentials: "oracle:oracle"
+2025-11-27 03:34:38.901 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 03:34:38.901 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-27 03:34:38.905 - [Debug] [Auth] Attacker 14.103.25.86 trying to authenticate with "password"
+2025-11-27 03:34:38.905 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-27 03:34:38.906 - [Debug] [Auth] Attacker: 14.103.25.86 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-27 03:34:38.906 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-11-27 03:34:38.942 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 03:34:39.345 - [Debug] [Connection] Attacker closed the connection
+2025-11-27 03:34:39.768 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-11-27 03:34:39.769 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-27 03:34:39.795 - [Debug] [Auth] Attacker 14.103.127.243 trying to authenticate with "password"
+2025-11-27 03:34:39.795 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-27 03:34:39.795 - [Debug] [Auth] Attacker: 14.103.127.243 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-27 03:34:40.085 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-11-27 03:34:40.085 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-27 03:34:40.086 - [Debug] [Auth] Attacker: 91.215.85.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-27 03:34:40.222 - [Debug] [Connection] Attacker closed the connection
+2025-11-27 03:34:40.412 - [Debug] [Connection] Attacker closed the connection
+2025-11-27 03:34:41.111 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-27 03:35:43.005 - [Debug] [Connection] Client error on ssh server
+2025-11-27 03:35:43.006 - [Debug] [Connection] Attacker closed connection
+2025-11-27 03:35:43.010 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 03:35:43.010 - [Debug] [LXC] Container's OpenSSH server closed connection

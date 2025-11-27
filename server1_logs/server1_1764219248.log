@@ -2,3 +2,15 @@
 2025-11-26 23:54:36.521 - [Info] Auto Access Enabled: true
 2025-11-26 23:54:36.522 - [Debug] [Init] Auto Access Barrier: true
 2025-11-26 23:54:36.527 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-27 00:00:44.336 - [Debug] [Connection] Attacker connected: 197.5.145.73 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-27 00:00:45.007 - [Debug] [Auth] Attacker 197.5.145.73 trying to authenticate with "password"
+2025-11-27 00:00:45.013 - [Debug] [Auto Access] Attacker: 197.5.145.73, Threshold: 1, Attempts: 1
+2025-11-27 00:00:45.013 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 00:00:45.013 - [Debug] [Auto Access] Adding the following credentials: "pivpn:pivpn"
+2025-11-27 00:00:45.807 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 00:00:45.808 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-27 00:00:45.857 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 00:00:46.367 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-27 00:01:03.223 - [Debug] [Connection] Attacker closed connection
+2025-11-27 00:01:03.227 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 00:01:03.227 - [Debug] [LXC] Container's OpenSSH server closed connection
