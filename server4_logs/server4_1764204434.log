@@ -1,0 +1,22 @@
+2025-11-26 19:47:42.564 - [Info] MITM Version: 1.4
+2025-11-26 19:47:42.566 - [Info] Auto Access Enabled: true
+2025-11-26 19:47:42.566 - [Debug] [Init] Auto Access Barrier: true
+2025-11-26 19:47:42.571 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-26 19:48:00.314 - [Debug] [Connection] Attacker connected: 101.36.117.148 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-26 19:48:00.358 - [Debug] [Connection] Attacker connected: 167.99.242.83 | Client Identification: SSH-2.0-Go
+2025-11-26 19:48:00.945 - [Debug] [Auth] Attacker 167.99.242.83 trying to authenticate with "none"
+2025-11-26 19:48:00.945 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-26 19:48:01.169 - [Debug] [Auth] Attacker 167.99.242.83 trying to authenticate with "password"
+2025-11-26 19:48:01.170 - [Debug] [Auto Access] Attacker: 167.99.242.83, Threshold: 1, Attempts: 1
+2025-11-26 19:48:01.170 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-26 19:48:01.170 - [Debug] [Auto Access] Adding the following credentials: "sol:123123123"
+2025-11-26 19:48:01.690 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-26 19:48:01.690 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-26 19:48:01.728 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-26 19:48:02.173 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-26 19:48:02.194 - [Debug] [Auth] Attacker 101.36.117.148 trying to authenticate with "password"
+2025-11-26 19:48:02.194 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-26 19:48:02.194 - [Debug] [Auth] Attacker: 101.36.117.148 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-26 19:48:02.625 - [Debug] [Connection] Attacker closed connection
+2025-11-26 19:48:02.629 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-26 19:48:02.630 - [Debug] [LXC] Container's OpenSSH server closed connection
