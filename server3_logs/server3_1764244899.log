@@ -1,0 +1,16 @@
+2025-11-27 07:02:06.369 - [Info] MITM Version: 1.4
+2025-11-27 07:02:06.372 - [Info] Auto Access Enabled: true
+2025-11-27 07:02:06.372 - [Debug] [Init] Auto Access Barrier: true
+2025-11-27 07:02:06.377 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-27 07:02:46.291 - [Debug] [Connection] Attacker connected: 103.147.211.2 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-27 07:02:47.744 - [Debug] [Auth] Attacker 103.147.211.2 trying to authenticate with "password"
+2025-11-27 07:02:47.746 - [Debug] [Auto Access] Attacker: 103.147.211.2, Threshold: 1, Attempts: 1
+2025-11-27 07:02:47.746 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-27 07:02:47.746 - [Debug] [Auto Access] Adding the following credentials: "magento:magento@123"
+2025-11-27 07:02:48.616 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-27 07:02:48.616 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-27 07:02:48.661 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-27 07:02:49.600 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-27 07:03:10.593 - [Debug] [Connection] Attacker closed connection
+2025-11-27 07:03:10.596 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-27 07:03:10.597 - [Debug] [LXC] Container's OpenSSH server closed connection
