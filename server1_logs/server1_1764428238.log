@@ -1,0 +1,16 @@
+2025-11-29 09:57:47.025 - [Info] MITM Version: 1.4
+2025-11-29 09:57:47.028 - [Info] Auto Access Enabled: true
+2025-11-29 09:57:47.029 - [Debug] [Init] Auto Access Barrier: true
+2025-11-29 09:57:47.035 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-11-29 09:57:52.004 - [Debug] [Connection] Attacker connected: 61.220.235.10 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-29 09:57:53.191 - [Debug] [Auth] Attacker 61.220.235.10 trying to authenticate with "password"
+2025-11-29 09:57:53.193 - [Debug] [Auto Access] Attacker: 61.220.235.10, Threshold: 1, Attempts: 1
+2025-11-29 09:57:53.194 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-29 09:57:53.194 - [Debug] [Auto Access] Adding the following credentials: "redmine:redmine@123"
+2025-11-29 09:57:53.733 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-29 09:57:53.734 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-11-29 09:57:53.773 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-29 09:57:54.610 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-29 09:58:12.030 - [Debug] [Connection] Attacker closed connection
+2025-11-29 09:58:12.033 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-29 09:58:12.033 - [Debug] [LXC] Container's OpenSSH server closed connection

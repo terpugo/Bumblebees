@@ -1,0 +1,24 @@
+2025-11-29 03:51:43.902 - [Info] MITM Version: 1.4
+2025-11-29 03:51:43.905 - [Info] Auto Access Enabled: true
+2025-11-29 03:51:43.905 - [Debug] [Init] Auto Access Barrier: true
+2025-11-29 03:51:43.911 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-29 03:54:11.758 - [Debug] [Connection] Attacker connected: 115.190.216.164 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-29 03:54:12.667 - [Debug] [Connection] Attacker connected: 45.79.181.251 | Client Identification: SSH-2.0-Go
+2025-11-29 03:54:12.704 - [Debug] [Connection] Attacker closed the connection
+2025-11-29 03:54:12.713 - [Debug] [Connection] Attacker connected: 45.79.181.251 | Client Identification: SSH-2.0-Go
+2025-11-29 03:54:12.760 - [Debug] [Connection] Attacker closed the connection
+2025-11-29 03:54:12.765 - [Debug] [Connection] Attacker connected: 45.79.181.251 | Client Identification: SSH-2.0-Go
+2025-11-29 03:54:12.781 - [Debug] [Connection] Client error on ssh server
+2025-11-29 03:54:12.781 - [Debug] [Connection] Attacker closed the connection
+2025-11-29 03:54:33.992 - [Debug] [Connection] Attacker connected: 101.47.160.250 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-29 03:54:37.384 - [Debug] [Auth] Attacker 101.47.160.250 trying to authenticate with "password"
+2025-11-29 03:54:37.407 - [Debug] [Auto Access] Attacker: 101.47.160.250, Threshold: 1, Attempts: 1
+2025-11-29 03:54:37.407 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-29 03:54:37.407 - [Debug] [Auto Access] Adding the following credentials: "casaos:123456"
+2025-11-29 03:54:38.875 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-29 03:54:38.875 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-29 03:54:39.080 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-29 03:54:40.708 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-29 03:55:00.111 - [Debug] [Connection] Attacker closed connection
+2025-11-29 03:55:00.115 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-29 03:55:00.115 - [Debug] [LXC] Container's OpenSSH server closed connection
