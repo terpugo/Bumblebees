@@ -1,0 +1,22 @@
+2025-11-28 14:49:24.039 - [Info] MITM Version: 1.4
+2025-11-28 14:49:24.041 - [Info] Auto Access Enabled: true
+2025-11-28 14:49:24.042 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 14:49:24.046 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-28 14:58:19.965 - [Debug] [Connection] Attacker connected: 218.202.91.147 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:58:20.710 - [Debug] [Connection] Attacker connected: 213.124.221.2 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:58:20.808 - [Debug] [Connection] Attacker connected: 178.178.222.50 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:58:21.520 - [Debug] [Auth] Attacker 213.124.221.2 trying to authenticate with "password"
+2025-11-28 14:58:21.523 - [Debug] [Auto Access] Attacker: 213.124.221.2, Threshold: 1, Attempts: 1
+2025-11-28 14:58:21.523 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 14:58:21.523 - [Debug] [Auto Access] Adding the following credentials: "root:root1234567"
+2025-11-28 14:58:21.927 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 14:58:21.927 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-28 14:58:21.974 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 14:58:22.012 - [Debug] [Connection] Attacker connected: 68.7.114.69 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:58:22.438 - [Debug] [Connection] Attacker connected: 197.219.210.86 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:58:22.487 - [Debug] [Connection] Attacker closed connection
+2025-11-28 14:58:22.488 - [Debug] [Auth] Attacker 178.178.222.50 trying to authenticate with "password"
+2025-11-28 14:58:22.488 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 14:58:22.488 - [Debug] [Auth] Attacker: 178.178.222.50 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 14:58:22.489 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 14:58:22.490 - [Debug] [LXC] Container's OpenSSH server closed connection

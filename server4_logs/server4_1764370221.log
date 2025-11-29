@@ -1,0 +1,21 @@
+2025-11-28 17:50:47.397 - [Info] MITM Version: 1.4
+2025-11-28 17:50:47.399 - [Info] Auto Access Enabled: true
+2025-11-28 17:50:47.399 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 17:50:47.403 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-28 17:51:51.520 - [Debug] [Connection] Attacker connected: 203.90.110.186 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-28 17:51:52.860 - [Debug] [Auth] Attacker 203.90.110.186 trying to authenticate with "password"
+2025-11-28 17:51:52.861 - [Debug] [Auto Access] Attacker: 203.90.110.186, Threshold: 1, Attempts: 1
+2025-11-28 17:51:52.861 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 17:51:52.861 - [Debug] [Auto Access] Adding the following credentials: "ionadmin:ionadmin123"
+2025-11-28 17:51:53.294 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 17:51:53.294 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-28 17:51:53.329 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 17:51:54.188 - [Debug] [Connection] Attacker connected: 220.80.219.163 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 17:51:54.266 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-28 17:51:56.673 - [Debug] [Auth] Attacker 220.80.219.163 trying to authenticate with "password"
+2025-11-28 17:51:56.673 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 17:51:56.674 - [Debug] [Auth] Attacker: 220.80.219.163 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 17:51:57.664 - [Debug] [Connection] Attacker closed the connection
+2025-11-28 17:52:13.873 - [Debug] [Connection] Attacker closed connection
+2025-11-28 17:52:13.877 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 17:52:13.878 - [Debug] [LXC] Container's OpenSSH server closed connection

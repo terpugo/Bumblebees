@@ -1,0 +1,22 @@
+2025-11-28 07:07:00.932 - [Info] MITM Version: 1.4
+2025-11-28 07:07:00.934 - [Info] Auto Access Enabled: true
+2025-11-28 07:07:00.934 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 07:07:00.939 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-28 07:07:39.258 - [Debug] [Connection] Attacker connected: 121.202.143.88 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 07:07:40.787 - [Debug] [Connection] Attacker connected: 80.94.92.165 | Client Identification: SSH-2.0-Go
+2025-11-28 07:07:41.615 - [Debug] [Auth] Attacker 121.202.143.88 trying to authenticate with "password"
+2025-11-28 07:07:41.617 - [Debug] [Auto Access] Attacker: 121.202.143.88, Threshold: 1, Attempts: 1
+2025-11-28 07:07:41.617 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 07:07:41.617 - [Debug] [Auto Access] Adding the following credentials: "supervisor:0987654321"
+2025-11-28 07:07:41.940 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 07:07:41.940 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-28 07:07:41.943 - [Debug] [Auth] Attacker 80.94.92.165 trying to authenticate with "none"
+2025-11-28 07:07:41.943 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-28 07:07:41.974 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 07:07:42.309 - [Debug] [Auth] Attacker 80.94.92.165 trying to authenticate with "password"
+2025-11-28 07:07:42.310 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 07:07:42.310 - [Debug] [Auth] Attacker: 80.94.92.165 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 07:07:42.598 - [Debug] [Connection] Attacker closed the connection
+2025-11-28 07:07:43.901 - [Debug] [Connection] Attacker closed connection
+2025-11-28 07:07:43.903 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 07:07:43.904 - [Debug] [LXC] Container's OpenSSH server closed connection

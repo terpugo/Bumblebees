@@ -1,0 +1,28 @@
+2025-11-28 14:35:59.689 - [Info] MITM Version: 1.4
+2025-11-28 14:35:59.691 - [Info] Auto Access Enabled: true
+2025-11-28 14:35:59.691 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 14:35:59.695 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-11-28 14:36:11.797 - [Debug] [Connection] Attacker connected: 183.167.198.31 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:12.576 - [Debug] [Connection] Attacker connected: 183.111.171.9 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:12.934 - [Debug] [Connection] Attacker connected: 31.173.67.115 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:12.988 - [Debug] [Connection] Attacker connected: 218.146.255.221 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:13.157 - [Debug] [Connection] Attacker connected: 103.81.236.82 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:13.280 - [Debug] [Connection] Attacker connected: 211.44.170.154 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:13.731 - [Debug] [Auth] Attacker 183.167.198.31 trying to authenticate with "password"
+2025-11-28 14:36:13.732 - [Debug] [Auto Access] Attacker: 183.167.198.31, Threshold: 1, Attempts: 1
+2025-11-28 14:36:13.732 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 14:36:13.732 - [Debug] [Auto Access] Adding the following credentials: "root:root1234567"
+2025-11-28 14:36:14.086 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 14:36:14.087 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-11-28 14:36:14.124 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 14:36:14.605 - [Debug] [Auth] Attacker 31.173.67.115 trying to authenticate with "password"
+2025-11-28 14:36:14.605 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 14:36:14.606 - [Debug] [Auth] Attacker: 31.173.67.115 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 14:36:15.086 - [Debug] [Connection] Attacker closed the connection
+2025-11-28 14:36:15.358 - [Debug] [Connection] Attacker connected: 183.171.15.149 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 14:36:15.363 - [Debug] [Auth] Attacker 103.81.236.82 trying to authenticate with "password"
+2025-11-28 14:36:15.363 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 14:36:15.363 - [Debug] [Auth] Attacker: 103.81.236.82 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 14:36:15.858 - [Debug] [Connection] Attacker closed connection
+2025-11-28 14:36:15.860 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 14:36:15.861 - [Debug] [LXC] Container's OpenSSH server closed connection

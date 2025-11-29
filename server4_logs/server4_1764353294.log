@@ -1,0 +1,22 @@
+2025-11-28 13:08:40.573 - [Info] MITM Version: 1.4
+2025-11-28 13:08:40.575 - [Info] Auto Access Enabled: true
+2025-11-28 13:08:40.576 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 13:08:40.580 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-11-28 13:10:10.451 - [Debug] [Connection] Attacker connected: 92.118.39.95 | Client Identification: SSH-2.0-Go
+2025-11-28 13:10:10.708 - [Debug] [Connection] Attacker connected: 180.94.74.94 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-11-28 13:10:11.263 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "none"
+2025-11-28 13:10:11.263 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-28 13:10:11.490 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "password"
+2025-11-28 13:10:11.491 - [Debug] [Auto Access] Attacker: 92.118.39.95, Threshold: 1, Attempts: 1
+2025-11-28 13:10:11.491 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 13:10:11.492 - [Debug] [Auto Access] Adding the following credentials: "ubuntu:QWER!@#$"
+2025-11-28 13:10:11.890 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 13:10:11.891 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-11-28 13:10:11.924 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 13:10:12.387 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-28 13:10:12.544 - [Debug] [Auth] Attacker 180.94.74.94 trying to authenticate with "password"
+2025-11-28 13:10:12.544 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 13:10:12.544 - [Debug] [Auth] Attacker: 180.94.74.94 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 13:10:12.877 - [Debug] [Connection] Attacker closed connection
+2025-11-28 13:10:12.881 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 13:10:12.881 - [Debug] [LXC] Container's OpenSSH server closed connection

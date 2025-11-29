@@ -1,0 +1,22 @@
+2025-11-28 21:35:36.317 - [Info] MITM Version: 1.4
+2025-11-28 21:35:36.319 - [Info] Auto Access Enabled: true
+2025-11-28 21:35:36.320 - [Debug] [Init] Auto Access Barrier: true
+2025-11-28 21:35:36.325 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-28 21:36:11.149 - [Debug] [Connection] Attacker connected: 80.94.92.171 | Client Identification: SSH-2.0-Go
+2025-11-28 21:36:12.296 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "none"
+2025-11-28 21:36:12.296 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-11-28 21:36:12.594 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "password"
+2025-11-28 21:36:12.596 - [Debug] [Auto Access] Attacker: 80.94.92.171, Threshold: 1, Attempts: 1
+2025-11-28 21:36:12.596 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-28 21:36:12.596 - [Debug] [Auto Access] Adding the following credentials: "solv:solv"
+2025-11-28 21:36:13.084 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-28 21:36:13.085 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-28 21:36:13.122 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-28 21:36:13.130 - [Debug] [Connection] Attacker connected: 36.50.55.18 | Client Identification: SSH-2.0-libssh_0.9.6
+2025-11-28 21:36:14.366 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-11-28 21:36:14.831 - [Debug] [Auth] Attacker 36.50.55.18 trying to authenticate with "password"
+2025-11-28 21:36:14.831 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-11-28 21:36:14.831 - [Debug] [Auth] Attacker: 36.50.55.18 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-28 21:36:14.902 - [Debug] [Connection] Attacker closed connection
+2025-11-28 21:36:14.905 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-28 21:36:14.905 - [Debug] [LXC] Container's OpenSSH server closed connection
