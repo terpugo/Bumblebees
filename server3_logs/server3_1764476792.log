@@ -1,0 +1,22 @@
+2025-11-29 23:26:59.810 - [Info] MITM Version: 1.4
+2025-11-29 23:26:59.813 - [Info] Auto Access Enabled: true
+2025-11-29 23:26:59.813 - [Debug] [Init] Auto Access Barrier: true
+2025-11-29 23:26:59.818 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-11-29 23:28:14.642 - [Debug] [Connection] Attacker connected: 180.76.115.202 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-29 23:28:16.316 - [Debug] [Connection] Attacker connected: 103.193.178.68 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-11-29 23:28:16.947 - [Debug] [Auth] Attacker 180.76.115.202 trying to authenticate with "password"
+2025-11-29 23:28:16.948 - [Debug] [Auto Access] Attacker: 180.76.115.202, Threshold: 1, Attempts: 1
+2025-11-29 23:28:16.949 - [Debug] [Auto Access] Compromising the honeypot
+2025-11-29 23:28:16.949 - [Debug] [Auto Access] Adding the following credentials: "server:123mudar"
+2025-11-29 23:28:17.287 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-11-29 23:28:17.287 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-11-29 23:28:17.324 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-11-29 23:28:17.901 - [Debug] [Auth] Attacker 103.193.178.68 trying to authenticate with "password"
+2025-11-29 23:28:17.901 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-11-29 23:28:17.902 - [Debug] [Auth] Attacker: 103.193.178.68 has so far made 1 attempts. Remaining: 5 attempts
+2025-11-29 23:28:18.319 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-11-29 23:28:18.460 - [Debug] [Connection] Attacker closed the connection
+2025-11-29 23:29:37.408 - [Debug] [Connection] Client error on ssh server
+2025-11-29 23:29:37.409 - [Debug] [Connection] Attacker closed connection
+2025-11-29 23:29:37.412 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-11-29 23:29:37.413 - [Debug] [LXC] Container's OpenSSH server closed connection
