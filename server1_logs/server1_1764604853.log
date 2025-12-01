@@ -1,0 +1,42 @@
+2025-12-01 11:01:37.945 - [Info] MITM Version: 1.4
+2025-12-01 11:01:37.949 - [Info] Auto Access Enabled: true
+2025-12-01 11:01:37.949 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 11:01:37.955 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-01 11:09:17.626 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap_SSH2_Enum_Algos
+2025-12-01 11:09:17.650 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-libssh2_1.10.0
+2025-12-01 11:09:17.694 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:18.128 - [Debug] [Auth] Attacker 172.105.3.107 trying to authenticate with "none"
+2025-12-01 11:09:18.129 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 11:09:18.265 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:47.706 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:47.728 - [Debug] [Connection] Client error on ssh server
+2025-12-01 11:09:47.728 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:47.778 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:47.853 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:47.897 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:47.966 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:48.014 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:48.037 - [Debug] [Connection] Client error on ssh server
+2025-12-01 11:09:48.037 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:48.082 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:48.105 - [Debug] [Connection] Client error on ssh server
+2025-12-01 11:09:48.105 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:09:48.151 - [Debug] [Connection] Attacker connected: 172.105.3.107 | Client Identification: SSH-2.0-Nmap-SSH2-Hostkey
+2025-12-01 11:09:48.174 - [Debug] [Connection] Client error on ssh server
+2025-12-01 11:09:48.174 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:11:34.621 - [Debug] [Connection] Attacker connected: 193.46.255.20 | Client Identification: SSH-2.0-PUTTY
+2025-12-01 11:11:35.349 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:12:17.553 - [Debug] [Connection] Attacker connected: 129.45.84.93 | Client Identification: SSH-2.0-Go
+2025-12-01 11:12:18.286 - [Debug] [Auth] Attacker 129.45.84.93 trying to authenticate with "none"
+2025-12-01 11:12:18.287 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 11:12:18.545 - [Debug] [Auth] Attacker 129.45.84.93 trying to authenticate with "password"
+2025-12-01 11:12:18.587 - [Debug] [Auto Access] Attacker: 129.45.84.93, Threshold: 1, Attempts: 1
+2025-12-01 11:12:18.587 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 11:12:18.587 - [Debug] [Auto Access] Adding the following credentials: "root:123456"
+2025-12-01 11:12:20.571 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 11:12:20.572 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-01 11:12:20.739 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 11:12:21.273 - [Debug] [EXEC] Noninteractive mode attacker command: echo SHELL_TEST; echo root:kitty911+++ | chpasswd; echo ubuntu:kitty911++ | chpasswd; echo SHELL_TEST
+2025-12-01 11:12:21.561 - [Debug] [Connection] Attacker closed connection
+2025-12-01 11:12:21.569 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-01 11:12:21.569 - [Debug] [LXC] Container's OpenSSH server closed connection

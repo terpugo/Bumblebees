@@ -1,0 +1,25 @@
+2025-12-01 11:55:33.277 - [Info] MITM Version: 1.4
+2025-12-01 11:55:33.280 - [Info] Auto Access Enabled: true
+2025-12-01 11:55:33.281 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 11:55:33.288 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-01 11:57:14.571 - [Debug] [Connection] Attacker connected: 27.79.2.14 | Client Identification: SSH-2.0-AsyncSSH_2.1.0
+2025-12-01 11:57:19.413 - [Debug] [Connection] Attacker connected: 27.79.2.14 | Client Identification: SSH-2.0-AsyncSSH_2.1.0
+2025-12-01 11:58:01.289 - [Debug] [Connection] Attacker connected: 45.78.219.168 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-01 11:58:01.305 - [Debug] [Connection] Attacker connected: 152.42.231.101 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-01 11:58:02.710 - [Debug] [Auth] Attacker 152.42.231.101 trying to authenticate with "password"
+2025-12-01 11:58:02.717 - [Debug] [Auto Access] Attacker: 152.42.231.101, Threshold: 1, Attempts: 1
+2025-12-01 11:58:02.717 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 11:58:02.717 - [Debug] [Auto Access] Adding the following credentials: "invoices:invoices@123"
+2025-12-01 11:58:05.388 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 11:58:05.390 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-01 11:58:05.484 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 11:58:06.465 - [Debug] [Auth] Attacker 45.78.219.168 trying to authenticate with "password"
+2025-12-01 11:58:06.465 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 11:58:06.466 - [Debug] [Auth] Attacker: 45.78.219.168 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-01 11:58:06.476 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-01 11:58:07.294 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 11:58:22.028 - [Debug] [Auth] Attacker 27.79.2.14 trying to authenticate with "none"
+2025-12-01 11:58:22.032 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 11:58:24.154 - [Debug] [Connection] Attacker closed connection
+2025-12-01 11:58:24.265 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-01 11:58:24.266 - [Debug] [LXC] Container's OpenSSH server closed connection

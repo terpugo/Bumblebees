@@ -1,0 +1,21 @@
+2025-12-01 02:50:08.034 - [Info] MITM Version: 1.4
+2025-12-01 02:50:08.038 - [Info] Auto Access Enabled: true
+2025-12-01 02:50:08.038 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 02:50:08.044 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-01 02:51:00.825 - [Debug] [Connection] Attacker connected: 103.144.2.208 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-01 02:51:08.833 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 02:51:44.211 - [Debug] [Connection] Attacker connected: 106.13.70.73 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-01 03:14:57.016 - [Debug] [Connection] Attacker connected: 202.129.205.102 | Client Identification: SSH-2.0-Go
+2025-12-01 03:15:00.941 - [Debug] [Auth] Attacker 202.129.205.102 trying to authenticate with "none"
+2025-12-01 03:15:00.943 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 03:15:01.646 - [Debug] [Auth] Attacker 202.129.205.102 trying to authenticate with "password"
+2025-12-01 03:15:01.657 - [Debug] [Auto Access] Attacker: 202.129.205.102, Threshold: 1, Attempts: 1
+2025-12-01 03:15:01.657 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 03:15:01.657 - [Debug] [Auto Access] Adding the following credentials: "nagiosadmin:nagios"
+2025-12-01 03:15:02.235 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 03:15:02.235 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-01 03:15:02.298 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 03:15:03.773 - [Debug] [EXEC] Noninteractive mode attacker command: hostname
+2025-12-01 03:15:30.390 - [Debug] [Connection] Attacker closed connection
+2025-12-01 03:15:30.394 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-01 03:15:30.395 - [Debug] [LXC] Container's OpenSSH server closed connection

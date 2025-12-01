@@ -1,0 +1,23 @@
+2025-12-01 05:32:10.353 - [Info] MITM Version: 1.4
+2025-12-01 05:32:10.357 - [Info] Auto Access Enabled: true
+2025-12-01 05:32:10.357 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 05:32:10.363 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-01 05:33:34.034 - [Debug] [Connection] Attacker connected: 172.236.228.229 | Client Identification: SSH-2.0-Go
+2025-12-01 05:33:34.299 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 05:33:34.365 - [Debug] [Connection] Attacker connected: 172.236.228.229 | Client Identification: SSH-2.0-Go
+2025-12-01 05:33:34.630 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 05:33:34.708 - [Debug] [Connection] Attacker connected: 172.236.228.229 | Client Identification: SSH-2.0-Go
+2025-12-01 05:33:34.766 - [Debug] [Connection] Client error on ssh server
+2025-12-01 05:33:34.766 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 05:38:26.099 - [Debug] [Connection] Attacker connected: 185.208.156.50 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-01 05:38:26.799 - [Debug] [Auth] Attacker 185.208.156.50 trying to authenticate with "password"
+2025-12-01 05:38:26.811 - [Debug] [Auto Access] Attacker: 185.208.156.50, Threshold: 1, Attempts: 1
+2025-12-01 05:38:26.812 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 05:38:26.812 - [Debug] [Auto Access] Adding the following credentials: "testuser:test"
+2025-12-01 05:38:28.872 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 05:38:28.872 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-01 05:38:28.931 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 05:38:29.451 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-01 05:38:46.348 - [Debug] [Connection] Attacker closed connection
+2025-12-01 05:38:46.351 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-01 05:38:46.352 - [Debug] [LXC] Container's OpenSSH server closed connection

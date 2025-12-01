@@ -1,0 +1,15 @@
+2025-12-01 08:15:59.973 - [Info] MITM Version: 1.4
+2025-12-01 08:15:59.976 - [Info] Auto Access Enabled: true
+2025-12-01 08:15:59.976 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 08:15:59.982 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-01 08:20:43.029 - [Debug] [Connection] Attacker connected: 93.115.203.232 | Client Identification: SSH-2.0-Go
+2025-12-01 08:20:51.352 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "none"
+2025-12-01 08:20:51.353 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 08:20:53.489 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "password"
+2025-12-01 08:20:53.500 - [Debug] [Auto Access] Attacker: 93.115.203.232, Threshold: 1, Attempts: 1
+2025-12-01 08:20:53.500 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 08:20:53.500 - [Debug] [Auto Access] Adding the following credentials: "root:kuanke"
+2025-12-01 08:20:55.139 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 08:20:55.139 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-01 08:20:55.206 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 08:21:04.948 - [Debug] [EXEC] Noninteractive mode attacker command: echo 'dGVzdA==' | base64 -d 2>/dev/null

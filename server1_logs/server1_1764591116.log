@@ -1,0 +1,35 @@
+2025-12-01 07:13:00.423 - [Info] MITM Version: 1.4
+2025-12-01 07:13:00.426 - [Info] Auto Access Enabled: true
+2025-12-01 07:13:00.426 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 07:13:00.432 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-01 07:13:28.906 - [Debug] [Connection] Attacker connected: 93.115.203.232 | Client Identification: SSH-2.0-Go
+2025-12-01 07:13:36.693 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "none"
+2025-12-01 07:13:36.693 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-01 07:13:39.318 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "password"
+2025-12-01 07:13:39.333 - [Debug] [Auto Access] Attacker: 93.115.203.232, Threshold: 1, Attempts: 1
+2025-12-01 07:13:39.333 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 07:13:39.334 - [Debug] [Auto Access] Adding the following credentials: "root:sha123"
+2025-12-01 07:13:40.337 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 07:13:40.337 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-01 07:13:40.345 - [Debug] [Connection] Attacker connected: 62.60.131.157 | Client Identification: SSH-2.0-libssh2_1.9.0
+2025-12-01 07:13:40.404 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-01 07:13:40.936 - [Debug] [Auth] Attacker 62.60.131.157 trying to authenticate with "password"
+2025-12-01 07:13:40.997 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 07:13:40.997 - [Debug] [Auth] Attacker: 62.60.131.157 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-01 07:13:41.297 - [Debug] [Auth] Attacker 62.60.131.157 trying to authenticate with "password"
+2025-12-01 07:13:41.297 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 07:13:41.297 - [Debug] [Auth] Attacker: 62.60.131.157 has so far made 2 attempts. Remaining: 4 attempts
+2025-12-01 07:13:41.541 - [Debug] [Auth] Attacker 62.60.131.157 trying to authenticate with "password"
+2025-12-01 07:13:41.541 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 07:13:41.542 - [Debug] [Auth] Attacker: 62.60.131.157 has so far made 3 attempts. Remaining: 3 attempts
+2025-12-01 07:13:41.781 - [Debug] [Auth] Attacker 62.60.131.157 trying to authenticate with "password"
+2025-12-01 07:13:41.781 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 07:13:41.782 - [Debug] [Auth] Attacker: 62.60.131.157 has so far made 4 attempts. Remaining: 2 attempts
+2025-12-01 07:13:42.118 - [Debug] [Auth] Attacker 62.60.131.157 trying to authenticate with "password"
+2025-12-01 07:13:42.119 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-01 07:13:42.119 - [Debug] [Auth] Attacker: 62.60.131.157 has so far made 5 attempts. Remaining: 1 attempts
+2025-12-01 07:13:42.356 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 07:13:46.421 - [Debug] [EXEC] Noninteractive mode attacker command: echo 'dGVzdA==' | base64 -d 2>/dev/null
+2025-12-01 07:15:19.135 - [Debug] [Connection] Attacker closed connection
+2025-12-01 07:15:19.139 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-01 07:15:19.139 - [Debug] [LXC] Container's OpenSSH server closed connection

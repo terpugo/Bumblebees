@@ -1,0 +1,22 @@
+2025-12-01 13:35:40.908 - [Info] MITM Version: 1.4
+2025-12-01 13:35:40.912 - [Info] Auto Access Enabled: true
+2025-12-01 13:35:40.913 - [Debug] [Init] Auto Access Barrier: true
+2025-12-01 13:35:40.921 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-12-01 13:36:20.775 - [Debug] [Connection] Attacker connected: 164.90.143.106 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-12-01 13:36:21.538 - [Debug] [Auth] Attacker 164.90.143.106 trying to authenticate with "password"
+2025-12-01 13:36:21.564 - [Debug] [Auto Access] Attacker: 164.90.143.106, Threshold: 1, Attempts: 1
+2025-12-01 13:36:21.564 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-01 13:36:21.564 - [Debug] [Auto Access] Adding the following credentials: "test1:test1"
+2025-12-01 13:36:28.890 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 13:36:28.894 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-01 13:36:28.915 - [Debug] [Connection] Attacker closed the connection
+2025-12-01 13:36:29.278 - [Debug] [Connection] Attacker connected: 178.150.135.19 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-12-01 13:36:29.434 - [Info] Exiting...
+2025-12-01 13:36:29.434 - [Debug] Cleaning up...
+2025-12-01 13:36:29.440 - [Error] Exception occurred: 
+No auth in progress
+2025-12-01 13:36:29.447 - [Debug] Cleaning up LXC Streams: 0
+2025-12-01 13:36:30.196 - [Debug] [Auth] Attacker 178.150.135.19 trying to authenticate with "password"
+2025-12-01 13:36:30.196 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-01 13:36:30.196 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-01 13:36:30.252 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
