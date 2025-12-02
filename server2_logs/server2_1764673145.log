@@ -1,0 +1,22 @@
+2025-12-02 05:59:35.994 - [Info] MITM Version: 1.4
+2025-12-02 05:59:35.997 - [Info] Auto Access Enabled: true
+2025-12-02 05:59:35.997 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 05:59:36.002 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-12-02 05:59:57.967 - [Debug] [Connection] Attacker connected: 179.125.104.245 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-12-02 05:59:58.972 - [Debug] [Connection] Attacker connected: 134.209.197.72 | Client Identification: SSH-2.0-Go
+2025-12-02 05:59:59.648 - [Debug] [Auth] Attacker 134.209.197.72 trying to authenticate with "none"
+2025-12-02 05:59:59.648 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-02 05:59:59.649 - [Debug] [Auth] Attacker 179.125.104.245 trying to authenticate with "password"
+2025-12-02 05:59:59.650 - [Debug] [Auto Access] Attacker: 179.125.104.245, Threshold: 1, Attempts: 1
+2025-12-02 05:59:59.650 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 05:59:59.651 - [Debug] [Auto Access] Adding the following credentials: "centos:abc123"
+2025-12-02 06:00:00.046 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 06:00:00.047 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-02 06:00:00.049 - [Debug] [Auth] Attacker 134.209.197.72 trying to authenticate with "password"
+2025-12-02 06:00:00.050 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-02 06:00:00.050 - [Debug] [Auth] Attacker: 134.209.197.72 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-02 06:00:00.088 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 06:00:00.267 - [Debug] [Connection] Attacker closed the connection
+2025-12-02 06:00:01.236 - [Debug] [Connection] Attacker closed connection
+2025-12-02 06:00:01.240 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-02 06:00:01.240 - [Debug] [LXC] Container's OpenSSH server closed connection

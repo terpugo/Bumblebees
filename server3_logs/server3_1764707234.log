@@ -1,0 +1,22 @@
+2025-12-02 15:27:41.652 - [Info] MITM Version: 1.4
+2025-12-02 15:27:41.654 - [Info] Auto Access Enabled: true
+2025-12-02 15:27:41.654 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 15:27:41.659 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-02 15:30:31.455 - [Debug] [Connection] Attacker connected: 185.247.137.35 | Client Identification: SSH-2.0-Go
+2025-12-02 15:30:31.753 - [Debug] [Connection] Attacker closed the connection
+2025-12-02 15:33:29.615 - [Debug] [Connection] Attacker connected: 129.212.182.51 | Client Identification: SSH-2.0-Go
+2025-12-02 15:33:29.826 - [Debug] [Auth] Attacker 129.212.182.51 trying to authenticate with "none"
+2025-12-02 15:33:29.826 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-02 15:33:37.614 - [Debug] [Connection] Attacker closed the connection
+2025-12-02 15:34:17.776 - [Debug] [Connection] Attacker connected: 181.105.67.139 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 15:34:18.755 - [Debug] [Auth] Attacker 181.105.67.139 trying to authenticate with "password"
+2025-12-02 15:34:18.756 - [Debug] [Auto Access] Attacker: 181.105.67.139, Threshold: 1, Attempts: 1
+2025-12-02 15:34:18.757 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 15:34:18.757 - [Debug] [Auto Access] Adding the following credentials: "root:redhat@123"
+2025-12-02 15:34:19.138 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 15:34:19.138 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-02 15:34:19.179 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 15:34:19.891 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-02 15:34:37.098 - [Debug] [Connection] Attacker closed connection
+2025-12-02 15:34:37.101 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-02 15:34:37.101 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,16 @@
+2025-12-02 15:46:51.903 - [Info] MITM Version: 1.4
+2025-12-02 15:46:51.906 - [Info] Auto Access Enabled: true
+2025-12-02 15:46:51.906 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 15:46:51.912 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-02 15:46:53.304 - [Debug] [Connection] Attacker connected: 134.199.194.65 | Client Identification: SSH-2.0-Go
+2025-12-02 15:46:53.517 - [Debug] [Auth] Attacker 134.199.194.65 trying to authenticate with "none"
+2025-12-02 15:46:53.517 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-02 15:46:53.614 - [Debug] [Auth] Attacker 134.199.194.65 trying to authenticate with "password"
+2025-12-02 15:46:53.616 - [Debug] [Auto Access] Attacker: 134.199.194.65, Threshold: 1, Attempts: 1
+2025-12-02 15:46:53.616 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 15:46:53.616 - [Debug] [Auto Access] Adding the following credentials: "splunk:splunk"
+2025-12-02 15:46:54.344 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 15:46:54.344 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-02 15:46:54.561 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 15:46:54.756 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-12-02 15:46:55.339 - [Debug] [Connection] Attacker closed connection
