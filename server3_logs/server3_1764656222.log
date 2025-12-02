@@ -1,0 +1,23 @@
+2025-12-02 01:17:28.967 - [Info] MITM Version: 1.4
+2025-12-02 01:17:28.969 - [Info] Auto Access Enabled: true
+2025-12-02 01:17:28.969 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 01:17:28.975 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-02 01:19:58.469 - [Debug] [Connection] Attacker connected: 222.102.214.75 | Client Identification: SSH-2.0-SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2
+2025-12-02 01:20:06.951 - [Debug] [Auth] Attacker 222.102.214.75 trying to authenticate with "password"
+2025-12-02 01:20:06.953 - [Debug] [Auto Access] Attacker: 222.102.214.75, Threshold: 1, Attempts: 1
+2025-12-02 01:20:06.953 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 01:20:06.953 - [Debug] [Auto Access] Adding the following credentials: "ubnt:ubnt"
+2025-12-02 01:20:07.323 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 01:20:07.323 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-02 01:20:07.364 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 01:20:08.298 - [Debug] [SHELL] Opened shell for attacker
+2025-12-02 01:20:08.299 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-12-02 01:20:08.691 - [Debug] [SHELL] Attacker Keystroke: ./oinasf;[Space]dd[Space]if=/proc/self/exe[Space]bs=22[Space]count=1[Space]||[Space]while[Space]read[Space]i;[Space]do[Space]echo[Space]$i;[Space]done[Space]<[Space]/proc/self/exe[Space]||[Space]cat[Space]/proc/self/exe;[LF]
+2025-12-02 01:20:08.696 - [Debug] [SHELL] line from reader: ./oinasf; dd if=/proc/self/exe bs=22 count=1 || while read i; do echo $i; done < /proc/self/exe || cat /proc/self/exe;
+2025-12-02 01:20:08.696 - [Debug] [SHELL] Keystroke buffer: 46,47,111,105,110,97,115,102,59,32,100,100,32,105,102,61,47,112,114,111,99,47,115,101,108,102,47,101,120,101,32,98,115,61,50,50,32,99,111,117,110,116,61,49,32,124,124,32,119,104,105,108,101,32,114,101,97,100,32,105,59,32,100,111,32,101,99,104,111,32,36,105,59,32,100,111,110,101,32,60,32,47,112,114,111,99,47,115,101,108,102,47,101,120,101,32,124,124,32,99,97,116,32,47,112,114,111,99,47,115,101,108,102,47,101,120,101,59,10
+2025-12-02 01:21:09.427 - [Debug] [Connection] Client error on ssh server
+2025-12-02 01:21:09.427 - [Debug] [Connection] Attacker closed connection
+2025-12-02 01:21:09.431 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-02 01:21:09.431 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-12-02 01:21:09.432 - [Debug] [LXC Streams] Removed Stream | Total streams: 0
+2025-12-02 01:21:09.432 - [Debug] [SHELL] Honeypot ended shell
