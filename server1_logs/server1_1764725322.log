@@ -1,0 +1,24 @@
+2025-12-02 20:29:08.807 - [Info] MITM Version: 1.4
+2025-12-02 20:29:08.808 - [Info] Auto Access Enabled: true
+2025-12-02 20:29:08.809 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 20:29:08.813 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-02 20:30:10.425 - [Debug] [Connection] Attacker connected: 45.78.207.41 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 20:30:16.065 - [Debug] [Connection] Attacker connected: 14.103.202.110 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 20:30:17.289 - [Debug] [Connection] Attacker connected: 103.180.237.36 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 20:30:18.655 - [Debug] [Auth] Attacker 14.103.202.110 trying to authenticate with "password"
+2025-12-02 20:30:18.657 - [Debug] [Auto Access] Attacker: 14.103.202.110, Threshold: 1, Attempts: 1
+2025-12-02 20:30:18.657 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 20:30:18.657 - [Debug] [Auto Access] Adding the following credentials: "admin:123"
+2025-12-02 20:30:18.997 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 20:30:18.997 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-02 20:30:19.036 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 20:30:20.082 - [Debug] [Auth] Attacker 103.180.237.36 trying to authenticate with "password"
+2025-12-02 20:30:20.082 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-12-02 20:30:20.082 - [Debug] [Auth] Attacker: 103.180.237.36 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-02 20:30:20.450 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-02 20:30:21.292 - [Debug] [Connection] Attacker closed the connection
+2025-12-02 20:30:22.536 - [Debug] [Connection] Attacker closed the connection
+2025-12-02 20:30:23.361 - [Debug] [Connection] Attacker connected: 45.78.219.238 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 20:30:38.910 - [Debug] [Connection] Attacker closed connection
+2025-12-02 20:30:38.913 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-02 20:30:38.914 - [Debug] [LXC] Container's OpenSSH server closed connection

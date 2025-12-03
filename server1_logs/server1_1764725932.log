@@ -1,0 +1,22 @@
+2025-12-02 20:39:21.375 - [Info] MITM Version: 1.4
+2025-12-02 20:39:21.377 - [Info] Auto Access Enabled: true
+2025-12-02 20:39:21.378 - [Debug] [Init] Auto Access Barrier: true
+2025-12-02 20:39:21.383 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-02 20:39:28.778 - [Debug] [Connection] Attacker connected: 45.78.207.41 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-02 20:39:29.543 - [Debug] [Connection] Attacker connected: 92.118.39.95 | Client Identification: SSH-2.0-Go
+2025-12-02 20:39:30.315 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "none"
+2025-12-02 20:39:30.315 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-02 20:39:30.557 - [Debug] [Auth] Attacker 92.118.39.95 trying to authenticate with "password"
+2025-12-02 20:39:30.558 - [Debug] [Auto Access] Attacker: 92.118.39.95, Threshold: 1, Attempts: 1
+2025-12-02 20:39:30.558 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-02 20:39:30.559 - [Debug] [Auto Access] Adding the following credentials: "ubuntu:qwer1234"
+2025-12-02 20:39:30.831 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-02 20:39:30.832 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-02 20:39:30.873 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-02 20:39:31.430 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-12-02 20:39:31.905 - [Debug] [Connection] Attacker closed connection
+2025-12-02 20:39:31.908 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-02 20:39:31.909 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-12-02 20:39:31.944 - [Debug] [Auth] Attacker 45.78.207.41 trying to authenticate with "password"
+2025-12-02 20:39:31.944 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-02 20:39:31.944 - [Debug] [Auth] Attacker: 45.78.207.41 has so far made 1 attempts. Remaining: 5 attempts
