@@ -1,0 +1,18 @@
+2025-12-03 03:04:53.973 - [Info] MITM Version: 1.4
+2025-12-03 03:04:53.976 - [Info] Auto Access Enabled: true
+2025-12-03 03:04:53.976 - [Debug] [Init] Auto Access Barrier: true
+2025-12-03 03:04:53.982 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-03 03:06:02.607 - [Debug] [Connection] Attacker connected: 80.94.92.164 | Client Identification: SSH-2.0-Go
+2025-12-03 03:06:03.946 - [Debug] [Auth] Attacker 80.94.92.164 trying to authenticate with "none"
+2025-12-03 03:06:03.946 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-03 03:06:04.401 - [Debug] [Auth] Attacker 80.94.92.164 trying to authenticate with "password"
+2025-12-03 03:06:04.403 - [Debug] [Auto Access] Attacker: 80.94.92.164, Threshold: 1, Attempts: 1
+2025-12-03 03:06:04.403 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-03 03:06:04.403 - [Debug] [Auto Access] Adding the following credentials: "odoo:odoo"
+2025-12-03 03:06:04.869 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-03 03:06:04.869 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-03 03:06:04.912 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-03 03:06:06.321 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-12-03 03:06:07.121 - [Debug] [Connection] Attacker closed connection
+2025-12-03 03:06:07.126 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-03 03:06:07.127 - [Debug] [LXC] Container's OpenSSH server closed connection

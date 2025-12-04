@@ -1,0 +1,20 @@
+2025-12-03 10:46:55.111 - [Info] MITM Version: 1.4
+2025-12-03 10:46:55.113 - [Info] Auto Access Enabled: true
+2025-12-03 10:46:55.113 - [Debug] [Init] Auto Access Barrier: true
+2025-12-03 10:46:55.117 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-03 11:04:22.810 - [Debug] [Connection] Attacker connected: 193.46.255.99 | Client Identification: SSH-2.0-PUTTY
+2025-12-03 11:04:23.539 - [Debug] [Connection] Attacker closed the connection
+2025-12-03 11:07:57.354 - [Debug] [Connection] Attacker connected: 129.45.84.93 | Client Identification: SSH-2.0-Go
+2025-12-03 11:07:57.999 - [Debug] [Auth] Attacker 129.45.84.93 trying to authenticate with "none"
+2025-12-03 11:07:58.000 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-03 11:07:58.241 - [Debug] [Auth] Attacker 129.45.84.93 trying to authenticate with "password"
+2025-12-03 11:07:58.244 - [Debug] [Auto Access] Attacker: 129.45.84.93, Threshold: 1, Attempts: 1
+2025-12-03 11:07:58.244 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-03 11:07:58.244 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-12-03 11:07:58.699 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-03 11:07:58.700 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-03 11:07:58.743 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-03 11:07:59.229 - [Debug] [EXEC] Noninteractive mode attacker command: echo SHELL_TEST; echo root:kitty911+++ | chpasswd; echo ubuntu:kitty911++ | chpasswd; echo SHELL_TEST
+2025-12-03 11:07:59.471 - [Debug] [Connection] Attacker closed connection
+2025-12-03 11:07:59.475 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-03 11:07:59.475 - [Debug] [LXC] Container's OpenSSH server closed connection

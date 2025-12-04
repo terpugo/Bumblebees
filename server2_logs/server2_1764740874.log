@@ -1,0 +1,21 @@
+2025-12-03 00:48:22.054 - [Info] MITM Version: 1.4
+2025-12-03 00:48:22.056 - [Info] Auto Access Enabled: true
+2025-12-03 00:48:22.057 - [Debug] [Init] Auto Access Barrier: true
+2025-12-03 00:48:22.061 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-12-03 00:48:48.840 - [Debug] [Connection] Attacker connected: 211.198.128.204 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-12-03 00:48:56.870 - [Debug] [Connection] Attacker connected: 144.31.199.194 | Client Identification: SSH-2.0-paramiko_3.5.1
+2025-12-03 00:48:57.853 - [Debug] [Auth] Attacker 144.31.199.194 trying to authenticate with "password"
+2025-12-03 00:48:57.855 - [Debug] [Auto Access] Attacker: 144.31.199.194, Threshold: 1, Attempts: 1
+2025-12-03 00:48:57.855 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-03 00:48:57.855 - [Debug] [Auto Access] Adding the following credentials: "root:formol1"
+2025-12-03 00:48:58.338 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-03 00:48:58.338 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-03 00:48:58.341 - [Debug] [Auth] Attacker 211.198.128.204 trying to authenticate with "password"
+2025-12-03 00:48:58.341 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-03 00:48:58.342 - [Debug] [Auth] Attacker: 211.198.128.204 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-03 00:48:58.382 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-03 00:48:59.058 - [Debug] [EXEC] Noninteractive mode attacker command: uname -a
+2025-12-03 00:48:59.480 - [Debug] [Connection] Attacker closed the connection
+2025-12-03 00:49:03.384 - [Debug] [Connection] Attacker closed connection
+2025-12-03 00:49:03.390 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-03 00:49:03.391 - [Debug] [LXC] Container's OpenSSH server closed connection
