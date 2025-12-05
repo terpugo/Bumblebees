@@ -1,0 +1,23 @@
+2025-12-05 03:09:40.063 - [Info] MITM Version: 1.4
+2025-12-05 03:09:40.067 - [Info] Auto Access Enabled: true
+2025-12-05 03:09:40.068 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 03:09:40.102 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-05 03:14:00.068 - [Debug] [Connection] Attacker connected: 8.221.139.48 | Client Identification: SSH-2.0-Go
+2025-12-05 03:14:01.138 - [Debug] [Auth] Attacker 8.221.139.48 trying to authenticate with "none"
+2025-12-05 03:14:01.138 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 03:14:01.528 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 03:24:27.326 - [Debug] [Connection] Attacker connected: 111.53.87.28 | Client Identification: SSH-2.0-libssh_0.9.6
+2025-12-05 03:24:30.599 - [Debug] [Auth] Attacker 111.53.87.28 trying to authenticate with "password"
+2025-12-05 03:24:30.748 - [Debug] [Auto Access] Attacker: 111.53.87.28, Threshold: 1, Attempts: 1
+2025-12-05 03:24:30.756 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 03:24:30.756 - [Debug] [Auto Access] Adding the following credentials: "root:Cloud123"
+2025-12-05 03:26:49.697 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 03:26:49.877 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-05 03:26:50.163 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 03:26:50.226 - [Debug] [Connection] Attacker connected: 45.78.219.223 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-05 03:26:50.236 - [Debug] [Connection] Attacker connected: 167.86.127.135 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-05 03:26:50.537 - [Info] Exiting...
+2025-12-05 03:26:50.538 - [Debug] Cleaning up...
+2025-12-05 03:26:50.538 - [Error] Exception occurred: 
+No auth in progress
+2025-12-05 03:26:50.565 - [Debug] Cleaning up LXC Streams: 0

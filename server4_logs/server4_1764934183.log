@@ -1,0 +1,29 @@
+2025-12-05 06:30:57.099 - [Info] MITM Version: 1.4
+2025-12-05 06:30:57.105 - [Info] Auto Access Enabled: true
+2025-12-05 06:30:57.105 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 06:30:57.114 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-05 06:31:45.599 - [Debug] [Connection] Attacker connected: 129.212.182.88 | Client Identification: SSH-2.0-Go
+2025-12-05 06:31:45.869 - [Debug] [Auth] Attacker 129.212.182.88 trying to authenticate with "none"
+2025-12-05 06:31:45.871 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 06:31:53.492 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 06:32:59.847 - [Debug] [Connection] Attacker connected: 129.212.182.88 | Client Identification: SSH-2.0-Go
+2025-12-05 06:33:00.173 - [Debug] [Auth] Attacker 129.212.182.88 trying to authenticate with "none"
+2025-12-05 06:33:00.174 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 06:33:00.264 - [Debug] [Auth] Attacker 129.212.182.88 trying to authenticate with "password"
+2025-12-05 06:33:00.286 - [Debug] [Auto Access] Attacker: 129.212.182.88, Threshold: 1, Attempts: 1
+2025-12-05 06:33:00.286 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 06:33:00.286 - [Debug] [Auto Access] Adding the following credentials: "guest:123456"
+2025-12-05 06:33:06.654 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 06:33:06.658 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-05 06:33:06.675 - [Debug] [Connection] Attacker connected: 129.212.182.88 | Client Identification: SSH-2.0-Go
+2025-12-05 06:33:06.738 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 06:33:06.913 - [Debug] [Auth] Attacker 129.212.182.88 trying to authenticate with "none"
+2025-12-05 06:33:06.913 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 06:33:06.924 - [Debug] [EXEC] Noninteractive mode attacker command: uname -s -v -n -r -m
+2025-12-05 06:33:07.019 - [Debug] [Auth] Attacker 129.212.182.88 trying to authenticate with "password"
+2025-12-05 06:33:07.019 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-05 06:33:07.020 - [Debug] [Auth] Attacker: 129.212.182.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 06:33:07.126 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 06:33:07.700 - [Debug] [Connection] Attacker closed connection
+2025-12-05 06:33:07.710 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-05 06:33:07.710 - [Debug] [LXC] Container's OpenSSH server closed connection

