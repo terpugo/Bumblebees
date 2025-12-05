@@ -2,3 +2,14 @@
 2025-12-03 23:52:03.411 - [Info] Auto Access Enabled: true
 2025-12-03 23:52:03.412 - [Debug] [Init] Auto Access Barrier: true
 2025-12-03 23:52:03.417 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-04 00:00:21.162 - [Debug] [Connection] Attacker connected: 2.57.121.112 | Client Identification: SSH-2.0-libssh2_1.9.0
+2025-12-04 00:00:21.908 - [Debug] [Auth] Attacker 2.57.121.112 trying to authenticate with "password"
+2025-12-04 00:00:21.911 - [Debug] [Auto Access] Attacker: 2.57.121.112, Threshold: 1, Attempts: 1
+2025-12-04 00:00:21.911 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-04 00:00:21.911 - [Debug] [Auto Access] Adding the following credentials: "admin:camara"
+2025-12-04 00:00:22.517 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-04 00:00:22.518 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-04 00:00:22.561 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-04 00:00:23.132 - [Debug] [Connection] Attacker closed connection
+2025-12-04 00:00:23.135 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-04 00:00:23.136 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,18 @@
+2025-12-04 17:25:56.320 - [Info] MITM Version: 1.4
+2025-12-04 17:25:56.323 - [Info] Auto Access Enabled: true
+2025-12-04 17:25:56.323 - [Debug] [Init] Auto Access Barrier: true
+2025-12-04 17:25:56.328 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-04 17:45:32.724 - [Debug] [Connection] Attacker connected: 93.115.203.232 | Client Identification: SSH-2.0-Go
+2025-12-04 17:45:33.567 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "none"
+2025-12-04 17:45:33.567 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-04 17:45:33.875 - [Debug] [Auth] Attacker 93.115.203.232 trying to authenticate with "password"
+2025-12-04 17:45:33.885 - [Debug] [Auto Access] Attacker: 93.115.203.232, Threshold: 1, Attempts: 1
+2025-12-04 17:45:33.885 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-04 17:45:33.885 - [Debug] [Auto Access] Adding the following credentials: "root:Admin1234!@#$ (Scor"
+2025-12-04 17:45:34.304 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-04 17:45:34.305 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-04 17:45:34.459 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-04 17:45:35.075 - [Debug] [EXEC] Noninteractive mode attacker command: uname -a 2>/dev/null; echo '---'; df -h 2>/dev/null; echo 'LINUX_COMPLETE' || systeminfo | findstr /B /C:"OS Name" /C:"OS Version" 2>nul & echo --- & fsutil volume diskfree c: 2>nul & echo WINDOWS_COMPLETE
+2025-12-04 17:45:35.695 - [Debug] [Connection] Attacker closed connection
+2025-12-04 17:45:35.698 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-04 17:45:35.698 - [Debug] [LXC] Container's OpenSSH server closed connection

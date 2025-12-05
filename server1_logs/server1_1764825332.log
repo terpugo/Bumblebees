@@ -1,0 +1,29 @@
+2025-12-04 00:15:58.085 - [Info] MITM Version: 1.4
+2025-12-04 00:15:58.087 - [Info] Auto Access Enabled: true
+2025-12-04 00:15:58.087 - [Debug] [Init] Auto Access Barrier: true
+2025-12-04 00:15:58.092 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-04 00:25:00.799 - [Debug] [Connection] Attacker connected: 51.158.205.203 | Client Identification: SSH-2.0-OpenSSH-keyscan
+2025-12-04 00:25:01.067 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 00:25:01.068 - [Debug] [Connection] Attacker connected: 51.158.205.203 | Client Identification: SSH-2.0-OpenSSH-keyscan
+2025-12-04 00:25:01.342 - [Debug] [Connection] Attacker connected: 51.158.205.203 | Client Identification: SSH-2.0-OpenSSH-keyscan
+2025-12-04 00:25:01.342 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 00:25:01.431 - [Debug] [Connection] Client error on ssh server
+2025-12-04 00:25:01.431 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 00:25:01.431 - [Debug] [Connection] Attacker connected: 51.158.205.203 | Client Identification: SSH-2.0-OpenSSH-keyscan
+2025-12-04 00:25:01.521 - [Debug] [Connection] Client error on ssh server
+2025-12-04 00:25:01.521 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 00:25:01.521 - [Debug] [Connection] Attacker connected: 51.158.205.203 | Client Identification: SSH-2.0-OpenSSH-keyscan
+2025-12-04 00:25:01.610 - [Debug] [Connection] Client error on ssh server
+2025-12-04 00:25:01.610 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 00:29:56.068 - [Debug] [Connection] Attacker connected: 41.216.177.55 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-04 00:29:58.096 - [Debug] [Auth] Attacker 41.216.177.55 trying to authenticate with "password"
+2025-12-04 00:29:58.098 - [Debug] [Auto Access] Attacker: 41.216.177.55, Threshold: 1, Attempts: 1
+2025-12-04 00:29:58.098 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-04 00:29:58.098 - [Debug] [Auto Access] Adding the following credentials: "root:123456789."
+2025-12-04 00:29:58.424 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-04 00:29:58.424 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-04 00:29:58.460 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-04 00:29:59.411 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-04 00:30:17.605 - [Debug] [Connection] Attacker closed connection
+2025-12-04 00:30:17.608 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-04 00:30:17.608 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,21 @@
+2025-12-04 20:56:39.011 - [Info] MITM Version: 1.4
+2025-12-04 20:56:39.014 - [Info] Auto Access Enabled: true
+2025-12-04 20:56:39.014 - [Debug] [Init] Auto Access Barrier: true
+2025-12-04 20:56:39.023 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-04 20:57:06.026 - [Debug] [Connection] Attacker connected: 47.76.77.155 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-04 20:57:06.176 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-12-04 20:57:07.154 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-12-04 20:57:07.155 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-04 20:57:07.469 - [Debug] [Auth] Attacker 47.76.77.155 trying to authenticate with "password"
+2025-12-04 20:57:07.483 - [Debug] [Auto Access] Attacker: 47.76.77.155, Threshold: 1, Attempts: 1
+2025-12-04 20:57:07.483 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-04 20:57:07.483 - [Debug] [Auto Access] Adding the following credentials: "root:Abc@123123"
+2025-12-04 20:57:09.111 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-04 20:57:09.112 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-04 20:57:09.114 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-12-04 20:57:09.115 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-04 20:57:09.115 - [Debug] [Auth] Attacker: 91.215.85.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-04 20:57:09.160 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-04 20:57:09.442 - [Debug] [Connection] Attacker closed the connection
+2025-12-04 20:57:10.118 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-04 20:57:23.822 - [Debug] [Connection] Attacker closed connection
