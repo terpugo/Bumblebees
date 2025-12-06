@@ -1,0 +1,21 @@
+2025-12-06 16:22:29.306 - [Info] MITM Version: 1.4
+2025-12-06 16:22:29.308 - [Info] Auto Access Enabled: true
+2025-12-06 16:22:29.308 - [Debug] [Init] Auto Access Barrier: true
+2025-12-06 16:22:29.313 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-06 16:26:50.462 - [Debug] [Connection] Attacker connected: 81.30.162.18 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-06 16:26:51.204 - [Debug] [Auth] Attacker 81.30.162.18 trying to authenticate with "password"
+2025-12-06 16:26:51.208 - [Debug] [Auto Access] Attacker: 81.30.162.18, Threshold: 1, Attempts: 1
+2025-12-06 16:26:51.208 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-06 16:26:51.209 - [Debug] [Auto Access] Adding the following credentials: "root:hengda"
+2025-12-06 16:26:52.094 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-06 16:26:52.095 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-06 16:26:52.098 - [Debug] [Connection] Attacker connected: 20.123.120.169 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-06 16:26:52.157 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-06 16:26:52.624 - [Debug] [Auth] Attacker 20.123.120.169 trying to authenticate with "password"
+2025-12-06 16:26:52.625 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-12-06 16:26:52.625 - [Debug] [Auth] Attacker: 20.123.120.169 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-06 16:26:52.700 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-06 16:26:52.786 - [Debug] [Connection] Attacker closed the connection
+2025-12-06 16:27:09.724 - [Debug] [Connection] Attacker closed connection
+2025-12-06 16:27:09.849 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-06 16:27:09.851 - [Debug] [LXC] Container's OpenSSH server closed connection

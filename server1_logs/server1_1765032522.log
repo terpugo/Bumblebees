@@ -1,0 +1,37 @@
+2025-12-06 09:49:12.060 - [Info] MITM Version: 1.4
+2025-12-06 09:49:12.063 - [Info] Auto Access Enabled: true
+2025-12-06 09:49:12.063 - [Debug] [Init] Auto Access Barrier: true
+2025-12-06 09:49:12.068 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-06 09:52:34.913 - [Debug] [Connection] Attacker connected: 139.19.117.197 | Client Identification: SSH-2.0-Go
+2025-12-06 09:52:35.574 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-12-06 09:52:35.575 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-06 09:52:35.575 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-06 09:52:35.823 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-12-06 09:52:35.823 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-06 09:52:35.824 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 2 attempts. Remaining: 4 attempts
+2025-12-06 09:52:44.909 - [Debug] [Connection] Attacker closed the connection
+2025-12-06 10:01:23.395 - [Debug] [Connection] Attacker connected: 31.150.145.214 | Client Identification: SSH-2.0-OpenSSH_8.4p1 Raspbian-5+deb11u1
+2025-12-06 10:01:23.694 - [Debug] [Connection] Attacker connected: 31.150.145.214 | Client Identification: SSH-2.0-OpenSSH_8.4p1 Raspbian-5+deb11u1
+2025-12-06 10:01:24.133 - [Debug] [Auth] Attacker 31.150.145.214 trying to authenticate with "none"
+2025-12-06 10:01:24.134 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-06 10:01:24.418 - [Debug] [Auth] Attacker 31.150.145.214 trying to authenticate with "password"
+2025-12-06 10:01:24.423 - [Debug] [Auto Access] Attacker: 31.150.145.214, Threshold: 1, Attempts: 1
+2025-12-06 10:01:24.423 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-06 10:01:24.423 - [Debug] [Auto Access] Adding the following credentials: "pi:raspberry"
+2025-12-06 10:01:24.861 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-06 10:01:24.861 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-06 10:01:24.864 - [Debug] [Auth] Attacker 31.150.145.214 trying to authenticate with "none"
+2025-12-06 10:01:24.864 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-06 10:01:24.905 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-06 10:01:25.112 - [Debug] [Auth] Attacker 31.150.145.214 trying to authenticate with "password"
+2025-12-06 10:01:25.112 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-06 10:01:25.112 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-06 10:01:25.143 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-06 10:01:25.416 - [Debug] [EXEC] Noninteractive mode attacker command: scp -t /tmp/2Ys3RnWQ
+2025-12-06 10:01:25.642 - [Debug] [EXEC] Noninteractive mode attacker command: scp -t /tmp/2Ys3RnWQ
+2025-12-06 10:01:45.369 - [Debug] [Connection] Attacker closed connection
+2025-12-06 10:01:45.370 - [Debug] [Connection] Attacker closed connection
+2025-12-06 10:01:45.373 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-06 10:01:45.373 - [Debug] [LXC] Container's OpenSSH server closed connection
+2025-12-06 10:01:45.374 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-06 10:01:45.374 - [Debug] [LXC] Container's OpenSSH server closed connection
