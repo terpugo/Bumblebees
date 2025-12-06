@@ -1,0 +1,16 @@
+2025-12-05 12:01:26.232 - [Info] MITM Version: 1.4
+2025-12-05 12:01:26.235 - [Info] Auto Access Enabled: true
+2025-12-05 12:01:26.235 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 12:01:26.240 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-05 12:02:27.047 - [Debug] [Connection] Attacker connected: 117.241.94.103 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-05 12:02:29.130 - [Debug] [Auth] Attacker 117.241.94.103 trying to authenticate with "password"
+2025-12-05 12:02:29.131 - [Debug] [Auto Access] Attacker: 117.241.94.103, Threshold: 1, Attempts: 1
+2025-12-05 12:02:29.132 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 12:02:29.132 - [Debug] [Auto Access] Adding the following credentials: "root:laguna1"
+2025-12-05 12:02:29.425 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 12:02:29.425 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-05 12:02:29.459 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 12:02:30.975 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-05 12:02:45.577 - [Debug] [Connection] Attacker closed connection
+2025-12-05 12:02:45.579 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-05 12:02:45.580 - [Debug] [LXC] Container's OpenSSH server closed connection

@@ -1,0 +1,23 @@
+2025-12-05 09:00:27.321 - [Info] MITM Version: 1.4
+2025-12-05 09:00:27.323 - [Info] Auto Access Enabled: true
+2025-12-05 09:00:27.324 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 09:00:27.329 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-05 09:01:53.015 - [Debug] [Connection] Attacker connected: 80.94.92.169 | Client Identification: SSH-2.0-Go
+2025-12-05 09:01:53.346 - [Debug] [Connection] Attacker connected: 13.229.105.114 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-05 09:01:53.855 - [Debug] [Auth] Attacker 80.94.92.169 trying to authenticate with "none"
+2025-12-05 09:01:53.856 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 09:01:54.205 - [Debug] [Auth] Attacker 80.94.92.169 trying to authenticate with "password"
+2025-12-05 09:01:54.207 - [Debug] [Auto Access] Attacker: 80.94.92.169, Threshold: 1, Attempts: 1
+2025-12-05 09:01:54.207 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 09:01:54.207 - [Debug] [Auto Access] Adding the following credentials: "sol:1234"
+2025-12-05 09:01:54.548 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 09:01:54.548 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-05 09:01:54.582 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 09:01:55.102 - [Debug] [Auth] Attacker 13.229.105.114 trying to authenticate with "password"
+2025-12-05 09:01:55.103 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Container user is disabled
+2025-12-05 09:01:55.103 - [Debug] [Auth] Attacker: 13.229.105.114 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 09:01:55.151 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-12-05 09:01:55.651 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 09:01:56.128 - [Debug] [Connection] Attacker closed connection
+2025-12-05 09:01:56.131 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-05 09:01:56.132 - [Debug] [LXC] Container's OpenSSH server closed connection

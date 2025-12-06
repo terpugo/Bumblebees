@@ -1,0 +1,22 @@
+2025-12-05 10:09:10.917 - [Info] MITM Version: 1.4
+2025-12-05 10:09:10.919 - [Info] Auto Access Enabled: true
+2025-12-05 10:09:10.920 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 10:09:10.924 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-12-05 10:17:49.799 - [Debug] [Connection] Attacker connected: 222.117.0.253 | Client Identification: SSH-2.0-OpenSSH_7.4
+2025-12-05 10:17:52.584 - [Debug] [Auth] Attacker 222.117.0.253 trying to authenticate with "password"
+2025-12-05 10:17:52.585 - [Debug] [Auto Access] Attacker: 222.117.0.253, Threshold: 1, Attempts: 1
+2025-12-05 10:17:52.585 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 10:17:52.586 - [Debug] [Auto Access] Adding the following credentials: "unknown:0987654321"
+2025-12-05 10:17:53.477 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 10:17:53.477 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-05 10:17:53.482 - [Debug] [Connection] Attacker connected: 91.215.85.88 | Client Identification: SSH-2.0-Go
+2025-12-05 10:17:53.537 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 10:17:54.443 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "none"
+2025-12-05 10:17:54.444 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 10:17:54.784 - [Debug] [Auth] Attacker 91.215.85.88 trying to authenticate with "password"
+2025-12-05 10:17:54.785 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-05 10:17:54.785 - [Debug] [Auth] Attacker: 91.215.85.88 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 10:17:55.137 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 10:17:55.582 - [Debug] [Connection] Attacker closed connection
+2025-12-05 10:17:55.590 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-05 10:17:55.590 - [Debug] [LXC] Container's OpenSSH server closed connection

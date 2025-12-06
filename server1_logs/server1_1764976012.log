@@ -1,0 +1,32 @@
+2025-12-05 18:07:18.400 - [Info] MITM Version: 1.4
+2025-12-05 18:07:18.402 - [Info] Auto Access Enabled: true
+2025-12-05 18:07:18.402 - [Debug] [Init] Auto Access Barrier: true
+2025-12-05 18:07:18.408 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-05 18:07:24.314 - [Debug] [Connection] Attacker connected: 139.19.117.197 | Client Identification: SSH-2.0-Go
+2025-12-05 18:07:24.973 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-12-05 18:07:24.974 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-05 18:07:24.975 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 18:07:25.221 - [Debug] [Auth] Attacker 139.19.117.197 trying to authenticate with "publickey"
+2025-12-05 18:07:25.221 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-05 18:07:25.222 - [Debug] [Auth] Attacker: 139.19.117.197 has so far made 2 attempts. Remaining: 4 attempts
+2025-12-05 18:07:34.312 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 18:11:40.623 - [Debug] [Connection] Attacker connected: 185.156.73.233 | Client Identification: SSH-2.0-OpenSSH_8.4p1 Debian-5+deb11u3
+2025-12-05 18:11:41.210 - [Debug] [Auth] Attacker 185.156.73.233 trying to authenticate with "none"
+2025-12-05 18:11:41.210 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 18:11:41.332 - [Debug] [Connection] Attacker connected: 80.94.92.171 | Client Identification: SSH-2.0-Go
+2025-12-05 18:11:41.389 - [Debug] [Auth] Attacker 185.156.73.233 trying to authenticate with "password"
+2025-12-05 18:11:41.391 - [Debug] [Auto Access] Attacker: 185.156.73.233, Threshold: 1, Attempts: 1
+2025-12-05 18:11:41.391 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-05 18:11:41.391 - [Debug] [Auto Access] Adding the following credentials: "guest:guest"
+2025-12-05 18:11:41.807 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-05 18:11:41.807 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-05 18:11:41.848 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-05 18:11:42.614 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "none"
+2025-12-05 18:11:42.614 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-05 18:11:43.031 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "password"
+2025-12-05 18:11:43.032 - [Debug] [Auth] Attacker authentication error: Invalid credentials - User does not exist
+2025-12-05 18:11:43.032 - [Debug] [Auth] Attacker: 80.94.92.171 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-05 18:11:43.259 - [Debug] [Connection] Attacker closed the connection
+2025-12-05 18:11:47.951 - [Debug] [Connection] Attacker closed connection
+2025-12-05 18:11:47.954 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-05 18:11:47.955 - [Debug] [LXC] Container's OpenSSH server closed connection
