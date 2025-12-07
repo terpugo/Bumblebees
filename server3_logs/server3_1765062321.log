@@ -1,0 +1,29 @@
+2025-12-06 18:05:47.974 - [Info] MITM Version: 1.4
+2025-12-06 18:05:47.976 - [Info] Auto Access Enabled: true
+2025-12-06 18:05:47.976 - [Debug] [Init] Auto Access Barrier: true
+2025-12-06 18:05:47.982 - [Info] SSH man-in-the-middle server for 172.20.0.4 listening on 0.0.0.0:10003
+2025-12-06 18:05:51.016 - [Debug] [Connection] Attacker connected: 163.181.207.222 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-06 18:05:51.247 - [Debug] [Connection] Attacker connected: 139.19.117.130 | Client Identification: SSH-2.0-Go
+2025-12-06 18:05:51.801 - [Debug] [Connection] Attacker connected: 115.190.195.59 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-06 18:05:51.913 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-12-06 18:05:51.914 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-06 18:05:51.915 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-06 18:05:52.161 - [Debug] [Auth] Attacker 139.19.117.130 trying to authenticate with "publickey"
+2025-12-06 18:05:52.162 - [Debug] [Auth] Attacker authentication error: Publickey authentication failed
+2025-12-06 18:05:52.162 - [Debug] [Auth] Attacker: 139.19.117.130 has so far made 2 attempts. Remaining: 4 attempts
+2025-12-06 18:05:52.628 - [Debug] [Auth] Attacker 163.181.207.222 trying to authenticate with "password"
+2025-12-06 18:05:52.629 - [Debug] [Auto Access] Attacker: 163.181.207.222, Threshold: 1, Attempts: 1
+2025-12-06 18:05:52.629 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-06 18:05:52.629 - [Debug] [Auto Access] Adding the following credentials: "root:Abcd#1234"
+2025-12-06 18:05:52.948 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-06 18:05:52.948 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.4
+2025-12-06 18:05:52.978 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-06 18:05:53.462 - [Debug] [Auth] Attacker 115.190.195.59 trying to authenticate with "password"
+2025-12-06 18:05:53.462 - [Debug] [Auth] Attacker authentication error: Invalid credentials - Password Authentication Failure
+2025-12-06 18:05:53.462 - [Debug] [Auth] Attacker: 115.190.195.59 has so far made 1 attempts. Remaining: 5 attempts
+2025-12-06 18:05:53.974 - [Debug] [Connection] Attacker closed the connection
+2025-12-06 18:05:54.108 - [Debug] [EXEC] Noninteractive mode attacker command: cd ~; chattr -ia .ssh; lockr -ia .ssh
+2025-12-06 18:06:01.247 - [Debug] [Connection] Attacker closed the connection
+2025-12-06 18:06:08.229 - [Debug] [Connection] Attacker closed connection
+2025-12-06 18:06:08.232 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-06 18:06:08.233 - [Debug] [LXC] Container's OpenSSH server closed connection
