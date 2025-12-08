@@ -1,0 +1,24 @@
+2025-12-07 05:56:31.901 - [Info] MITM Version: 1.4
+2025-12-07 05:56:31.903 - [Info] Auto Access Enabled: true
+2025-12-07 05:56:31.903 - [Debug] [Init] Auto Access Barrier: true
+2025-12-07 05:56:31.909 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-07 06:00:40.985 - [Debug] [Connection] Attacker connected: 80.94.92.171 | Client Identification: SSH-2.0-Go
+2025-12-07 06:00:45.747 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "none"
+2025-12-07 06:00:45.748 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-07 06:00:46.044 - [Debug] [Connection] Attacker closed the connection
+2025-12-07 06:03:35.361 - [Debug] [Connection] Attacker connected: 205.210.31.215 | Client Identification: SSH-2.0-ZGrab ZGrab SSH Survey
+2025-12-07 06:03:37.448 - [Debug] [Connection] Attacker closed the connection
+2025-12-07 06:05:41.680 - [Debug] [Connection] Attacker connected: 80.94.92.171 | Client Identification: SSH-2.0-Go
+2025-12-07 06:05:42.746 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "none"
+2025-12-07 06:05:42.746 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-07 06:05:43.151 - [Debug] [Auth] Attacker 80.94.92.171 trying to authenticate with "password"
+2025-12-07 06:05:43.153 - [Debug] [Auto Access] Attacker: 80.94.92.171, Threshold: 1, Attempts: 1
+2025-12-07 06:05:43.153 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-07 06:05:43.153 - [Debug] [Auto Access] Adding the following credentials: "john:john"
+2025-12-07 06:05:44.064 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-07 06:05:44.064 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-07 06:05:44.138 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-07 06:05:44.870 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-12-07 06:05:45.849 - [Debug] [Connection] Attacker closed connection
+2025-12-07 06:05:45.852 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-07 06:05:45.852 - [Debug] [LXC] Container's OpenSSH server closed connection

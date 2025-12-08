@@ -1,0 +1,24 @@
+2025-12-07 03:00:12.753 - [Info] MITM Version: 1.4
+2025-12-07 03:00:12.756 - [Info] Auto Access Enabled: true
+2025-12-07 03:00:12.756 - [Debug] [Init] Auto Access Barrier: true
+2025-12-07 03:00:12.761 - [Info] SSH man-in-the-middle server for 172.20.0.2 listening on 0.0.0.0:10001
+2025-12-07 03:00:28.401 - [Debug] [Connection] Attacker connected: 120.48.151.153 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-07 03:02:02.060 - [Debug] [Connection] Attacker connected: 120.48.151.153 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-07 03:02:21.744 - [Debug] [Connection] Attacker connected: 45.78.219.216 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-07 03:02:29.932 - [Debug] [Connection] Attacker closed the connection
+2025-12-07 03:03:36.000 - [Debug] [Connection] Attacker connected: 120.48.151.153 | Client Identification: SSH-2.0-libssh_0.11.1
+2025-12-07 03:03:39.327 - [Debug] [Connection] Attacker closed the connection
+2025-12-07 03:04:02.096 - [Debug] [Connection] Attacker connected: 80.94.92.177 | Client Identification: SSH-2.0-Go
+2025-12-07 03:04:03.305 - [Debug] [Auth] Attacker 80.94.92.177 trying to authenticate with "none"
+2025-12-07 03:04:03.305 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-07 03:04:03.648 - [Debug] [Auth] Attacker 80.94.92.177 trying to authenticate with "password"
+2025-12-07 03:04:03.650 - [Debug] [Auto Access] Attacker: 80.94.92.177, Threshold: 1, Attempts: 1
+2025-12-07 03:04:03.650 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-07 03:04:03.650 - [Debug] [Auto Access] Adding the following credentials: "loginuser:123456"
+2025-12-07 03:04:04.101 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-07 03:04:04.101 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.2
+2025-12-07 03:04:04.147 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-07 03:04:05.189 - [Debug] [EXEC] Noninteractive mode attacker command: /bin/./uname -s -v -n -r -m
+2025-12-07 03:04:06.410 - [Debug] [Connection] Attacker closed connection
+2025-12-07 03:04:06.414 - [Debug] [LXC] Container's OpenSSH server ended connection
+2025-12-07 03:04:06.414 - [Debug] [LXC] Container's OpenSSH server closed connection

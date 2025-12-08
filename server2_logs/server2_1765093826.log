@@ -1,0 +1,131 @@
+2025-12-07 02:50:55.899 - [Info] MITM Version: 1.4
+2025-12-07 02:50:55.901 - [Info] Auto Access Enabled: true
+2025-12-07 02:50:55.901 - [Debug] [Init] Auto Access Barrier: true
+2025-12-07 02:50:55.907 - [Info] SSH man-in-the-middle server for 172.20.0.3 listening on 0.0.0.0:10002
+2025-12-07 02:52:52.242 - [Debug] [Connection] Attacker connected: 88.130.146.84 | Client Identification: SSH-2.0-OpenSSH_10.2p1 Debian-2
+2025-12-07 02:52:52.558 - [Debug] [Connection] Attacker closed the connection
+2025-12-07 02:53:08.829 - [Debug] [Connection] Attacker connected: 88.130.146.84 | Client Identification: SSH-2.0-OpenSSH_10.2p1 Debian-2
+2025-12-07 02:53:11.349 - [Debug] [Auth] Attacker 88.130.146.84 trying to authenticate with "none"
+2025-12-07 02:53:11.349 - [Debug] [Auth] Attacker authentication error: No authentication method provided
+2025-12-07 02:53:14.179 - [Debug] [Auth] Attacker 88.130.146.84 trying to authenticate with "password"
+2025-12-07 02:53:14.181 - [Debug] [Auto Access] Attacker: 88.130.146.84, Threshold: 1, Attempts: 1
+2025-12-07 02:53:14.181 - [Debug] [Auto Access] Compromising the honeypot
+2025-12-07 02:53:14.181 - [Debug] [Auto Access] Adding the following credentials: "test:test"
+2025-12-07 02:53:15.545 - [Debug] [Auth] Valid credentials - Password Authentication
+2025-12-07 02:53:15.545 - [Debug] [LXC] Attempting to connect to the honeypot: 172.20.0.3
+2025-12-07 02:53:15.597 - [Debug] [LXC-Auth] Attacker authenticated and is inside container
+2025-12-07 02:53:16.701 - [Debug] [SHELL] Opened shell for attacker
+2025-12-07 02:53:16.703 - [Debug] [LXC Streams] New Stream | Total Streams: 1
+2025-12-07 02:53:18.351 - [Debug] [SHELL] Attacker Keystroke: w
+2025-12-07 02:53:18.431 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:18.432 - [Debug] [SHELL] line from reader: w
+2025-12-07 02:53:18.432 - [Debug] [SHELL] Keystroke buffer: 119,13
+2025-12-07 02:53:20.286 - [Debug] [SHELL] Attacker Keystroke: u
+2025-12-07 02:53:20.483 - [Debug] [SHELL] Attacker Keystroke: n
+2025-12-07 02:53:20.562 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:53:20.659 - [Debug] [SHELL] Attacker Keystroke: m
+2025-12-07 02:53:20.756 - [Debug] [SHELL] Attacker Keystroke: e
+2025-12-07 02:53:20.812 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:53:21.165 - [Debug] [SHELL] Attacker Keystroke: -
+2025-12-07 02:53:21.281 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:53:21.379 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:21.380 - [Debug] [SHELL] line from reader: uname -a
+2025-12-07 02:53:21.380 - [Debug] [SHELL] Keystroke buffer: 117,110,97,109,101,32,45,97,13
+2025-12-07 02:53:24.750 - [Debug] [SHELL] Attacker Keystroke: p
+2025-12-07 02:53:24.871 - [Debug] [SHELL] Attacker Keystroke: s
+2025-12-07 02:53:24.930 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:53:25.190 - [Debug] [SHELL] Attacker Keystroke: 0
+2025-12-07 02:53:25.329 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:53:25.469 - [Debug] [SHELL] Attacker Keystroke: u
+2025-12-07 02:53:25.653 - [Debug] [SHELL] Attacker Keystroke: x
+2025-12-07 02:53:25.854 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:25.855 - [Debug] [SHELL] line from reader: ps 0aux
+2025-12-07 02:53:25.855 - [Debug] [SHELL] Keystroke buffer: 112,115,32,48,97,117,120,13
+2025-12-07 02:53:27.139 - [Debug] [SHELL] Attacker Keystroke: p
+2025-12-07 02:53:27.301 - [Debug] [SHELL] Attacker Keystroke: s
+2025-12-07 02:53:27.412 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:53:27.853 - [Debug] [SHELL] Attacker Keystroke: -
+2025-12-07 02:53:28.148 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:53:28.253 - [Debug] [SHELL] Attacker Keystroke: u
+2025-12-07 02:53:28.434 - [Debug] [SHELL] Attacker Keystroke: x
+2025-12-07 02:53:29.372 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:29.372 - [Debug] [SHELL] line from reader: ps -aux
+2025-12-07 02:53:29.372 - [Debug] [SHELL] Keystroke buffer: 112,115,32,45,97,117,120,13
+2025-12-07 02:53:42.351 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:53:42.472 - [Debug] [SHELL] Attacker Keystroke: d
+2025-12-07 02:53:42.592 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:53:42.770 - [Debug] [SHELL] Attacker Keystroke: /
+2025-12-07 02:53:42.986 - [Debug] [SHELL] Attacker Keystroke: t
+2025-12-07 02:53:43.244 - [Debug] [SHELL] Attacker Keystroke: m
+2025-12-07 02:53:43.440 - [Debug] [SHELL] Attacker Keystroke: p
+2025-12-07 02:53:43.781 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:43.781 - [Debug] [SHELL] line from reader: cd /tmp
+2025-12-07 02:53:43.781 - [Debug] [SHELL] Keystroke buffer: 99,100,32,47,116,109,112,13
+2025-12-07 02:53:44.697 - [Debug] [SHELL] Attacker Keystroke: l
+2025-12-07 02:53:44.739 - [Debug] [SHELL] Attacker Keystroke: s
+2025-12-07 02:53:44.855 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:44.855 - [Debug] [SHELL] line from reader: ls
+2025-12-07 02:53:44.856 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-12-07 02:53:45.844 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:53:45.924 - [Debug] [SHELL] Attacker Keystroke: d
+2025-12-07 02:53:46.002 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:46.002 - [Debug] [SHELL] line from reader: cd
+2025-12-07 02:53:46.002 - [Debug] [SHELL] Keystroke buffer: 99,100,13
+2025-12-07 02:53:46.854 - [Debug] [SHELL] Attacker Keystroke: l
+2025-12-07 02:53:46.912 - [Debug] [SHELL] Attacker Keystroke: s
+2025-12-07 02:53:47.053 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:47.053 - [Debug] [SHELL] line from reader: ls
+2025-12-07 02:53:47.053 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-12-07 02:53:55.168 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:53:55.294 - [Debug] [SHELL] Attacker Keystroke: d
+2025-12-07 02:53:55.400 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:53:55.587 - [Debug] [SHELL] Attacker Keystroke: i
+2025-12-07 02:53:55.878 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-12-07 02:53:56.251 - [Debug] [SHELL] Attacker Keystroke: I
+2025-12-07 02:53:56.442 - [Debug] [SHELL] Attacker Keystroke: n
+2025-12-07 02:53:56.548 - [Debug] [SHELL] Attacker Keystroke: [TAB]
+2025-12-07 02:53:57.473 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:57.473 - [Debug] [SHELL] line from reader: cd In       
+2025-12-07 02:53:57.473 - [Debug] [SHELL] Keystroke buffer: 99,100,32,105,127,73,110,9,13
+2025-12-07 02:53:58.494 - [Debug] [SHELL] Attacker Keystroke: l
+2025-12-07 02:53:58.555 - [Debug] [SHELL] Attacker Keystroke: s
+2025-12-07 02:53:58.683 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:53:58.683 - [Debug] [SHELL] line from reader: ls
+2025-12-07 02:53:58.683 - [Debug] [SHELL] Keystroke buffer: 108,115,13
+2025-12-07 02:54:03.711 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:54:03.831 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:54:04.079 - [Debug] [SHELL] Attacker Keystroke: r
+2025-12-07 02:54:04.409 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-12-07 02:54:04.492 - [Debug] [SHELL] Attacker Keystroke: t
+2025-12-07 02:54:04.719 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:54:05.891 - [Debug] [SHELL] Attacker Keystroke: W
+2025-12-07 02:54:06.094 - [Debug] [SHELL] Attacker Keystroke: [TAB]
+2025-12-07 02:54:07.058 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:54:07.058 - [Debug] [SHELL] line from reader: cat W       
+2025-12-07 02:54:07.058 - [Debug] [SHELL] Keystroke buffer: 99,97,114,127,116,32,87,9,13
+2025-12-07 02:54:11.358 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:54:11.448 - [Debug] [SHELL] Attacker Keystroke: a
+2025-12-07 02:54:11.627 - [Debug] [SHELL] Attacker Keystroke: t
+2025-12-07 02:54:11.698 - [Debug] [SHELL] Attacker Keystroke: [Space]
+2025-12-07 02:54:11.914 - [Debug] [SHELL] Attacker Keystroke: /
+2025-12-07 02:54:12.190 - [Debug] [SHELL] Attacker Keystroke: [
+2025-12-07 02:54:12.422 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-12-07 02:54:12.620 - [Debug] [SHELL] Attacker Keystroke: p
+2025-12-07 02:54:12.698 - [Debug] [SHELL] Attacker Keystroke: r
+2025-12-07 02:54:12.835 - [Debug] [SHELL] Attacker Keystroke: o
+2025-12-07 02:54:12.855 - [Debug] [SHELL] Attacker Keystroke: i
+2025-12-07 02:54:12.936 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:54:13.093 - [Debug] [SHELL] Attacker Keystroke: [TAB]
+2025-12-07 02:54:13.719 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-12-07 02:54:13.855 - [Debug] [SHELL] Attacker Keystroke: [DEL]
+2025-12-07 02:54:13.973 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:54:14.073 - [Debug] [SHELL] Attacker Keystroke: [TAB]
+2025-12-07 02:54:15.137 - [Debug] [SHELL] Attacker Keystroke: c
+2025-12-07 02:54:15.338 - [Debug] [SHELL] Attacker Keystroke: p
+2025-12-07 02:54:15.573 - [Debug] [SHELL] Attacker Keystroke: u
+2025-12-07 02:54:15.732 - [Debug] [SHELL] Attacker Keystroke: i
+2025-12-07 02:54:15.907 - [Debug] [SHELL] Attacker Keystroke: n
+2025-12-07 02:54:16.005 - [Debug] [SHELL] Attacker Keystroke: [TAB]
+2025-12-07 02:54:16.597 - [Debug] [SHELL] Attacker Keystroke: [CR]
+2025-12-07 02:54:16.598 - [Debug] [SHELL] line from reader: cat /proic  cpuin   
+2025-12-07 02:54:16.598 - [Debug] [SHELL] Keystroke buffer: 99,97,116,32,47,91,127,112,114,111,105,99,9,127,127,99,9,99,112,117,105,110,9,13
